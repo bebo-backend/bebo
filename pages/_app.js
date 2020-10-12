@@ -1,17 +1,13 @@
 import '../styles/index.css'
 import "antd/dist/antd.css"
 
-
-
-import { Provider } from 'react-redux'
-import { useStore } from '../store'
 import { SWRConfig } from 'swr'
 import {getFetch} from '../lib/ax-fetch'
 
 
 
 export default function App({ Component, pageProps }) {
-  const store = useStore(pageProps.initialReduxState)
+
 
   return (
 
