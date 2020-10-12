@@ -12,6 +12,7 @@
         "@zeit/next-sass": "^1.0.1",
         "date-fns": "^2.16.1",
         "iron-store": "^1.3.0",
+        "antd": "^4.6.3",
         "next": "9.5.3",
         "next-auth": "^3.1.0",
         "next-iron-session": "^4.1.8",
