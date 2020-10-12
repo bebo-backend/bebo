@@ -71,7 +71,7 @@ md:mb-3 flex flex-col justify-center items-left mx-3 ml-5 sm:ml-0 sm:mx-0"
 
 <p className="">
     { data.submit_user.image ?
-      <Avatar className="ml-2" src={BASE_IMG_URL+data.submit_user.image}
+      <Avatar className="ml-2" src={BASE_IMG_URL+data.submit_user.image} icon={<UserOutlined></UserOutlined>}
        style={{'marginLeft':'10px',"width":'40px','height':'40px',
       }}>
     </Avatar>:

@@ -45,7 +45,7 @@ if (!index || index===0) return BASE_URL+"search_data?search="+search+"&page="+p
 return BASE_URL+"search_data?search="+search+"&page="+index+"&limit="+LIMIT+"&tags="+tags
 },fetcher)
 
-if (!data) return <p className="flex justify-center"> <LoadingOutlined /> </p>;
+if (!data) return <p className="flex justify-center items-center h-screen w-sreen">Searching <LoadingOutlined /> </p>;
 
 
 

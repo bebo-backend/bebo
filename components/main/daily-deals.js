@@ -86,7 +86,7 @@ md:mb-3 flex flex-col justify-end items-left pl-5 sm:px-3 ml-0">
 <span className="">
 
     { data.submit_user.image ?
-      <Avatar src={BASE_IMG_URL+data.submit_user.image} style={{"width":'33px','height':'33px',
+      <Avatar src={BASE_IMG_URL+data.submit_user.image} icon={<UserOutlined></UserOutlined>} style={{"width":'33px','height':'33px',
       }}>
     </Avatar>:
 

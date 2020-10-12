@@ -23,14 +23,15 @@ const Header = ({tag=true}) => {
 
   return (
     <header className=" bg-white  ">
-      <nav className=" flex inset-y-0 top-0 text-black px-0 w-full md:px-5 items-end  ">
-        <ul className="flex-inline sm:flex w-full py-0 my-0 border-b-2 border-gray-200">
+      <nav className=" flex inset-y-0 top-0 text-black px-0 w-full md:px-5 items-end justify-center
+       sm:justify-start  ">
+        <ul className="flex-inline sm:flex w-full py-0 my-0 border-b-1 border-gray-200">
 
         <div className="w-full sm:w-1/6 mx-0 fixed sm:relative shadow-lg sm:shadow-none py-2  z-40  md:mr-3 my-0 
         sm:py-0 flex justify-center items-center bg-white ">
        
         <Link href="/">
-         <h2 className="font-extrabold text-xl px-2 rounded sm:mt-0 mt-1 mb-0  bg-black text-white cursor-pointer mb-0
+         <h2 className="font-extrabold text-lg px-2 rounded sm:mt-0 mt-1 mb-0  bg-black text-white cursor-pointer mb-0
           relative p-1">beBO</h2>
         </Link>
 
@@ -40,7 +41,7 @@ const Header = ({tag=true}) => {
         <Search/>
         </div>
 
-        <div className="flex-shrink md:m-2 w-full  py-1 md:w-2/3 md:px-3 justify-evenly md:justify-end flex items-start">
+        <div className="flex-shrink md:m-2 w-full  py-1 md:w-2/3 md:px-3 justify-evenly md:justify-evenly flex items-start">
 
         <Link href='/upload-item'>
         <p className="
@@ -55,7 +56,7 @@ const Header = ({tag=true}) => {
         {
         user?.isLoggedIn ?(
 <i className="cursor-pointer hover:border-b-2">
-          <Avatar  src={BASE_IMG_URL+user?.image} style={{"width":'37px','height':'37px',
+          <Avatar  src={BASE_IMG_URL+user?.image} style={{"width":'35px','height':'35px',
         }} onClick={e=>router.push('/dashboard/profile')}><h2 className="text-base font-bold 
         uppercase">
           {user?.username.slice(0,2)}</h2>
@@ -63,7 +64,7 @@ const Header = ({tag=true}) => {
           </i>
         ) : (
           <i className="cursor-pointer  hover:border-b-2">
-          <Avatar className="cursor-pointer" onClick={e=>router.push('/dashboard/profile')} style={{"width":'37px','height':'37px',
+          <Avatar className="cursor-pointer" onClick={e=>router.push('/dashboard/profile')} style={{"width":'35px','height':'35px',
           }} icon={<UserOutlined></UserOutlined>} className=""></Avatar> </i>
         )
 
@@ -84,7 +85,7 @@ const Header = ({tag=true}) => {
         <a className="
        font-bold text-white  uppercase shadow-lg
          cursor-pointer ml-3  leading-loose flex items-end hover:text-purple-300 
-         p-1 rounded-sm  px-3 border-0 border-blue-800 rounded-full bg-blue-500
+         p-1  px-3 border-0 border-blue-800 bg-blue-500
 
           " href='/logout' onClick={async (e) => {
           e.preventDefault()
@@ -100,7 +101,7 @@ Logout
         <p className="
        font-bold text-white  uppercase shadow-lg
          cursor-pointer ml-3  leading-loose flex items-end hover:text-purple-300 
-         p-1 rounded-sm  px-3 border-0 border-blue-800 rounded-full bg-blue-500
+         p-1  px-3 border-0 border-blue-800  bg-blue-500
 
          ">Login</p>
                 </Link>
@@ -113,7 +114,7 @@ Logout
         </ul>
       </nav>
      
-{tag && (  <div className="flex inline-flex w-full p-3">
+{tag && (  <div className="flex inline-flex w-full px-3 pb-2 pt-1">
 <Tag />
 </div>)}
     

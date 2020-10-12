@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 
 const Form = ({ errorMessage, onSubmit,onChange=f=>f,load=false }) => (
-  <form className="w-full sm:w-1/2 lg:w-1/3  m-10 rounded-lg shadow-2xl p-5 px-10 py-10
+  <form className="w-full sm:w-1/2 lg:w-1/3 my-8 mx-4 px-5 sm:m-10 rounded-lg shadow-2xl sm:p-5 sm:px-10 py-10
   border-1 bg-white">
   <p className="w-full  justify-center text-3xl text-black font-bold 
  "> Sign in</p>
@@ -40,7 +40,7 @@ onClick={onSubmit}>CONTINUE {load && <LoadingOutlined /> }</button>
 
   <div className='w-full flex justify-center mt-6 uppercase '>
   
-  <p className=" border-b-2 text-gray-500 border-black font-extrabold">Sign in with</p>
+  <p className=" border-b-2 text-gray-500 border-black font-extrabold w-full">Sign in with</p>
 
 
   </div>

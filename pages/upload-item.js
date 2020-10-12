@@ -228,7 +228,7 @@ const stepMove=(value)=>{
 
 
 <div className="flex w-full justify-center">
-      <div className=" w-full sm:w-3/4  px-10 mt-0 bg-white py-5 mt-3 shadow-2xl rounded-lg ">
+      <div className=" w-full sm:w-3/4 my-8 mx-4 px-5  sm:px-10 mt-0 bg-white py-5 mt-3 shadow-2xl rounded-lg ">
 
                     {step==0 &&
 

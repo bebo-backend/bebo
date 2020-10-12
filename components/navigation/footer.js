@@ -15,7 +15,7 @@ const Footer = () => {
   // console.log('use user: '+user?.isLoggedIn)
 
   return (
-    <footer className="border-t-2 sm:shadow-md border-gray-200 inset-y-0 bottom-0 sm:flex justify-evenly 
+    <footer className="sm:border-t-2 sm:shadow-md border-gray-200 inset-y-0 bottom-0 sm:flex justify-evenly 
     sm:flex-wrap mt-4 ml-6  md:mt-10 ">
    
 

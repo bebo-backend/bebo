@@ -51,6 +51,7 @@ data.user.password = userForm.password
  data.user.email = userForm.username
   data.phone_no = userForm.tel
   data.agencyname = userForm.store
+  data.website = userForm.website
 
     // const {message,error,user} = await axios.post(BASE_URL+"signup/", data);
 
