@@ -1,65 +1,121 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Layout from '../components/layout'
+import PopularCategory from '../components/main/popularcategory'
+import UploadItem from '../components/main/upload-item'
+import UploadDetail from '../components/main/upload-detail'
+import TopCompany from '../components/main/top-company'
+import DailyDeals from '../components/main/daily-deals'
+import { BASE_URL } from '../settings'
+import axios from 'axios'
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+const Home = ({topCompany,dailyDeals}) => (
+  <Layout>
+  
+       
+  <p className="text-2xl md:text-4xl bg-black sm:bg-transparent font-extrabold rounded-lg
+  mt-3 text-white sm:text-black sm:px-5 py-4 md:py-1 center leading-tight w-full
+     " style={{'textAlign':'center'}}>
+    Find things you'll love. Support independent sellers. Only on beBO.
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+    </p>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+    <TopCompany data={topCompany} />
+
+ <div className="flex  flex-wrap md:flex-no-wrap justify-evenly mb-8  p-5 bg-teal-900">
+
+ <PopularCategory />
+ <UploadItem />
+ <UploadDetail />
+
+
+
+ </div>
+
+ <DailyDeals data={dailyDeals} />
+
+  </Layout>
+)
+
+export default Home
+
+export const getStaticProps = async()=>{
+
+
+  const topCompany = [{
+
+    submit_user:{
+      agencyname:'niyi ogun',
+      image:null,
+      rate:3,
+      rate_count:16},
+    images:null
+  },
+  {
+
+    submit_user:{
+      agencyname:'jkl',
+      image:null,
+      rate:4,
+      rate_count:16},
+    images:null
+  }]
+  const dailyDeals=[{
+
+    submit_user:{
+      agencyname:'niyi ogun',
+      image:null,
+      rate:3,
+      rate_count:16},
+    images:null,
+    acquire_type:'sale',
+    price:100,
+    from_price:140,
+    to_price:4000,
+    instock:1,
+    title:"Huaweil 4s6 flip smartphone"
+  },
+  {
+
+    submit_user:{
+      agencyname:'jkl',
+      image:null,
+      rate:4,
+      rate_count:16},
+    images:null,
+    acquire_type:'exchange',
+    price:0,
+    from_price:140,
+    to_price:4000,
+    instock:4,
+    title:"new genertroe rtb black"
+  }]
+
+const  response = await axios.get(BASE_URL+'getTopCompany')
+const  dailydeals = await axios.get(BASE_URL+'mainsearch')
+
+
+// const data = await postFetch('/api/auth/getdata', {
+//   method: 'POST',
+//   headers: { 'Content-Type': 'application/json' },
+//   body: JSON.stringify({'url':'getTopCompany'}),
+// })
+// console.log('data]]]'+Object.keys(topCompany))
+
+
+
+  return {
+    props:{
+      topCompany:response.data ?response.data:[],
+      // topCompany,
+      // dailyDeals
+      dailyDeals:dailydeals.data ? dailydeals.data:[]
+    },
+    revalidate:1,
+  }
+
+
 }
