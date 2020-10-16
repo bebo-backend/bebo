@@ -24,7 +24,7 @@ return (
     md:mx-0 py-2 lg:pl-10 pl-3 " > 
 
 <div className="flex justify-end">
-    <span className="border-black border-2  p-2 px-3 
+    <span className="bg-blue-500 text-white  p-2 px-3 
     rounded cursor-pointer hover:bg-blue-300" onClick={clearFilters}>Clear x</span>
     </div>
        

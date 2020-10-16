@@ -141,9 +141,10 @@ axios.get(BASE_URL+"addrate/"+data.id+'/'+value+'/'+username).then(res=>{
 
 
 
-
-<p className="text-4xl font-bold mb-0 mx-0"> {data.submit_user.agencyname} </p>
-
+<Link href={"/shop/"+data.submit_user.agencyname.replace('&','and')}>
+<a className="text-4xl font-bold mb-0 mx-0 cursor-pointer z-60 text-black"> {data.submit_user.agencyname} </a>
+</Link>
+<p className="my-0"></p>
 <span className="text-lg  text-gray-600 mt-0"> ({data.submit_user.rate_count}) 
   Rate seller 
 <span className="mx-5"><Rate onChange={e=>handleRate(e)} defaultValue={data.submit_user.rate} allowClear={false}
@@ -226,7 +227,9 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 <Avatar src={BASE_IMG_URL+data.submit_user.image} style={{"width":'35px',
 'height':'35px'}} icon={<UserOutlined />}></Avatar> 
 
-<span  className="ml-3 font-bold text-base">{data.submit_user.user.username}
+<span  className="ml-3 font-bold text-base"><Link href={"/shop/"+data.submit_user.agencyname.replace('&','and')}>
+<a className="text-lg font-bold mb-0 mx-0 cursor-pointer z-60"> {data.submit_user.agencyname} </a>
+</Link>
 </span>
 <hr className="my-3" />
 
@@ -239,8 +242,8 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 
 <div className="odd:bg-gray-700">
 
-<p className="shadow-lg p-2 pl-4 rounded-lg">
- <p className='mb-2'> Acquire </p>
+<p className=" flex sm:block p-2 pl-4 rounded-lg my-0">
+ <p className='mb-2 mr-2'> Acquire: </p>
 
   <p className='uppercase text-base font-semibold mb-0'> {data.acquire_type} </p> 
 
@@ -250,18 +253,18 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 
 
 { data.condition && 
-	<p className="shadow-lg p-2 pl-4 rounded-lg">
- <p className='mb-2'> Condition</p>
+	<p className=" flex sm:block p-2 pl-4 rounded-lg my-0">
+ <p className='mb-2 mr-2'> Condition: </p>
 
   <p className='uppercase text-base font-semibold mb-0'> {data.condition} </p> 
 </p>
 
 }
 
-	<p className="shadow-lg p-2 pl-4 rounded-lg">
- <p className='mb-2'> Location <EnvironmentOutlined /></p>
+	<p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
+ <p className='mb-2 mr-2'> Location: </p>
 
-  <p className='uppercase text-base font-semibold mb-0'> {data.address} </p> 
+  <p className='uppercase text-base font-semibold mb-0'><EnvironmentOutlined /> {data.address} </p> 
 </p>
 
 
@@ -272,8 +275,8 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 {data.acquire_type=='rent' && <div>
 {data.duration &&
 
-<p className="shadow-lg p-2 pl-4 rounded-lg">
- <p className='mb-2'> Duration </p>
+<p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
+ <p className='mb-2 mr-2'> Duration: </p>
 
   <p className='uppercase text-base font-semibold mb-0'> {data.dur_count} {
      getDuration(data.duration)} </p> 
@@ -286,8 +289,8 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 }
 
 
-<p className="shadow-lg p-2 pl-4 rounded-lg">
- <p className='mb-2'> Delivery <CarOutlined /></p>
+<p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
+ <p className='mb-2 mr-2'> Delivery <CarOutlined />: </p>
 
   <p className='uppercase text-base font-semibold mb-0'> {data.with_delivery =='Yes'? " Provided by seller":" Not Provided"} </p> 
 </p>
@@ -295,8 +298,8 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 
 
 {data.delivery_company &&
-	<p className="shadow-lg p-2 pl-4 rounded-lg">
- <p className='mb-2'> Delivery Company</p>
+	<p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
+ <p className='mb-2 mr-2'> Delivery Company: </p>
 
   <p className='uppercase text-base font-semibold mb-0'> {data.delivery_company} </p> 
 </p>
@@ -304,8 +307,8 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 
 }
 
-	<div className="shadow-lg p-2 pl-4 rounded-lg">
- <p className='mb-2'> Payments Method</p>
+	<div className="flex sm:block my-0 p-2 pl-4 rounded-lg">
+ <p className='mb-2 mr-2'> Payments Method: </p>
 
   <p className='uppercase text-base font-semibold mb-0'>{data.payment_type} </p> 
 </div>

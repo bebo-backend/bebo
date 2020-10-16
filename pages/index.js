@@ -25,10 +25,11 @@ const Home = ({topCompany,dailyDeals}) => (
 
     <TopCompany data={topCompany} />
 
- <div className="flex  flex-wrap md:flex-no-wrap justify-evenly mb-8  p-5 bg-teal-900">
+ <div className="flex  flex-wrap md:flex-no-wrap justify-evenly mb-8  p-5 ">
 
- <PopularCategory />
+
  <UploadItem />
+  <PopularCategory />
  <UploadDetail />
 
 

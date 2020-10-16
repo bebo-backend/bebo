@@ -132,20 +132,20 @@ const steps=(step)=>{
     return <Steps direction="horizontal"  current={step}>
 
 
-      <Steps.Step title={<p className="font-bold"> DETAILS </p>}>
+      <Steps.Step title={<p className="font-bold hidden sm:block"> DETAILS </p>}>
 
       </Steps.Step>
-       <Steps.Step   title={<p className="font-bold"> MORE DETAILS </p>} >
+       <Steps.Step   title={<p className="font-bold hidden sm:block"> MORE DETAILS </p>} >
 
       </Steps.Step>
-      <Steps.Step   title={<p className="font-bold"> IMAGE(S) UPLOAD </p>}  >
+      <Steps.Step   title={<p className="font-bold hidden sm:block"> IMAGE(S) UPLOAD </p>}  >
 
       </Steps.Step>
 
-      <Steps.Step  title={<p className="font-bold"> DELIVERY </p>} >
+      <Steps.Step  title={<p className="font-bold hidden sm:block"> DELIVERY </p>} >
 
       </Steps.Step>
-      <Steps.Step  title={<p className="font-bold"> PAYMENT </p>} >
+      <Steps.Step  title={<p className="font-bold hidden sm:block"> PAYMENT </p>} >
 
     </Steps.Step>
 
@@ -209,17 +209,21 @@ const stepMove=(value)=>{
 
 
 
-    <div className="flex w-full justify-center mt-2 mb-0">  
-    <p className="uppercase text-4xl font-extrabold mb-0">Shop hub</p>
+<div className="bg-white py-3 mx-5 shadow-2xl my-5">
+    <div className="flex w-full justify-center mt-2 mb-0 ">  
+    <span className="uppercase text-4xl font-extrabold mb-0">Shop hub</span>
+    
 
     </div>
 
 
     <div className="flex w-full justify-center mt-0 mb-2 ">  
     <p className=" text-lg text-gray-600 mx-3">
-    Upload your item on your shop for Sale, Rental or Exchange
+    Upload product on your shop for Sale, Rental or Exchange
     </p> 
     </div>
+
+</div>
 
     <div className="mx-10">
     

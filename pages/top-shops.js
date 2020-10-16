@@ -9,12 +9,13 @@ import axios from 'axios'
 import {fetcher} from '../lib/ax-fetch'
 import useSWRInfinite from "swr";
 import {useState} from 'react'
+import {LoadingOutlined} from '@ant-design/icons';
 
 
 
 
 
-const Home = ({dailyDeals}) => {
+const Home = () => {
 const LIMIT = 25
 const [page,setPage] = useState(1)
 const {data,error,mutate,size,setSize,isReachingEnd}=useSWRInfinite((index,previousPageData)=>{
@@ -25,7 +26,8 @@ if (!index || index===0) return BASE_URL+'popular-shop?page='+page+"&limit="+LIM
 return BASE_URL+'popular-shop?page='+index+"&limit="+LIMIT
 },fetcher)
 
-if (!data) return null;
+if (!data) return <p className="flex justify-center items-center h-screen w-sreen text-2xl text-pink-600"> <LoadingOutlined /> </p>;
+
 
 
 
@@ -50,31 +52,29 @@ return (
 
 
 
- <DailyDeals data={dailyDeals} />
-
   </Layout>
 )
 }
 
 export default Home
 
-export const getStaticProps = async()=>{
+// export const getStaticProps = async()=>{
 
 
 
-// const  response = await axios.get(BASE_URL+'popular-shop')
-const  dailydeals = await axios.get(BASE_URL+'mainsearch')
+// // const  response = await axios.get(BASE_URL+'popular-shop')
+// // const  dailydeals = await axios.get(BASE_URL+'mainsearch')
 
 
 
-  return {
-    props:{
-      // topCompany:response.data ?response.data:[],
+//   return {
+//     props:{
+//       // topCompany:response.data ?response.data:[],
     
-      dailyDeals:dailydeals.data ? dailydeals.data:[]
-    },
-    revalidate:1,
-  }
+//       dailyDeals:[]
+//     },
+//     revalidate:1,
+//   }
 
 
-}
+// }

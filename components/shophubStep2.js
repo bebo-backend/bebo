@@ -65,7 +65,7 @@ name="condition" defaultValue={"new"} buttonStyle="outline">
 
 <label htmlFor="price" className="uppercase text-md font-semibold my-2 mr-2 ">Price (*)</label>
 
-<Input   className="my-4 h-10 " name="price" required allowClear prefix={"NGN(₦)"} type="number" 
+<Input   className="my-4 h-12 " name="price" required allowClear prefix={"NGN(₦)"} type="number" 
 onChange={e=>handlechange(e.target.value,'price')}  autoComplete="true"  placeholder="10,000" autoFocus
 /> 
 
@@ -106,11 +106,11 @@ onChange={e=>handlechange(e.target.value,'price')}  autoComplete="true"  placeho
 <Collapse.Panel key={1} header={"Price (Advanced)"}>
 
 From: 
- <InputNumber   className="my-4 h-10 " defaultValue={0} onChange={e=>handlechange(e,'from_price')}  >
+ <InputNumber   className="my-4 h-12 " defaultValue={0} onChange={e=>handlechange(e,'from_price')}  >
 
 </InputNumber>  
 
-To: <InputNumber    className="my-4 h-10 " defaultValue={10000} onChange={e=>handlechange(e,'to_price')} >
+To: <InputNumber    className="my-4 h-12 " defaultValue={10000} onChange={e=>handlechange(e,'to_price')} >
 
 </InputNumber>
 </Collapse.Panel>
@@ -169,7 +169,7 @@ placeholder={"Duration"} defaultValue="weekly"
 
 <label  className="uppercase text-md font-semibold my-2 " htmlFor="rent_dur_year">Duration Count</label>
 
-<Input   className="my-4 h-10 " name="dur_count" minLength={1} maxLength={50} minLength={1} required allowClear  type="number"
+<Input   className="my-4 h-12 " name="dur_count" minLength={1} maxLength={50} minLength={1} required allowClear  type="number"
 onChange={e=>handlechange(e.target.value,'dur_count')}   placeholder="3" 
 defaultValue={1}
 />
@@ -185,7 +185,7 @@ defaultValue={1}
 <div className="grp-input">
 <label className="uppercase text-md font-semibold my-2 mr-10 " htmlFor="instock">Available inStock (*): </label> 
 
-<InputNumber   className="my-4 h-10 py-0 px-24 "  onChange={e=>handlechange(e,'instock')} 
+<InputNumber   className="my-4 h-12 py-0 px-24 "  onChange={e=>handlechange(e,'instock')} 
  defaultValue={1}>
 
 </InputNumber> 

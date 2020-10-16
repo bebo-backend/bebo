@@ -76,9 +76,11 @@ cursor-pointer hover:border-2 p-2
 <div className="w-5/6 mx-1 flex" style={{'maxHeight':'530px'}}>  
 
 
+<Link href={BASE_IMG_URL+data.images[step].images}>
+    <a> <img className="object-scale-down sm:object-cover  rounded  " 
+      src={BASE_IMG_URL+data.images[step].images}></img></a>
+      </Link>
 
-     <img className="object-scale-down sm:object-cover  rounded  " 
-      src={BASE_IMG_URL+data.images[step].images}></img>
      {stepMove(step)}
 
 

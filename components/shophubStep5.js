@@ -36,7 +36,7 @@ return <div className="mb-10">
 </div>
 
 <div className="flex justify-center items-center"> 
-<div onClick={submitForm} className='btn w-full sm:w-1/2 center h-10 flex justify-center items-center  bg-blue-700
+<div onClick={submitForm} className='btn w-full sm:w-1/2 center h-12 flex justify-center items-center  bg-blue-700
 rounded-md my-10  text-white  hover:bg-blue-500'>
 <button className="text-base uppercase font-extrabold my-10 "  
 >UPLOAD ITEM <CloudUploadOutlined className="ml-3 text-base"/> </button>

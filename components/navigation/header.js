@@ -24,8 +24,8 @@ const Header = ({tag=true}) => {
   return (
     <header className=" bg-white  ">
       <nav className=" flex inset-y-0 top-0 text-black px-0 w-full md:px-5 items-end justify-center
-       sm:justify-start  ">
-        <ul className="flex-inline sm:flex w-full py-0 my-0 border-b-1 border-gray-200">
+       sm:justify-start pb-0  ">
+        <ul className="flex-inline sm:flex w-full py-0 my-0 shadow mb-3">
 
         <div className="w-full sm:w-1/6 mx-0 fixed sm:relative shadow-lg sm:shadow-none py-2  z-40  md:mr-3 my-0 
         sm:py-0 flex justify-center items-center bg-white ">
@@ -85,7 +85,7 @@ const Header = ({tag=true}) => {
         <a className="
        font-bold text-white  uppercase shadow-lg
          cursor-pointer ml-3  leading-loose flex items-end hover:text-purple-300 
-         p-1  px-3 border-0 border-blue-800 bg-blue-500
+         p-1  px-3 border-0 border-blue-800 bg-blue-500 rounded
 
           " href='/logout' onClick={async (e) => {
           e.preventDefault()
@@ -101,7 +101,7 @@ Logout
         <p className="
        font-bold text-white  uppercase shadow-lg
          cursor-pointer ml-3  leading-loose flex items-end hover:text-purple-300 
-         p-1  px-3 border-0 border-blue-800  bg-blue-500
+         p-1  px-3 border-0 border-blue-800  bg-blue-500 rounded
 
          ">Login</p>
                 </Link>

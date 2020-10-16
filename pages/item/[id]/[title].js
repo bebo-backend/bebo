@@ -27,7 +27,8 @@ if(data){
   arrayData.push(data)}
 
   if (router.isFallback) {
-    return <div className="w-full flex justify-center my-20 text-lg font-semibold">loading <LoadingOutlined /></div>
+  return <p className="flex justify-center items-center h-screen w-sreen text-4xl text-pink-600"> <LoadingOutlined /> </p>;
+    
   }
 
 
@@ -36,7 +37,7 @@ return (
   <Layout title={data && data.title}>
 
   { data && 
-<div className="flex-inline sm:flex mt-0 pl-2 shadow-none pt-5 md:pl-5 w-full bg-white pr-5"> 
+<div className="flex-inline sm:flex mt-0 pl-1 shadow-none pt-5 md:pl-1 w-full bg-white pr-5"> 
 
 <div className="sm:w-3/4 w-full flex  "> 
 

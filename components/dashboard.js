@@ -18,7 +18,7 @@ return (
 
 
     <div className="mb-5 bg-white p-2 pl-3 overflow-hidden
-    rounded-lg shadow-lg justify-center" > 
+    rounded-lg shadow-2xl justify-center" > 
  
   
  <p className="uppercase text-base font-extrabold pt-3 py-2 mb-5 border-b-2">Profile data</p>
@@ -39,7 +39,7 @@ return (
      </div>
 
      <div className="mb-5 bg-white p-2 pl-3
-     rounded-lg shadow-lg justify-center overflow-hidden"   > 
+     rounded-lg shadow-2xl justify-center overflow-hidden"   > 
  
   
  <p className="uppercase text-base font-extrabold pt-3 py-2 mb-5 border-b-2 ">contact info</p>
@@ -95,8 +95,9 @@ export function ItemInfo({itemdata,mutateProperty,setPage,page}){
 return (
 
 
-    <div className="m-0  mx-3 md:mx-16 text-black px-1 md:px-5 py-3 center leading-tight w-full sm:w-3/4 mb-5
- bg-white rounded-lg shadow-lg justify-center " style={{'marginTop':'-40px'}} > 
+    <div className="m-0  mx-3 md:mx-8 text-black px-1 md:px-5 py-3 center leading-tight
+     w-full sm:w-3/4 mb-5
+ bg-white rounded-lg shadow-2xl justify-center " style={{'marginTop':'-40px'}} > 
 
 
 
@@ -107,19 +108,19 @@ return (
  Build your Shop
 
     </p>
-    <p className="text-lg px-0 py-0 center leading-tight w-full font-semibold text-gray-700
+    <p className="text-lg px-0 py-0 center leading-tight w-full text-gray-700
      font-sans " style={{'textAlign':'center'}}> Showcase your collections, by uploading your item on Shop Hub </p>
     
     <div className="uppercase text-blue-800 font-bold text-lg w-full center  flex justify-center " >
     <Link href="/upload-item">
-    <a className="border-2 border-blue-900 rounded-md px-5 py-2 my-4 hover:bg-blue-300 cursor-pointer">
+    <a className="bg-blue-700 rounded-md px-5 py-2 my-4 hover:bg-blue-300 cursor-pointer text-white">
     <CloudUploadOutlined /> Shop Hub </a>
   </Link>  </div>
  
  
 <hr className="my-3" />   
 
-<p className=" text-lg uppercase font-bold mt-5">collections ({itemdata && Object.keys(itemdata).length})</p>
+<p className=" text-lg uppercase font-bold mt-5">collections ({itemdata && Object.keys(itemdata.res).length})</p>
 <table className="table-auto overflow-scroll w-full">
 
 

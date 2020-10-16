@@ -5,7 +5,7 @@ import useSWR from 'swr'
 import { BASE_URL,BASE_IMG_URL } from '../../settings'
 import {myfetcher,fetcher} from '../../lib/ax-fetch'
 import {ProfileInfo, ItemInfo} from '../../components/dashboard'
-import {UserOutlined,EditFilled} from '@ant-design/icons';
+import {UserOutlined,EditFilled,LoadingOutlined} from '@ant-design/icons';
 import {Empty,Rate,Avatar} from "antd";
 import ProfileEdit from '../../contrib/profile-update'
 import useSWRInfinite from "swr";
@@ -30,7 +30,8 @@ if (!index || index===0) return BASE_URL+'dashboard/myproperty/'+account.data.us
 return BASE_URL+'dashboard/myproperty/'+account.data.user.username+'/?page='+index+"&limit="+LIMIT
 },fetcher)
 
-if (!property) return null;
+if (!property) return <p className="flex justify-center items-center h-screen w-sreen text-2xl text-pink-600"> <LoadingOutlined /> </p>;
+
 
 
 
@@ -40,7 +41,8 @@ if (!property) return null;
 
 
   if (!user || user.isLoggedIn === false) {
-    return <Layout>loading...</Layout>
+    return <p className="flex justify-center items-center h-screen w-sreen text-2xl text-pink-600"> <LoadingOutlined /> </p>;
+
   }
 
 if(account && property){
@@ -49,15 +51,18 @@ if(account && property){
     <Layout title={user.username}>
 
     <ProfileEdit data={account.data} update={update} setUpdate={setUpdate} mutateAccount={mutateAccount} mutateUser={mutateUser} />
-<div className=" "> 
-    <div className="flex flex-col sm:flex-row w-full justify-center  pl-1 pt-10 pb-20  "
+
+
+<div className="bg-white "> 
+    <div className="flex flex-col sm:flex-row w-full justify-center  pl-1 pt-10 pb-20 shadow-2xl 
+    bg-teal-800 rounded-br-lg rounded-bl-lg  "
    >
-<div className="flex flex-col sm:flex-row self-center">
+<div className="flex flex-col sm:flex-row self-center ">
     <i className="ml-10 sm:ml-0 pl-4 sm:pl-1 hover:border-b-2 mr-0 md:mr-5 z-20 ">
 
     <Avatar className="shadow" src={BASE_IMG_URL+account.data.image} 
 style={{"width":'137px','height':'137px'
-    }} icon={<UserOutlined className="text-6xl object-center mt-4" ></UserOutlined>} className="">
+    }} icon={<UserOutlined className="text-6xl object-center mt-4" style={{"marginTop":'15px'}} ></UserOutlined>} className="">
     </Avatar >
 
 
@@ -65,9 +70,11 @@ style={{"width":'137px','height':'137px'
       'top':'43px','marginLeft':'-14px'
     }} /> </i>
 
-<div className="block">
-<h1 className="text-4xl font-extrabold m-0 px-5">{account.data.agencyname}</h1> 
-<span  className="pl-5 text-gray-600 m-0 text-base wrap">www.bebo.now.sh/shop/{account.data.agencyname}  </span>
+<div className="block text-white">
+<p className="flex w-full justify-center">
+<h1 className="text-4xl font-extrabold m-0 px-5 text-white">{account.data.agencyname}</h1> 
+</p>
+<span  className="pl-5 text-gray-600 m-0 text-base wrap">www.bebo.vercel.app/shop/{account.data.agencyname}  </span>
 <table className="table m-2">
 
 <tr >

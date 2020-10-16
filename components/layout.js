@@ -9,7 +9,7 @@ import Head from 'next/head'
 const Layout = ({ title,children,tag }) => (
   <>
   <Head>
-    <title>{title ? title+ " @ beBO" :"Get Electronics, Fashions, Home Appliances @ beBO"}</title>
+    <title>{title ? title+ " @ beBO" :"Buy, Sell, Rent or Exchange items @ beBO"}</title>
 
     <meta name="robots" content="index" />
     <meta name="robots" content="follow" />
@@ -21,7 +21,7 @@ const Layout = ({ title,children,tag }) => (
     </Head>
     <Header tag={tag} />
     <main>
-      <div className="flex-col bg-gray-100 w-full m-0  pt-2 pr-2">{children}</div>
+      <div className="flex-col bg-gray-100 w-full m-0  pt-2 px-2">{children}</div>
     </main>
 
     <Footer />

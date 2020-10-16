@@ -138,8 +138,8 @@ return (
 
 {content && 
 
-<div className="w-full sm:m-6 border-2 p-1 sm:p-5 rounded-lg "> 
-<div className="flex-inline sm:flex justify-between mb-3">
+<div className="w-full sm:m-6  shadow p-1 sm:p-5 rounded-lg "> 
+<div className="flex-inline sm:flex justify-between mb-5">
 
 <p className="text-3xl mb-0 font-bold">My Shopping Bag: {Object.keys(content.data).length} items</p>
 <Link href="/">

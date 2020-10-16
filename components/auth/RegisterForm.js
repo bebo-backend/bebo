@@ -9,45 +9,45 @@ import Link from 'next/link'
 const RegisterForm = ({ errorMessage, onSubmit,onChange=f=>f,load=false }) => (
   <form className="w-full sm:w-1/2 lg:w-1/3 my-8 mx-4 px-5 sm:m-10 rounded-lg shadow-2xl sm:p-5 sm:px-10 py-10
   border-1 bg-white">
-  <p className="center text-2xl leading-tight text-black font-bold 
- " style={{'textAlign':'center'}}> Create new Account for your Shop</p>
+  <p className="center border-b-2 border-gray-300 pb-3 text-lg sm:text-2xl leading-tight text-black font-bold 
+ " style={{'textAlign':'center'}}> Create new  Shop Account</p>
    
 
 
   <label className="text-md font-semibold " htmlFor="agencyname">Full Name * </label>
-<Input name="username"  className="my-3 h-10 border-white" required autoCapitalize 
+<Input name="username"  className="my-3 h-12 border-white" required autoCapitalize 
  allowClear prefix={<UserAddOutlined></UserAddOutlined>}
 onChange={onChange}  autoFocus autoComplete={true} placeholder="Owner Full Name"
 />
 
  <label className="text-md font-semibold " htmlFor="store">Shop Name *</label>
-<Input name="store"  className="my-3 h-10 border-white" required allowClear  type="text" prefix={<ShopOutlined/>}
+<Input name="store"  className="my-3 h-12 border-white" required allowClear  type="text" prefix={<ShopOutlined/>}
 onChange={onChange} autoComplete="true"  placeholder="ie. Alaba21store electronics, Odeba Food & Beverages, GS Mall etc."
 />
 
 <label className="text-md font-semibold "  htmlFor="email">E-mail *</label>
-<Input name="username"  className="my-3 h-10 border-white" required   allowClear prefix={<MailOutlined/>} type="email" 
+<Input name="username"  className="my-3 h-12 border-white" required   allowClear prefix={<MailOutlined/>} type="email" 
 onChange={onChange} 
 autoComplete={true}placeholder="you@domain.com"
 />
 
 
 <label className="text-md font-semibold "  htmlFor="tel">Phone Number *</label>
-<Input name="tel"  className="my-3 h-10 border-white" required   allowClear prefix={<PhoneOutlined/>} type="tel" 
+<Input name="tel"  className="my-3 h-12 border-white" required   allowClear prefix={<PhoneOutlined/>} type="tel" 
 onChange={onChange} 
  placeholder="08123546778 etc."
 />
 
 
 <label className="text-md font-semibold "  htmlFor="website">Website</label>
-<Input name="website"  className="my-3 h-10 border-white" allowClear prefix={"www"}
+<Input name="website"  className="my-3 h-12 border-white" allowClear prefix={"https"}
 onChange={onChange} 
 placeholder="www.bebo.now.sh"
 />
 
 <label className="text-md font-semibold " >Password *</label>
 
-<Input.Password  className="my-3 h-10 border-white" required name="password" onChange={onChange} placeholder="Password"
+<Input.Password  className="my-3 h-12 border-white" required name="password" onChange={onChange} placeholder="Password"
  allowClear prefix={<SecurityScanOutlined></SecurityScanOutlined>}
   autoComplete={true}></Input.Password>
   
@@ -73,7 +73,7 @@ Yes, i would like to receive a monthly e-mail on new item near me
   
 
 
-<div onClick={onSubmit} className='btn w-full center h-10 flex justify-center items-center bg-red-700
+<div onClick={onSubmit} className='btn w-full center h-12 flex justify-center items-center bg-red-700
 rounded-md mt-5 text-white  hover:bg-red-500'>
 <button className="text-md uppercase font-extrabold "  
 >CONTINUE {load && <LoadingOutlined /> }</button>
@@ -82,7 +82,7 @@ rounded-md mt-5 text-white  hover:bg-red-500'>
 
 
 
-  <div className='btn w-full center h-10 flex justify-center items-center bg-blue-700
+  <div className='btn w-full center h-12 flex justify-center items-center bg-blue-700
 rounded-md mt-3 text-white  hover:bg-blue-500'>
 <Link href="/login">
 <button className="text-md font-extrabold "

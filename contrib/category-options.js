@@ -18,6 +18,12 @@ const motorsItem = ['Vehicles',
   'Kids Clothing,Shoes & Accessories',
 
 ]
+const software = [
+'Domain',
+  'Web Application',
+  'Mobile Application',
+  'Desktop Application',
+  'Other Application',]
 
 const booksmovmus = [
 'Musical Instruments & Gear',
@@ -217,6 +223,12 @@ const Options = [
         label: <Typography.Text>Real Estate-</Typography.Text>,
         disabled: false,
         children: [...getChildren(realest) ],
+      },
+       {
+        value: 'Software',
+        label: <Typography.Text>Software-</Typography.Text>,
+        disabled: false,
+        children: [...getChildren(software) ],
       },
 
     {

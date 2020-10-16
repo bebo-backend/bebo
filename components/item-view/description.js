@@ -16,8 +16,8 @@ return (
 	<div className="my-10">  
 {data.description && 
 	      <span onClick={e=>setShow(0)} style={{
-'backgroundColor':show === 0 && "red"
-}} className="md:text-base cursor-pointer font-extrabold bg-blue-600 p-2  mx-1 p-2 mt-10 text-white rounded  uppercase hover:bg-blue-300">
+'borderBottom':show === 0 ? "2px solid blue":"2px solid gray"
+}} className="md:text-base cursor-pointer font-extrabold p-2  mx-1  mt-10    uppercase hover:bg-blue-200">
 description  
  </span>
 
@@ -37,7 +37,7 @@ exchangable item
 
 {data.requirement && 
 	      <span onClick={e=>setShow(2)}  style={{
-'backgroundColor':show === 2 && "red"
+'borderBottom':show === 0 ? "2px solid blue":"2px solid gray"
 }} className="md:text-base rounded cursor-pointer  font-extrabold bg-blue-600 p-2  mx-1 p-2 mt-10 text-white  uppercase hover:bg-blue-300">
 requirement 
  </span>
@@ -47,7 +47,7 @@ requirement
 
 {data.issue && 
 	      <span onClick={e=>setShow(3)} style={{
-'backgroundColor':show === 3 && "red"
+'borderBottom':show === 0 ? "2px solid blue":"2px solid gray"
 }} className="md:text-base rounded cursor-pointer  font-extrabold bg-blue-600 p-2  mx-1 p-2 mt-10 text-white  uppercase hover:bg-blue-300">
 issue  
  </span>
@@ -55,13 +55,13 @@ issue
 }
 <hr className="mt-2"/>
 
-{show === 0 && <pre className="my-6 text-base text-black whitespace-pre-wrap"> {data.description} </pre>}
+{show === 0 && <pre className="my-6 text-base  whitespace-pre-wrap"> {data.description} </pre>}
 
-{show === 1 && <pre className="my-6 text-base text-black whitespace-pre-wrap"> {data.exchange_item} </pre>}
+{show === 1 && <pre className="my-6 text-base  whitespace-pre-wrap"> {data.exchange_item} </pre>}
 
-{show === 2 && <pre className="my-6 text-base text-black whitespace-pre-wrap"> {data.requirement} </pre>}
+{show === 2 && <pre className="my-6 text-base  whitespace-pre-wrap"> {data.requirement} </pre>}
 
-{show === 3 && <pre className="my-6 text-base text-black whitespace-pre-wrap"> {data.issue} </pre>}
+{show === 3 && <pre className="my-6 text-base  whitespace-pre-wrap"> {data.issue} </pre>}
 
 
 

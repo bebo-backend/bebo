@@ -15,39 +15,39 @@ const RegisterForm = ({ errorMessage, onSubmit,onChange=f=>f,load=false }) => (
 
 
   <label className="text-md font-semibold " htmlFor="agencyname">Full Name * </label>
-<Input name="username"  className="my-3 h-10 border-white" required autoCapitalize 
+<Input name="username"  className="my-3 h-12 border-white" required autoCapitalize 
  allowClear prefix={<UserAddOutlined></UserAddOutlined>}
 onChange={onChange}  autoFocus autoComplete={true} placeholder="Owner Full Name"
 />
 
  <label className="text-md font-semibold " htmlFor="store">Shop Name *</label>
-<Input name="store"  className="my-3 h-10 border-white" required allowClear  type="text" prefix={<ShopOutlined/>}
+<Input name="store"  className="my-3 h-12 border-white" required allowClear  type="text" prefix={<ShopOutlined/>}
 onChange={onChange} autoComplete="true"  placeholder="ie. Alaba21store electronics, Odeba Food & Beverages, GS Mall etc."
 />
 
 <label className="text-md font-semibold "  htmlFor="email">E-mail *</label>
-<Input name="username"  className="my-3 h-10 border-white" required   allowClear prefix={<MailOutlined/>} type="email" 
+<Input name="username"  className="my-3 h-12 border-white" required   allowClear prefix={<MailOutlined/>} type="email" 
 onChange={onChange} 
 autoComplete={true}placeholder="you@domain.com"
 />
 
 
 <label className="text-md font-semibold "  htmlFor="tel">Phone Number *</label>
-<Input name="tel"  className="my-3 h-10 border-white" required   allowClear prefix={<PhoneOutlined/>} type="tel" 
+<Input name="tel"  className="my-3 h-12 border-white" required   allowClear prefix={<PhoneOutlined/>} type="tel" 
 onChange={onChange} 
  placeholder="08123546778 etc."
 />
 
 
 <label className="text-md font-semibold my-2 "  htmlFor="website">Website</label>
-<Input name="website"  className="my-3 h-10 border-white" allowClear prefix={"WWW"}
+<Input name="website"  className="my-3 h-12 border-white" allowClear prefix={"WWW"}
 onChange={onChange} 
 placeholder="www.bebo.now.sh"
 />
 
 <label className="text-md font-semibold " >Password *</label>
 
-<Input.Password  className="my-4 h-10 border-white " required name="password" onChange={onChange} placeholder="Password"
+<Input.Password  className="my-4 h-12 border-white " required name="password" onChange={onChange} placeholder="Password"
  allowClear prefix={<SecurityScanOutlined></SecurityScanOutlined>}
   autoComplete={true}></Input.Password>
   
@@ -73,7 +73,7 @@ Yes, i would like to receive a monthly e-mail on new item near me
   
 
 
-<div onClick={onSubmit} className='btn w-full center h-10 flex justify-center items-center bg-red-700
+<div onClick={onSubmit} className='btn w-full center h-12 flex justify-center items-center bg-red-700
 rounded-md mt-5 text-white  hover:bg-red-500'>
 <button className="text-md uppercase font-extrabold "  
 >CONTINUE {load && <LoadingOutlined /> }</button>
@@ -82,7 +82,7 @@ rounded-md mt-5 text-white  hover:bg-red-500'>
 
 
 
-  <div className='btn w-full center h-10 flex justify-center items-center bg-blue-700
+  <div className='btn w-full center h-12 flex justify-center items-center bg-blue-700
 rounded-md mt-3 text-white  hover:bg-blue-500'>
 <Link href="/login">
 <button className="text-md font-extrabold "
