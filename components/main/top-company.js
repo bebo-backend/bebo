@@ -49,7 +49,7 @@ justify-left mb-2  md:mx-3  ">
     rounded  pb-1 bg-white md:border-0    ">
  
 
- <div className="flex sm:inline-block px-3 py-0 mx-0 hover:shadow-2xl
+ <div className="flex sm:inline-block px-3 py-1 mx-0 hover:shadow-2xl
  sm:mx-1 shadow-sm sm:shadow-sm rounded-lg sm:px-1 overflow-hidden">
     
     <p className="justify-center w-1/4 sm:w-full flex rounded-full ">
