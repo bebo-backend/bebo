@@ -129,7 +129,7 @@ setStartUpdate(false)
 
 
 const steps=(step)=>{
-    return <Steps direction="horizontal"  current={step}>
+    return <Steps direction="horizontal" className="flex sm:inline"  current={step}>
 
 
       <Steps.Step title={<p className="font-bold hidden sm:block"> DETAILS </p>}>

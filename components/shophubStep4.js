@@ -35,7 +35,7 @@ defaultValue={"no"} buttonStyle="outline">
 <label className="uppercase text-md font-semibold my-2 "  htmlFor="deli-comp">Delivery Channel</label> <br/>
 
 
-<Select style={{'marginTop':'13px','marginBottom':'19px','width':'340px'}} allowClear={true} showSearch={true} onChange={(value)=>handlechange(value,"delivery_comp")}
+<Select style={{'marginTop':'13px','marginBottom':'19px'}} allowClear={true} showSearch={true} onChange={(value)=>handlechange(value,"delivery_comp")}
  placeholder={"Select Delivery Company"} 
  >
 {Object.values(deliveries).map((e,index)=>(
@@ -51,7 +51,7 @@ defaultValue={"no"} buttonStyle="outline">
 
 
 <p className="flex justify-center text-2xl font-bold 
-text-gray-400">Watch out for beBo Delivery - Currently not available  </p>
+text-gray-400">Watch out for beBo Courier - Currently not available  </p>
 </div>
 
 }
