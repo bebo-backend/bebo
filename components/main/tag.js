@@ -18,9 +18,9 @@ Object.keys(tagOptions).length >0 && tagOptions.map((data,key)=>(
 
     <Link key={key} href={"/search?search="+data.replace('&','and')+"&tags=true"}>
 <a>
-    <Tag key={key} className="mx-1 cursor-pointer"   style={{
+    <Tag color="grey" key={key} className="mx-1 cursor-pointer"   style={{
         'borderRadius':"20px",'border':'0px solid',
-        'fontSize':'14px'
+        'fontSize':'13px','cursor':'pointer'
          }} > {data}</Tag>
 
 

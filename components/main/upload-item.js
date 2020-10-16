@@ -7,7 +7,7 @@ function UploadItem(){
 
 return (
 
-    <div className="flex md:flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4 m-2  justify-center items-center p-5
+    <div className="flex md:flex-col w-full  md:w-1/3 lg:w-1/4 m-2  justify-center items-center p-5
    bg-white shadow-2xl rounded-lg "> 
 
    <p className="text-2xl font-extrabold px-3 py-0 center leading-tight md:w-full"

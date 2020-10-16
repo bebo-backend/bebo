@@ -322,7 +322,7 @@ setMenu(true)
 
 <div className="mx-3 shadow-2xl rounded-lg">
 
-<div className=" md:flex flex-inline mt-0 pt-5 pl-0 w-full bg-white pr-5  "> 
+<div className=" md:flex flex-inline mt-0 py-5 pl-0 w-full bg-white pr-5  "> 
 
 <div className="md:w-1/4 w-full mt-0 pr-5 md:border-r-2 border-gray-300 " style={{
   'display':isMobile()? isMobile() && !menu ? 'block':'none' : menu ? 'block':'none'
@@ -369,7 +369,7 @@ Filters:
 
  <div className="mr-5 md:mr-0 w-full " style={{'marginTop':'-39px'}}>
   <div className="w-full  block sm:inline-block
-justify-left mb-2 mx-2 md:mx-3 sm:mx-0 md:mx-1   ">
+justify-left my-3 mx-2 md:mx-3 sm:mx-0 md:mx-1   ">
 
 {data.res.map(e=>(
 
@@ -414,6 +414,7 @@ export default Home
 export const getServerSideProps  = async ({query})=>{
 
 const search = query.search
+const tags = query.tags
 // const  response = await axios.get(BASE_URL+'search_data?search='+search)
 // const  dailydeals = await axios.post(BASE_URL+'mainsearch')
 
@@ -424,6 +425,7 @@ const search = query.search
   return {
     props:{
       search:search? search : 'All',
+      tags:tags? tags : '',
       // dailyDeals:response.data ? response.data:[]
     }
   }

@@ -23,14 +23,14 @@ return (
   
  <p className="uppercase text-base font-extrabold pt-3 py-2 mb-5 border-b-2">Profile data</p>
  <p className="">Username:</p>
- <p className="capitalize text-base font-semibold text-gray-900  ">
+ <p className="capitalize text-base font-semibold text-gray-900 my-2 ">
  {data.user.username}</p>
  <p className="">Shop Name:</p>
- <p className="capitalize text-base font-semibold text-gray-900  ">
+ <p className="capitalize text-base font-semibold text-gray-900 my-2  ">
  {data.agencyname}</p>
 
  <p className="">Account Created:</p>
- <p className="capitalize text-base font-semibold text-gray-900  ">
+ <p className="capitalize text-base font-semibold text-gray-900 my-2  ">
  {data.created.split("T")[0]}</p>
 
 
@@ -44,14 +44,14 @@ return (
   
  <p className="uppercase text-base font-extrabold pt-3 py-2 mb-5 border-b-2 ">contact info</p>
 
- <p className="">Phone Number: <PhoneFilled/></p>
+ <p className="my-1">Phone Number: <PhoneFilled/></p>
  <p className="capitalize text-base font-semibold text-gray-900  ">
  {data.phone_no} </p> 
 
- <p className="">E-mail: <MailFilled/></p>
+ <p className="my-1">E-mail: <MailFilled/></p>
  <p className=" text-base font-semibold text-gray-900  ">
  {data.user.email} </p>
- <p className="">Website:</p>
+ <p className="my-1">Website:</p>
  <p className="text-base font-semibold  text-gray-900 ">
  {data.website ? data.website:"not available"}</p>
 

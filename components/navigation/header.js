@@ -45,7 +45,7 @@ const Header = ({tag=true}) => {
 
         <Link href='/upload-item'>
         <p className="
-       font-extrabold uppercase
+       font-extrabold capitalize
          cursor-pointer mr-3  leading-loose  hover:text-purple-300 
          p-1 rounded-sm  px-3 text-blue-500 text-md
 
@@ -83,7 +83,7 @@ const Header = ({tag=true}) => {
       {user?.isLoggedIn ? (
 
         <a className="
-       font-bold text-white  uppercase shadow-lg
+ text-white  uppercase shadow-lg text-sm
          cursor-pointer ml-3  leading-loose flex items-end hover:text-purple-300 
          p-1  px-3 border-0 border-blue-800 bg-blue-500 rounded
 
@@ -99,7 +99,7 @@ Logout
 
         <Link href='/login'>
         <p className="
-       font-bold text-white  uppercase shadow-lg
+   text-sm text-white  uppercase shadow-lg
          cursor-pointer ml-3  leading-loose flex items-end hover:text-purple-300 
          p-1  px-3 border-0 border-blue-800  bg-blue-500 rounded
 

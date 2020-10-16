@@ -22,7 +22,7 @@ const toPage=(page)=>{
 
 return (
 
-    <div className="mt-0 bg-white px-2 md:px-3 mx-3 pb-3 shadow-2xl mb-3 rounded-lg " > 
+    <div className="mt-0 bg-white px-2 md:px-3 mx-3 py-5 shadow-2xl mb-3 rounded-lg " > 
 
     
        
