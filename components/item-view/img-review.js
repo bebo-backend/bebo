@@ -77,8 +77,8 @@ cursor-pointer hover:border-2 p-2
 
 
 <Link href={BASE_IMG_URL+data.images[step].images}>
-    <a> <img className="object-scale-down sm:object-cover  rounded  " 
-      src={BASE_IMG_URL+data.images[step].images}></img></a>
+   <img className="object-scale-down sm:object-cover  rounded  " 
+      src={BASE_IMG_URL+data.images[step].images}></img>
       </Link>
 
      {stepMove(step)}
