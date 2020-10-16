@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {Radio,Empty} from "antd";
 import {EnvironmentOutlined} from '@ant-design/icons';
-import {city} from "../../actions/location"
+// import {city} from "../../actions/location"
+import gistfile1 from '../../contrib/gistfile1'
 
 
     
@@ -34,14 +35,21 @@ this.props.handleSearch(filterurl,e.target.value,'location')
 
       return (
 <div className="my-3 w-full text-base" >
-<p className="mb-1 font-semibold"> Location <EnvironmentOutlined></EnvironmentOutlined></p>
+<p className="mb-2 font-semibold"> Location <EnvironmentOutlined></EnvironmentOutlined></p>
 
-<div  className="ml-5">
-<Radio.Group onChange={e=>this.handleChange(e)}    buttonStyle="outline">
+<div  className="ml-1 h-64 overflow-y-scroll">
+<Radio.Group onChange={e=>this.handleChange(e)}  >
 
-{city ? city.map((e,index)=>(
-    <Radio key={index} value={e}> {e}</Radio>
-)) : <Empty description="No City Available">
+{gistfile1 ? Object.values(gistfile1).map((e,index)=>(
+  Object.values(e.state.locals).map(city=>(
+
+  <Radio style={{'marginBottom':'8px'}} key={city.name} value={city.name}> { city.name + ', '+e.state.name}</Radio>
+    ))
+  
+)) 
+
+
+: <Empty description="No City Available">
 City (0) found
 </Empty>
 

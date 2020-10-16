@@ -21,7 +21,7 @@ function Filters({search="",handleSearch=e=>e,clearFilters}){
 return (
 
     <div className="px-2  m-0 bg-white min-h-screen mx-2 sm:mx-14 
-    md:mx-0 py-2 pl-6  " > 
+    md:mx-0 py-2 pl-6 border-b-2 border-gray-400  " > 
 
 <div className="flex justify-end">
     <span className="bg-blue-500 text-white  p-2 px-1 

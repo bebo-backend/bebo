@@ -160,12 +160,12 @@ const stepMove=(value)=>{
 
 
       { value > 0 && 
-        <Button type="ghost" className="mx-3 w-24 " 
+        <Button type="ghost" className="mx-3 w-40 h-8 font-bold " 
         onClick={e=>setStep(value-1)}>Back</Button>
       }
 
       {value < 4 && 
-      <Button className="mx-3 w-24 py-2" type="primary" 
+      <Button className="mx-3 w-40 h-8 font-bold" type="primary" 
       onClick={e=>setStep(value+1)}>Next</Button>
       }
       </p>
@@ -209,7 +209,7 @@ const stepMove=(value)=>{
 
 
 
-<div className="bg-white py-3 mx-5 shadow-2xl my-5">
+<div className="bg-white py-3 sm:mx-5 shadow-xl my-5">
     <div className="flex w-full justify-center mt-2 mb-0 ">  
     <span className="uppercase text-4xl font-extrabold mb-0">Shop hub</span>
     

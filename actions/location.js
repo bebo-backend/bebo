@@ -1,11 +1,8 @@
 import axios from 'axios';
 
 
-export const city=[
-        'Lagos','Abuja',
-        'Kano'
-    ]
-    
+
+
 
 export function get_cities(){
 

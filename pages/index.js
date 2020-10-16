@@ -25,7 +25,7 @@ const Home = ({topCompany,dailyDeals}) => (
 
     <TopCompany data={topCompany} />
 
- <div className="flex  flex-wrap md:flex-no-wrap justify-evenly mb-8  p-5 ">
+ <div className="flex  flex-wrap md:flex-no-wrap justify-evenly mb-8 pt-5 mx-0  md:px-5 ">
 
 
  <UploadItem />

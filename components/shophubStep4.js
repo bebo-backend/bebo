@@ -1,7 +1,7 @@
 
 import {Radio,Select} from "antd";
 import {CarFilled} from '@ant-design/icons';
-
+import deliveries from '../contrib/deliveries'
 
 
 
@@ -30,15 +30,19 @@ defaultValue={"no"} buttonStyle="outline">
 
 
 
-<div className="deli-input">
+<div className="deli-input w-1/2">
 
 <label className="uppercase text-md font-semibold my-2 "  htmlFor="deli-comp">Delivery Channel</label> <br/>
 
 
-<Select style={{'marginTop':'13px','marginBottom':'19px'}} onChange={(value)=>handlechange(value,"delivery_comp")}
- placeholder={"Select Delivery Company"}
+<Select style={{'marginTop':'13px','marginBottom':'19px','width':'340px'}} allowClear={true} showSearch={true} onChange={(value)=>handlechange(value,"delivery_comp")}
+ placeholder={"Select Delivery Company"} 
  >
-<Select.Option value="FedEx">FedEx</Select.Option>
+{Object.values(deliveries).map((e,index)=>(
+<Select.Option value={e} key={index}>{e}</Select.Option>
+
+	))}
+
 <Select.Option value="Other">Others</Select.Option>
 
 </Select> 
@@ -46,8 +50,8 @@ defaultValue={"no"} buttonStyle="outline">
 </div>
 
 
-<p className="flex justify-center text-3xl font-semibold 
-text-red-600">Watch out for beBo Delivery - Currently not available  </p>
+<p className="flex justify-center text-2xl font-bold 
+text-gray-400">Watch out for beBo Delivery - Currently not available  </p>
 </div>
 
 }

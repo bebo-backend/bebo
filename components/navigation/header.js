@@ -44,12 +44,12 @@ const Header = ({tag=true}) => {
         <div className="flex-shrink md:m-2 w-full  py-1 md:w-2/3 md:px-3 justify-evenly md:justify-evenly flex items-start">
 
         <Link href='/upload-item'>
-        <p className="
+        <a className="
        font-extrabold capitalize
          cursor-pointer mr-3  leading-loose  hover:text-purple-300 
          p-1 rounded-sm  px-3 text-blue-500 text-md
 
-         "><CloudUploadOutlined className=" text-2xl ml-1" /> upload</p>
+         "><CloudUploadOutlined className=" text-2xl ml-4 sm:ml-1" /> upload</a>
                 </Link>
         
         
@@ -83,7 +83,7 @@ const Header = ({tag=true}) => {
       {user?.isLoggedIn ? (
 
         <a className="
- text-white  uppercase shadow-lg text-sm
+ text-white font-bold shadow-lg text-sm
          cursor-pointer ml-3  leading-loose flex items-end hover:text-purple-300 
          p-1  px-3 border-0 border-blue-800 bg-blue-500 rounded
 
@@ -99,7 +99,7 @@ Logout
 
         <Link href='/login'>
         <p className="
-   text-sm text-white  uppercase shadow-lg
+   text-sm text-white font-bold  shadow-lg
          cursor-pointer ml-3  leading-loose flex items-end hover:text-purple-300 
          p-1  px-3 border-0 border-blue-800  bg-blue-500 rounded
 
@@ -114,7 +114,7 @@ Logout
         </ul>
       </nav>
      
-{tag && (  <div className="flex inline-flex w-full px-3 pb-2 pt-1">
+{tag && (  <div className="flex inline-flex w-full px-0 md:px-3 pb-2 pt-1">
 <Tag />
 </div>)}
     

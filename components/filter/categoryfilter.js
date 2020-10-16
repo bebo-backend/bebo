@@ -30,7 +30,7 @@ router.push("/search?search="+data.replace('&','and')+"&page="+1)
 <p className="mb-3 font-semibold"> Categories</p>
 <span className="">
 <Select  className="w-full mr-10" onChange={(value)=>handleClickTag(value.replace('&','and'))}
- placeholder="Select category">
+ placeholder="Select category" showSearch={true} allowClear={true}>
 
 
 

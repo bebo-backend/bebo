@@ -300,8 +300,7 @@ setMenu(true)
     "  >
 <p className="  w-full">
 <Breadcrumb className="flex w-full" Seperator=" > ">
-<Breadcrumb.Item className="underline text-base "  >
-<Link href='/'>Home </Link>  </Breadcrumb.Item>
+
 
       <Breadcrumb.Item className="font-bold  text-sm leading-tight capitalize md:text-base text-black" >{search?search:"All"}
        </Breadcrumb.Item>
@@ -369,7 +368,7 @@ Filters:
 
  <div className="mr-5 md:mr-0 w-full " style={{'marginTop':'-39px'}}>
   <div className="w-full  block sm:inline-block
-justify-left my-3 mx-2 md:mx-3 sm:mx-0 md:mx-1   ">
+justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
 
 {data.res.map(e=>(
 

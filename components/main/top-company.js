@@ -12,21 +12,21 @@ function TopCompany({data}){
 
 return (
 
-  <div className="mx-3 shadow-2xl py-2 bg-white rounded-lg">
+  <div className="sm:mx-3 shadow-2xl py-2 bg-white rounded-lg mt-3">
 
     <div className="mt-5 text-black bg-white px-3 py-1   leading-tight w-full mb-5
     " > 
 
     
        
-    <p className="text-xl md:text-3xl mb-0 text-gray-700 md:ml-5 md:px-5  py-5 center leading-tight w-full
+    <p className="text-lg md:text-3xl mb-0 text-gray-700 md:ml-5 md:px-5  py-5 center leading-tight w-full
      " style={{'textAlign':'left'}}>
    Explore Popular Shops
    <Link href='/top-shops'>
  
     <a className="ml-1 p-1">   <button className="mx-3 p-1 " 
       ><RightOutlined className="
-      shadow-lg text-3xl  rounded-full hover:bg-black " /></button></a> 
+      shadow-lg sm:text-3xl  rounded-full hover:bg-black " /></button></a> 
    
 
    </Link>

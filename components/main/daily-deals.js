@@ -22,11 +22,11 @@ const toPage=(page)=>{
 
 return (
 
-    <div className="mt-0 bg-white px-2 md:px-3 mx-3 py-5 shadow-2xl mb-3 rounded-lg " > 
+    <div className="mt-0 bg-white px-2 md:px-3 sm:mx-3 py-5 shadow-2xl  rounded-lg " > 
 
     
        
-    <p className="text-xl md:text-3xl ml-1 px-2 md:px-5 md:ml-3 py-5 center leading-tight w-full text-gray-700
+    <p className="text-lg md:text-3xl ml-1 px-2 md:px-5 md:ml-3 py-5 center leading-tight w-full text-gray-700
      " style={{'textAlign':'left'}}>
 {title}
 {title &&
@@ -34,7 +34,7 @@ return (
 
     <a className="ml-1 p-1">   <button className="mx-3 p-1 " 
      ><RightOutlined className="
-      shadow-lg text-3xl rounded-full hover:bg-black " /></button></a> 
+      shadow-lg sm:text-3xl rounded-full hover:bg-black " /></button></a> 
 
    </Link>
 }

@@ -9,7 +9,7 @@ function Tags(){
 
 return (
 
-    <div className="mt-0 w-full flex-inline justify-center mx-1 " style={{
+    <div className="mt-0 w-full flex-inline justify-center md:mx-1 " style={{
         'textAlign':'center'
     }}> 
     {
@@ -20,7 +20,7 @@ Object.keys(tagOptions).length >0 && tagOptions.map((data,key)=>(
 <a>
     <Tag color="grey" key={key} className="mx-1 cursor-pointer"   style={{
         'borderRadius':"20px",'border':'0px solid',
-        'fontSize':'13px','cursor':'pointer'
+        'fontSize':'13px','cursor':'pointer','marginBottom':'7px'
          }} > {data}</Tag>
 
 
