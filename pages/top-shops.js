@@ -32,7 +32,7 @@ if (!data) return <p className="flex justify-center items-center h-screen w-sree
 
 
 return (
-  <Layout title="Top Shops">
+  <Layout title="Top beBO accounts">
   
     {data &&   <div className="md:mb-20" >
  

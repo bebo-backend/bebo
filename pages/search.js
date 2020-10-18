@@ -45,7 +45,7 @@ if (!index || index===0) return BASE_URL+"search_data?search="+search+"&page="+p
 return BASE_URL+"search_data?search="+search+"&page="+index+"&limit="+LIMIT+"&tags="+tags
 },fetcher)
 
-if (!data) return <p className="flex justify-center items-center h-screen w-sreen text-2xl text-pink-600"> <LoadingOutlined /> </p>;
+if (!data) return null
 
 
 
@@ -296,15 +296,15 @@ setMenu(true)
   <Layout title={search ? "You search for "+search:"You search for All"} value={search}>
   
        
-  <p className="text-sm flex justify-between py-0 m-0 mb-0 text-black px-5 center leading-tight w-full
-    "  >
+   <p className=" text-2xl flex justify-between pt-3 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
+    text-white" style={{'backgroundColor':'#01718f'}} >
 <p className="  w-full">
 <Breadcrumb className="flex w-full" Seperator=" > ">
 
 
-      <Breadcrumb.Item className="font-bold  text-sm leading-tight capitalize md:text-base text-black" >{search?search:"All"}
+      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md sm:text-lg text-white"  >{search}
        </Breadcrumb.Item>
-      <Breadcrumb.Item className="text-sm leading-tight md:text-base text-gray-900" >Page: {page}, ({Object.keys(data.res).length}) results </Breadcrumb.Item>
+      <Breadcrumb.Item className="text-sm leading-tight md:text-base text-white" >Page: {page}, ({Object.keys(data.res).length}) results </Breadcrumb.Item>
 
  
       </Breadcrumb> 
@@ -312,8 +312,8 @@ setMenu(true)
       </p>
 
   <span className="flex justify-end  flex-shrink ">
-<MenuOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-blue-600" onClick={e=>setMenu(!menu)} style={{
-  'color':'blue'
+<MenuOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-white " onClick={e=>setMenu(!menu)} style={{
+  'color':'white'
 }} />
 </span> 
     </p>

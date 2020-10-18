@@ -193,16 +193,15 @@ setMenu(true)
   <Layout title={title} value={title}>
   
        
-  <p className=" text-2xl flex justify-between py-0 m-0 mb-0 text-black px-5 center leading-tight w-full
-    "  >
+  <p className=" text-2xl flex justify-between pt-3 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
+    text-white" style={{'backgroundColor':'#01718f'}} >
 <p className="  w-full">
 <Breadcrumb className="flex w-full" Seperator=" > ">
-<Breadcrumb.Item className="underline  "  >
-<Link href='/'>Home </Link>  </Breadcrumb.Item>
 
-      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-xl text-black"  >{title}
+
+      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md sm:text-lg text-white"  >{title}
        </Breadcrumb.Item>
-      <Breadcrumb.Item className="text-sm leading-tight md:text-base text-gray-900" >Page: {page}, ({Object.keys(data.res).length}) results </Breadcrumb.Item>
+      <Breadcrumb.Item className="text-sm leading-tight md:text-base text-white" >Page: {page}, ({Object.keys(data.res).length}) results </Breadcrumb.Item>
 
  
       </Breadcrumb> 
@@ -210,8 +209,8 @@ setMenu(true)
       </p>
 
   <span className="flex justify-end  flex-shrink ">
-<MenuOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-blue-600" onClick={e=>setMenu(!menu)} style={{
-  'color':'blue'
+<MenuOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-white " onClick={e=>setMenu(!menu)} style={{
+  'color':'white'
 }} />
 </span> 
     </p>

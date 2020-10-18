@@ -55,7 +55,7 @@ if(account && property){
 
 <div className="bg-white "> 
     <div className="flex flex-col sm:flex-row w-full justify-center  pl-1 pt-10 pb-20 shadow-2xl 
-    bg-teal-800 rounded-br-lg rounded-bl-lg  "
+   rounded-br-lg rounded-bl-lg  " style={{'backgroundColor':'#01718f'}}
    >
 <div className="flex flex-col sm:flex-row self-center ">
     <i className="ml-10 sm:ml-0 pl-4 sm:pl-1 hover:border-b-2 mr-0 md:mr-5 z-20 ">
@@ -74,7 +74,7 @@ style={{"width":'137px','height':'137px'
 <p className="flex w-full justify-center">
 <h1 className="text-4xl font-extrabold m-0 px-5 text-white">{account.data.agencyname}</h1> 
 </p>
-<span  className="pl-5 text-gray-600 m-0 text-base wrap">www.bebo.vercel.app/shop/{account.data.agencyname}  </span>
+<span  className="pl-5 text-white m-0 text-base wrap">www.bebo.vercel.app/shop/{account.data.agencyname}  </span>
 <table className="table m-2">
 
 <tr >

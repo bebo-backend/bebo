@@ -15,15 +15,15 @@ const Footer = () => {
   // console.log('use user: '+user?.isLoggedIn)
 
   return (
-    <footer className="sm:border-t-2 sm:shadow-md border-gray-200 inset-y-0 bottom-0  ">
-    <p className="text-gray-400">Please do not use Opera mini for better performance </p>
+    <footer className="sm:border-t-2 sm:shadow-md border-gray-200 inset-y-0 bottom-0   ">
+    <p className="text-gray-400 mt-10 hidden sm:block">Please do not use Opera mini for better performance </p>
    <div className="sm:flex justify-evenly 
-    sm:flex-wrap mt-4 ml-6  md:mt-10">
+    sm:flex-wrap mt-4 ml-6  md:mt-1">
 
   
 
     <ul className="m-3" > 
-    <h2 className="text-2xl font-bold"> Buy & Sell </h2>
+    <h2 className="text-lg font-bold"> Buy & Sell </h2>
     
     <li className=" text-base">Registration </li>
     <li  className=" text-base"> Buying & renting help</li>
@@ -35,7 +35,7 @@ const Footer = () => {
 
 
     <ul className="m-3" > 
-    <h2 className="text-2xl font-bold">Stay Connected  </h2>
+    <h2 className="text-lg font-bold">Stay Connected  </h2>
     
     <li  className=" text-base"> <a href="https://www.facebook.com/beBO"> <FacebookOutlined></FacebookOutlined> Facebook </a> </li>
     <li  className=" text-base"> <a href="https://www.twitter.com/beBO"> <TwitterCircleFilled></TwitterCircleFilled> Twitter </a>  </li>
@@ -45,7 +45,7 @@ const Footer = () => {
     </ul>
 
     <ul className="m-3" > 
-    <h2 className="text-2xl font-bold"> About beBO  </h2>
+    <h2 className="text-lg font-bold"> About beBO  </h2>
     
     <li className=" text-base">Company info  </li>
     <li  className=" text-base">  Advertise with us</li>
@@ -57,7 +57,7 @@ const Footer = () => {
 
 
     <ul className="m-3" > 
-    <h2 className="text-2xl font-bold">  beBo sites </h2>
+    <h2 className="text-lg font-bold">  beBo sites </h2>
     
     <li className=" text-base">Lagos </li>
 

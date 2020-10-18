@@ -77,7 +77,7 @@ if (e.target.name === "username"){
 
   return (
     <Layout title="Sign in">
-      <div className=" flex w-full justify-center flex-no-wrap sm:bg-teal-900">
+      <div className=" flex w-full justify-center flex-no-wrap " style={{'backgroundColor':'#01718f'}}>
         <Form isLogin errorMessage={errorMsg} onSubmit={handleSubmit} onChange={onChange} load={Load} />
       </div>
       

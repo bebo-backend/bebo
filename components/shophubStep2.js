@@ -24,7 +24,7 @@ return <div className="mb-10">
 
 <div className="grp-input">
 
-<label className="uppercase text-md font-semibold my-2 " htmlFor="acquire_type">Acquire Type </label>
+<label className="capitalize text-md font-semibold my-2 " htmlFor="acquire_type">Acquire Type </label>
 
 <div>
 
@@ -45,7 +45,7 @@ name="acqure_type" defaultValue={"sale"}  buttonStyle="outline">
 
 
 <div className="grp-input">
-<label htmlFor="condtion" className="uppercase text-md font-semibold my-2 ">Condition </label> 
+<label htmlFor="condtion" className="capitalize text-md font-semibold my-2 ">Condition </label> 
 <div>
 
 <Radio.Group style={{'marginTop':'8px','marginBottom':'15px'}} onChange={e=>handlechange(e.target.value,'condition')}  
@@ -63,7 +63,7 @@ name="condition" defaultValue={"new"} buttonStyle="outline">
 
 <div className="grp-input">
 
-<label htmlFor="price" className="uppercase text-md font-semibold my-2 mr-2 ">Price (*)</label>
+<label htmlFor="price" className="capitalize text-md font-semibold my-2 mr-2 ">Price (*)</label>
 
 <Input   className="my-4 h-12 " name="price" required allowClear prefix={"NGN(₦)"} type="number" 
 onChange={e=>handlechange(e.target.value,'price')}  autoComplete="true"  placeholder="10,000" autoFocus
@@ -79,7 +79,7 @@ onChange={e=>handlechange(e.target.value,'price')}  autoComplete="true"  placeho
 
 
 <div className="grp-input">
-<label htmlFor="negotiable" className="uppercase text-md font-semibold my-2 ml-10 ">Negotiable (*)</label>
+<label htmlFor="negotiable" className="capitalize text-md font-semibold my-2 ml-10 ">Negotiable (*)</label>
 
 <div>
  <Radio.Group style={{'marginLeft':'39px','marginTop':'10px'}} onChange={e=>handlechange(e.target.value,'negotiable')} 
@@ -134,7 +134,7 @@ To: <InputNumber    className="my-4 h-12 " defaultValue={10000} onChange={e=>han
 <>
 
 <div className="grp-input">
-<label className="uppercase text-md font-semibold my-2 " htmlFor="price">Duration</label>
+<label className="capitalize text-md font-semibold my-2 " htmlFor="price">Duration</label>
 
 <div>
 
@@ -167,7 +167,7 @@ placeholder={"Duration"} defaultValue="weekly"
 
 <div className="grp-input">
 
-<label  className="uppercase text-md font-semibold my-2 " htmlFor="rent_dur_year">Duration Count</label>
+<label  className="capitalize text-md font-semibold my-2 " htmlFor="rent_dur_year">Duration Count</label>
 
 <Input   className="my-4 h-12 " name="dur_count" minLength={1} maxLength={50} minLength={1} required allowClear  type="number"
 onChange={e=>handlechange(e.target.value,'dur_count')}   placeholder="3" 
@@ -183,7 +183,7 @@ defaultValue={1}
 
 
 <div className="grp-input">
-<label className="uppercase text-md font-semibold my-2 mr-10 " htmlFor="instock">Available inStock (*): </label> 
+<label className="capitalize text-md font-semibold my-2 mr-10 " htmlFor="instock">Available inStock (*): </label> 
 
 <InputNumber   className="my-4 h-12 py-0 px-24 "  onChange={e=>handlechange(e,'instock')} 
  defaultValue={1}>
@@ -196,7 +196,7 @@ defaultValue={1}
 <Col span={24}>
 
 <div className="grp-input">
-<label htmlFor="descr" className="uppercase text-md font-semibold my-2 ">Descriptions (*) </label>
+<label htmlFor="descr" className="capitalize text-md font-semibold my-2 ">Descriptions (*) </label>
 <div>
 <textarea className="p-3 my-4 border-gray-300 border-2 rounded w-full " onChange={e=>handlechange(e.target.value,'description')}
  placeholder={"More descriptions on item"}
@@ -214,7 +214,7 @@ defaultValue={1}
 
 
 <div className="grp-input">
-<label htmlFor="req" className="uppercase text-md font-semibold my-2 ">Requirements (Optional) </label>
+<label htmlFor="req" className="capitalize text-md font-semibold my-2 ">Requirements (Optional) </label>
 <div>
 <textarea className="p-3 my-4 border-gray-300 border-2 rounded w-full " onChange={e=>handlechange(e.target.value,'requirement')} 
  placeholder={"Enter requirement(s), if any"} >
@@ -242,7 +242,7 @@ defaultValue={1}
 
 {data && data['acquire_type']==="exchange" ?
 <div className="grp-input">
-<label htmlFor="req" className="uppercase text-md font-semibold my-2 ">Exchangable Items (Optional)</label> 
+<label htmlFor="req" className="capitalize text-md font-semibold my-2 ">Exchangable Items (Optional)</label> 
 <div>
 <textArea className="p-3 my-4 border-gray-300 border-2 rounded w-full " onChange={e=>handlechange(e.target.value,'exchange_items')} 
  placeholder={"Enter Exchangable item(s), if any"}>
@@ -265,7 +265,7 @@ defaultValue={1}
 
 {data && data['condition']==="used" &&
 <div className="grp-input">
-<label htmlFor="req" className="uppercase text-md font-semibold my-2 ">Issues (Optional)</label> 
+<label htmlFor="req" className="capitalize text-md font-semibold my-2 ">Issues (Optional)</label> 
 <div>
 <textarea className="p-3 my-4 border-gray-300 border-2 rounded w-full " onChange={e=>handlechange(e.target.value,'issue')} 
  placeholder={"Enter Item issue(s), if any"}>

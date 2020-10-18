@@ -1,6 +1,6 @@
 
 import Link from 'next/link'
-import {Empty,Avatar,Statistic,Modal} from "antd";
+import {Empty,Avatar,Statistic,Modal,Button} from "antd";
 import {BASE_IMG_URL,BASE_URL} from '../settings'
 import {MailFilled,PhoneFilled,UserOutlined,CloudUploadOutlined,
     FileJpgOutlined,ClearOutlined} from '@ant-design/icons';
@@ -95,7 +95,7 @@ export function ItemInfo({itemdata,mutateProperty,setPage,page}){
 return (
 
 
-    <div className="m-0  mx-3 md:mx-8 text-black px-1 md:px-5 py-3 center leading-tight
+    <div className="m-0  mx-0 md:mx-8 text-black px-1 md:px-5 py-3 center leading-tight
      w-full sm:w-3/4 mb-5
  bg-white rounded-lg shadow-2xl justify-center " style={{'marginTop':'-40px'}} > 
 
@@ -103,24 +103,26 @@ return (
 
 
        
-    <p className="sm:text-4xl text-2xl px-0 py-3 pt-6 center leading-tight w-full font-extrabold mb-1 uppercase
+    <p className="sm:text-3xl text-lg text-gray-900 px-0 py-3 pt-6 center 
+    leading-tight w-full font-extrabold mb-1 
      " style={{'textAlign':'center'}}>
- Build your Shop
+ Build your beBO account
 
     </p>
     <p className="text-lg px-0 py-0 center leading-tight w-full text-gray-700
-     font-sans " style={{'textAlign':'center'}}> Showcase your collections, by uploading your item on Shop Hub </p>
+     font-sans " style={{'textAlign':'center'}}> Showcase your collections, by uploading your item with Sell Hub </p>
     
     <div className="uppercase text-blue-800 font-bold text-lg w-full center  flex justify-center " >
     <Link href="/upload-item">
-    <a className="bg-blue-700 rounded-md px-5 py-2 my-4 hover:bg-blue-300 cursor-pointer text-white">
-    <CloudUploadOutlined /> Shop Hub </a>
+    <Button type="ghost" size='large'>
+    <a className="px-5 py-2 my-4 hover:text-blue-300 cursor-pointer text-white text-base">
+    <CloudUploadOutlined /> Sell Hub </a></Button>
   </Link>  </div>
  
  
 <hr className="my-3" />   
 
-<p className=" text-lg uppercase font-bold mt-5">collections ({itemdata && Object.keys(itemdata.res).length})</p>
+<p className=" text-lg  font-bold mt-5">Collections ({itemdata && Object.keys(itemdata.res).length})</p>
 <table className="table-auto overflow-scroll w-full">
 
 

@@ -7,7 +7,7 @@ import Review from './reviews'
 import Description from './description'
 import ItemInfo from './item-info'
 import Link from 'next/link'
-
+import {useRouter} from 'next/router'
 import axios from 'axios'
 import {mutate} from 'swr'
 
@@ -17,6 +17,7 @@ const Index=({data,user})=>{
 
 const [step, setStep] = useState(0)
 const [stateReview, setStateReview] = useState(0)
+const router = useRouter()
 
 
 const submitReview=()=>{
@@ -58,28 +59,22 @@ const stepMove=(value)=>{
 
 
 
- return <div className="ml-0 md:ml-1 mb-10 md:mx-0 w-full rounded-lg ">
+ return <div className="mx-0 md:ml-1 mb-10 md:mx-0 w-full rounded-lg ">
 <div className=" p-2 justify-center px-0 md:justify-left md:px-0  flex overflow-y-hidden"
  style={{'maxHeight':'600px'}}>
 <GroupPics  images={data.images && data.images} step={step} />
 
 
-<div className="w-3/4 mx-1 flex absolute justify-end pr-24 pt-5 lg:pr-64 ">  
-<HeartOutlined className=" float-right absolute text-2xl 
-cursor-pointer hover:border-2 p-2
- rounded-full 
- bg-white shadow-lg" /> 
-
- </div>
 
 
-<div className="w-5/6 mx-1 flex" style={{'maxHeight':'530px'}}>  
+
+<div className="sm:w-5/6 mx-1 flex" style={{'maxHeight':'530px'}}>  
 
 
-<Link href={BASE_IMG_URL+data.images[step].images}>
-   <img className="object-scale-down sm:object-cover  rounded  " 
+
+   <img className="object-cover  rounded  " onClick={e=>router.push(BASE_IMG_URL+data.images[step].images)}
       src={BASE_IMG_URL+data.images[step].images}></img>
-      </Link>
+ 
 
      {stepMove(step)}
 
@@ -140,16 +135,16 @@ cursor-pointer hover:border-2 p-2
  <Avatar src={BASE_IMG_URL+user.image} icon={<UserOutlined></UserOutlined>}  
  style={{"width":'48px','height':'48px','marginTop':'1px'}} className="mt-3">
 </Avatar>
- <Input className="h-12 ml-3 shadow-lg" name="review" required allowClear 
+ <Input className="h-12 ml-3 " name="review" required allowClear 
 onChange={e=>setStateReview(e.target.value)}  
 autoComplete="true"  placeholder="Write a Review on item" 
-style={{'width':"50%"}}
+
 />
 
 
-<button className="h-12 w-20 bg-blue-500 rounded mx-3"  
+<button className="h-12 w-20 bg-blue-500 rounded mx-3 text-white hover:bg-blue-300"  
  onClick={e=>{ e.preventDefault();submitReview()}}> <ArrowRightOutlined 
-  className="text-2xl text-white"/> </button>
+  className="text-md sm:text-2xl text-white"/> </button>
 
 </form>
 :

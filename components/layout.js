@@ -21,7 +21,7 @@ const Layout = ({ title,children,tag }) => (
     </Head>
     <Header tag={tag} />
     <main>
-      <div className="flex-col bg-gray-100 w-full m-0  pt-2 px-2">{children}</div>
+      <div className="flex-col bg-gray-100 w-full m-0  pt-2 px-0">{children}</div>
     </main>
 
     <Footer />

@@ -13,14 +13,20 @@ import axios from 'axios'
 
 const Home = ({topCompany,dailyDeals}) => (
   <Layout>
-  
-       
-  <p className="text-2xl md:text-4xl bg-black sm:bg-transparent font-extrabold rounded-lg
-  mt-3 text-white sm:text-black sm:px-5 py-4 md:py-1 center leading-tight w-full
+
+
+    <div className="m-0 px-4 py-4" style={{'backgroundColor':'#01718f'}}>   
+
+  <p className="text-lg md:text-3xl  font-extrabold rounded-lg
+  mt-3 text-white  sm:px-5 py-4 md:py-1 center w-full
      " style={{'textAlign':'center'}}>
     Find things you'll love. Support independent sellers. Only on beBO.
 
     </p>
+     </div>  
+
+
+
 
 
     <TopCompany data={topCompany} />

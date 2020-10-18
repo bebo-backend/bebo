@@ -3,7 +3,7 @@ import Link from 'next/link'
 import useUser from '../../lib/useUser'
 import { useRouter} from 'next/router'
 import fetchJson from '../../lib/fetchJson'
-import {Avatar} from "antd";
+import {Avatar,Button} from "antd";
 import {BASE_IMG_URL,BASE_URL} from '../../settings'
 import {UserOutlined, ShoppingFilled,CloudUploadOutlined} from '@ant-design/icons';
 import Search from '../search'
@@ -27,17 +27,17 @@ const Header = ({tag=true}) => {
        sm:justify-start pb-0  ">
         <ul className="flex-inline sm:flex w-full py-0 my-0 shadow mb-3">
 
-        <div className="w-full sm:w-1/6 mx-0 fixed sm:relative shadow-lg sm:shadow-none py-2  z-40  md:mr-3 my-0 
+        <div className="w-full sm:w-1/6 mx-0 fixed sm:relative bg-blue-900 sm:bg-white py-2  z-40  md:mr-3 my-0 
         sm:py-0 flex justify-center items-center bg-white ">
        
         <Link href="/">
-         <h2 className="font-extrabold text-lg px-2 rounded sm:mt-0 mt-1 mb-0  bg-black text-white cursor-pointer mb-0
-          relative p-1">beBO</h2>
+         <h2 className="font-extrabold text-2xl sm:text-lg px-2 rounded sm:mt-0 mt-1 mb-0   text-white cursor-pointer mb-0
+          relative sm:p-1 sm:bg-black">beBO</h2>
         </Link>
 
         </div>
 
-        <div className="flex-shrink  w-full flex justify-center items-center my-3 p-0 mt-20 sm:mt-3 ">
+        <div className="flex-shrink  w-full flex justify-center items-center my-3 p-0 mt-16 sm:mt-3 ">
         <Search/>
         </div>
 
@@ -45,11 +45,11 @@ const Header = ({tag=true}) => {
 
         <Link href='/upload-item'>
         <a className="
-       font-extrabold capitalize
-         cursor-pointer mr-3  leading-loose  hover:text-purple-300 
-         p-1 rounded-sm  px-3 text-blue-500 text-md
+      capitalize
+         cursor-pointer mr-3   leading-loose  hover:text-purple-300 
+         p-1 rounded-sm  px-3 text-blue-800 text-base
 
-         "><CloudUploadOutlined className=" text-2xl ml-4 sm:ml-1" /> upload</a>
+         "><CloudUploadOutlined className=" text-base ml-4 sm:ml-1 mr-1" /> sell</a>
                 </Link>
         
         
@@ -82,10 +82,10 @@ const Header = ({tag=true}) => {
 
       {user?.isLoggedIn ? (
 
-        <a className="
- text-white font-bold shadow-lg text-sm
+        <Button type='ghost' className="
+ text-md font-bold
          cursor-pointer ml-3  leading-loose flex items-end hover:text-purple-300 
-         p-1  px-3 border-0 border-blue-800 bg-blue-500 rounded
+         p-1  px-3 border-0 border-blue-500 border-1 rounded
 
           " href='/logout' onClick={async (e) => {
           e.preventDefault()
@@ -93,17 +93,17 @@ const Header = ({tag=true}) => {
           router.push('/login')
         }}>
 Logout
-        </a>
+        </Button>
 
       ):(
 
         <Link href='/login'>
-        <p className="
-   text-sm text-white font-bold  shadow-lg
+        <Button className="
+ text-md font-bold
          cursor-pointer ml-3  leading-loose flex items-end hover:text-purple-300 
-         p-1  px-3 border-0 border-blue-800  bg-blue-500 rounded
+         p-1  px-3 border-0 border-blue-500 border-1 rounded
 
-         ">Login</p>
+         ">Login</Button>
                 </Link>
       )}
 
@@ -114,7 +114,7 @@ Logout
         </ul>
       </nav>
      
-{tag && (  <div className="flex inline-flex w-full px-0 md:px-3 pb-2 pt-1">
+{tag && (  <div className="flex inline-flex w-full px-0 md:px-1 mx-0 pb-2 pt-1">
 <Tag />
 </div>)}
     

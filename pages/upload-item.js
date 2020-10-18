@@ -129,27 +129,29 @@ setStartUpdate(false)
 
 
 const steps=(step)=>{
-    return <Steps direction="horizontal" className="flex sm:inline"  current={step}>
+    return <div className="flex sm:inline w-full"> <Steps direction="horizontal"   current={step} 
+>
 
 
-      <Steps.Step title={<p className="font-bold hidden sm:block"> DETAILS </p>}>
-
-      </Steps.Step>
-       <Steps.Step   title={<p className="font-bold hidden sm:block"> MORE DETAILS </p>} >
+      <Steps.Step title={<p className="font-bold hidden sm:block capitalize"> DETAILS </p>}>
 
       </Steps.Step>
-      <Steps.Step   title={<p className="font-bold hidden sm:block"> IMAGE(S) UPLOAD </p>}  >
+       <Steps.Step   title={<p className="font-bold hidden sm:block capitalize"> MORE DETAILS </p>} >
+
+      </Steps.Step>
+      <Steps.Step   title={<p className="font-bold hidden sm:block capitalize"> IMAGE(S) UPLOAD </p>}  >
 
       </Steps.Step>
 
-      <Steps.Step  title={<p className="font-bold hidden sm:block"> DELIVERY </p>} >
+      <Steps.Step  title={<p className="font-bold hidden sm:block capitalize"> DELIVERY </p>} >
 
       </Steps.Step>
-      <Steps.Step  title={<p className="font-bold hidden sm:block"> PAYMENT </p>} >
+      <Steps.Step  title={<p className="font-bold hidden sm:block capitalize"> PAYMENT </p>} >
 
     </Steps.Step>
 
     </Steps>
+    </div>
 
     }
 
@@ -176,7 +178,7 @@ const stepMove=(value)=>{
 
 
   return (
-    <Layout title="Shop Hub - Upload" >
+    <Layout title="Sell Hub - Upload" >
     <Modal visible={updateDone} centered title="Upload successful"  okType="primary" okText={
         <a onClick={e=>{ setUpdateDone(false); setStartUpdate(false);}}> Upload More </a>
            
@@ -209,17 +211,17 @@ const stepMove=(value)=>{
 
 
 
-<div className="bg-white py-3 sm:mx-5 shadow-xl my-5">
-    <div className="flex w-full justify-center mt-2 mb-0 ">  
-    <span className="uppercase text-4xl font-extrabold mb-0">Shop hub</span>
+<div className="bg-white py-3 sm:mx-5 shadow-xl my-5 text-white" style={{'backgroundColor':'#01718f'}}>
+    <div className="flex w-full justify-center mt-2 mb-0 " >  
+    <span className="text-4xl font-extrabold mb-0 text-white">Sell Hub</span>
     
 
     </div>
 
 
     <div className="flex w-full justify-center mt-0 mb-2 ">  
-    <p className=" text-lg text-gray-600 mx-3">
-    Upload product on your shop for Sale, Rental or Exchange
+    <p className=" text-lg text-white mx-3" style={{'textAlign':'center'}}>
+    Upload item to your beBO account for Sale, Rental or Exchange
     </p> 
     </div>
 

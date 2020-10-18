@@ -92,7 +92,7 @@ setForm(data)
 
   return (
     <Layout title="Sign up" >
-      <div className=" flex w-full justify-center flex-no-wrap sm:bg-teal-900">
+      <div className=" flex w-full justify-center flex-no-wrap" style={{'backgroundColor':'#01718f'}}>
 
       <Modal visible={created} centered title="Registration successful"  okType="primary" okText={
      <a onClick={e=>router.push('/login')}> Login to Continue </a>

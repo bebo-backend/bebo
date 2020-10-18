@@ -150,14 +150,12 @@ axios.get(BASE_URL+"addrate/"+data.id+'/'+value+'/'+username).then(res=>{
 <span className="mx-5"><Rate onChange={e=>handleRate(e)} defaultValue={data.submit_user.rate} allowClear={false}
 > </Rate> </span> {rateLoad &&  <LoadingOutlined />}</span>
 
-<p className="text-3xl font-normal leading-tight mt-6 mb-2" style={{
-	'fontFamily':'serif'
-}}> {data.title}</p>
+<p className="text-3xl font-normal leading-tight mt-3 mb-2 " > {data.title}</p>
 
 
-<p>{data.submit_user.rate >=0 && <Tag color="pink" style={{'padding':'5px',
-'borderRadius':'10px','border':'0px solid','paddingLeft':'10px',"color":'black'}} 
-className="rounded-full"> Bestseller</Tag>}</p>
+<p>{data.submit_user.rate >=0 && <Tag color="grey" style={{'paddingRight':'10px',
+'borderRadius':'10px','border':'0px solid','paddingLeft':'10px'}} 
+className="rounded-full"> Exclusive</Tag>}</p>
 
 
 
@@ -168,7 +166,7 @@ className="rounded-full"> Bestseller</Tag>}</p>
 <p className="flex-inline shadow-lg p-2 rounded-lg pl-4">
 <p className="mb-0">
   <span className='mr-3'>Negotiable:</span> 
-  <span className='uppercase font-bold text-base mb-1'> {data.negotiable}  </span>
+  <span className='capitalize font-bold text-base mb-1'> {data.negotiable}  </span>
 </p>
 
 <p className="flex">
@@ -211,7 +209,7 @@ rounded-md mt-3 text-white  hover:bg-teal-500 my-4'>
    justify-center items-center bg-red-700
 rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 
-<a className="text-lg text-white font-extrabold "
+<a className="sm:text-lg text-white font-extrabold "
 > View Contacts</a>
 
 
@@ -245,7 +243,7 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 <p className=" flex sm:block p-2 pl-4 rounded-lg my-0">
  <p className='mb-2 mr-2'> Acquire: </p>
 
-  <p className='uppercase text-base font-semibold mb-0'> {data.acquire_type} </p> 
+  <p className='capitalize text-base font-semibold mb-0'> {data.acquire_type} </p> 
 
 
 </p>
@@ -256,7 +254,7 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 	<p className=" flex sm:block p-2 pl-4 rounded-lg my-0">
  <p className='mb-2 mr-2'> Condition: </p>
 
-  <p className='uppercase text-base font-semibold mb-0'> {data.condition} </p> 
+  <p className='capitalize text-base font-semibold mb-0'> {data.condition} </p> 
 </p>
 
 }
@@ -264,7 +262,7 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 	<p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
  <p className='mb-2 mr-2'> Location: </p>
 
-  <p className='uppercase text-base font-semibold mb-0'><EnvironmentOutlined /> {data.address} </p> 
+  <p className='capitalize text-base font-semibold mb-0'><EnvironmentOutlined /> {data.address} </p> 
 </p>
 
 
@@ -278,7 +276,7 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 <p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
  <p className='mb-2 mr-2'> Duration: </p>
 
-  <p className='uppercase text-base font-semibold mb-0'> {data.dur_count} {
+  <p className='capitalize text-base font-semibold mb-0'> {data.dur_count} {
      getDuration(data.duration)} </p> 
 
 </p>
@@ -292,7 +290,7 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 <p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
  <p className='mb-2 mr-2'> Delivery <CarOutlined />: </p>
 
-  <p className='uppercase text-base font-semibold mb-0'> {data.with_delivery =='Yes'? " Provided by seller":" Not Provided"} </p> 
+  <p className='capitalize text-base font-semibold mb-0'> {data.with_delivery =='Yes'? " Provided by seller":" Not Provided"} </p> 
 </p>
 
 
@@ -301,7 +299,7 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 	<p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
  <p className='mb-2 mr-2'> Delivery Company: </p>
 
-  <p className='uppercase text-base font-semibold mb-0'> {data.delivery_company} </p> 
+  <p className='capitalize text-base font-semibold mb-0'> {data.delivery_company} </p> 
 </p>
 
 
@@ -310,7 +308,7 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 	<div className="flex sm:block my-0 p-2 pl-4 rounded-lg">
  <p className='mb-2 mr-2'> Payments Method: </p>
 
-  <p className='uppercase text-base font-semibold mb-0'>{data.payment_type} </p> 
+  <p className='capitalize text-base font-semibold mb-0'>{data.payment_type} </p> 
 </div>
 
 

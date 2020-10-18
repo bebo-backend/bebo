@@ -16,7 +16,7 @@ return <div className="mb-10">
  <hr className="mb-3" />
  
 <div className="deli-input">
-<label className="uppercase text-md font-semibold my-2 " htmlFor="delivery">With Delivery: </label> <br/>
+<label className="capitalize text-md font-semibold my-2 " htmlFor="delivery">With Delivery: </label> <br/>
 
 <Radio.Group style={{'marginTop':'13px','marginBottom':'19px'}}   onChange={e=>handlechange(e.target.value,'delivery')}  name="delivery" 
 defaultValue={"no"} buttonStyle="outline">
@@ -32,7 +32,7 @@ defaultValue={"no"} buttonStyle="outline">
 
 <div className="deli-input w-1/2">
 
-<label className="uppercase text-md font-semibold my-2 "  htmlFor="deli-comp">Delivery Channel</label> <br/>
+<label className="capitalize text-md font-semibold my-2 "  htmlFor="deli-comp">Delivery Channel</label> <br/>
 
 
 <Select style={{'marginTop':'13px','marginBottom':'19px'}} allowClear={true} showSearch={true} onChange={(value)=>handlechange(value,"delivery_comp")}
