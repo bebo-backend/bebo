@@ -72,7 +72,7 @@ const stepMove=(value)=>{
 
 
 
-   <img className="object-cover  rounded  " onClick={e=>router.push(BASE_IMG_URL+data.images[step].images)}
+   <img className="object-cover  rounded shadow-lg  " onClick={e=>router.push(BASE_IMG_URL+data.images[step].images)}
       src={BASE_IMG_URL+data.images[step].images}></img>
  
 

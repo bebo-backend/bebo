@@ -98,7 +98,7 @@ Logout
       ):(
 
         <Link href='/login'>
-        <Button className="
+        <Button type='ghost' className="
  text-md font-bold
          cursor-pointer ml-3  leading-loose flex items-end hover:text-purple-300 
          p-1  px-3 border-0 border-blue-500 border-1 rounded

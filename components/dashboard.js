@@ -109,7 +109,7 @@ return (
  Build your beBO account
 
     </p>
-    <p className="text-lg px-0 py-0 center leading-tight w-full text-gray-700
+    <p className="text-lg px-0 py-0 center leading-tight w-full text-gray-700 mb-4
      font-sans " style={{'textAlign':'center'}}> Showcase your collections, by uploading your item with Sell Hub </p>
     
     <div className="uppercase text-blue-800 font-bold text-lg w-full center  flex justify-center " >
