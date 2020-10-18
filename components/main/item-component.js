@@ -30,7 +30,7 @@ const Main=({data=[]})=>{
     { data.images && data.images[0] ?
    
       
-      <img alt="first image"  style={{'maxHeight':'190px','width':'380px'}} className="
+      <img alt="first image"  style={{'height':'190px','width':'380px'}} className="
        rounded-tl rounded-tr object-cover mb-0 mt-1"
         src={BASE_IMG_URL+last(data.images).images} />:
 <FileJpgOutlined className="text-5xl" style={{
@@ -79,7 +79,7 @@ md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
 
 
 <span className=" font-bold ml-0 mt-1 sm:mt-3 mb-0 md:mb-3
-   text-md text-gray-900 h-4 w-6 w-full" >
+   text-base text-gray-900 h-4 w-6 w-full" >
 <Typography.Text style={{'maxWidth':'100%'}} ellipsis={true}>  
    {data.title}</Typography.Text>
    </span> 
@@ -88,7 +88,7 @@ md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
 
 
 <p  className="  capitalize
- h-4  
+ h-6  
  overflow-hidden text-gray-700 my-1 mt-2 sm:mt-1
 text-sm leading-tight"  ><EnvironmentOutlined />  
 <Typography.Text style={{'maxWidth':'100%','marginLeft':'5px'}} ellipsis={true}>  

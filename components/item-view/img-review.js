@@ -33,8 +33,8 @@ mutate(BASE_URL+'get_reviews/'+data.id+'/')
 
 const stepMove=(value)=>{
 
-        return <div className="flex justify-around w-full absolute"><p style={{
-        	'marginTop':'180px'}} className=" z-30 w-full   " 
+        return <div className="flex justify-around absolute"><p style={{
+        	'marginTop':'180px'}} className=" z-30   " 
         >
 
 
@@ -153,8 +153,12 @@ autoComplete="true"  placeholder="Write a Review on item"
   <div className='btn w-full center h-10 flex justify-center items-center 
 '>
 <Link href="/login">
-<button className="text-base font-extrabold w-2/5 h-10  bg-red-700 rounded-md mt-3 text-white  hover:bg-red-500"
->Login to Post Review</button>
+<button className="text-base font-extrabold w-full sm:w-2/5 h-10  bg-red-700 rounded-md mt-3 text-white  hover:bg-red-500"
+>
+<a className="sm:text-lg text-base font-extrabold text-white w-full "style={{'textAlign':'center'}}
+> 
+Login to Post Review</a>
+</button>
 </Link>
 
 </div>

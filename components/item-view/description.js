@@ -29,7 +29,8 @@ description
 {data.exchange_item && 
 	      <span onClick={e=>setShow(1)}  style={{
 'backgroundColor':show === 1 && "red"
-}} className="md:text-base rounded cursor-pointer font-extrabold bg-blue-600 p-2  mx-1 p-2 mt-10 text-white  uppercase hover:bg-blue-300">
+}} className="md:text-base rounded cursor-pointer font-extrabold 
+bg-blue-600 p-2  mx-1 p-2 mt-10 text-white  uppercase hover:bg-blue-300">
 exchangable item
  </span>
 

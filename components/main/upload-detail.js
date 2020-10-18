@@ -22,7 +22,7 @@ return (
    </p>
    
 <div style={{'textAlign':'center'}} className=" flex flex-1 items-start center text-lg mt-0 pt-0 ">   
-Save things you'll love, want or need  with shop bag.
+Save things you'll love, want or need  for later consideration.
 </div>  
 
 </div>

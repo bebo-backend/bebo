@@ -197,7 +197,7 @@ rounded-md mt-3 text-white  hover:bg-blue-500 my-4'>
  :<div className='btn w-full center h-10 flex justify-center items-center bg-teal-700
 rounded-md mt-3 text-white  hover:bg-teal-500 my-4'>
 <Link href="/login">
-<a className="text-lg font-extrabold text-white"
+<a className="sm:text-lg text-base font-extrabold text-white w-full "style={{'textAlign':'center'}}
 > Login to Save to cart</a>
 </Link>
 
@@ -209,7 +209,7 @@ rounded-md mt-3 text-white  hover:bg-teal-500 my-4'>
    justify-center items-center bg-red-700
 rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 
-<a className="sm:text-lg text-white font-extrabold "
+<a className="sm:text-lg text-base font-extrabold text-white w-full "style={{'textAlign':'center'}}
 > View Contacts</a>
 
 
@@ -238,7 +238,7 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 
 
 
-<div className="odd:bg-gray-700">
+<div className="odd:bg-gray-700 flex flex-col">
 
 <p className=" flex sm:block p-2 pl-4 rounded-lg my-0">
  <p className='mb-2 mr-2'> Acquire: </p>
@@ -316,10 +316,10 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 
  {data.submit_user.website &&
 
-<div className='btn w-full cursor-pointer center h-10 flex justify-center items-center bg-red-700
-rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
+<div className='btn w-full cursor-pointer center h-10 flex justify-center items-center bg-teal-700
+rounded-md mt-3 text-white  hover:bg-teal-500 my-4'>
 
-<a href={"http://"+data.submit_user.website} className="text-lg text-white font-extrabold "
+<a href={"http://"+data.submit_user.website} className="sm:text-lg text-base font-extrabold text-white w-full "style={{'textAlign':'center'}}
 > Visit Website</a>
 
 

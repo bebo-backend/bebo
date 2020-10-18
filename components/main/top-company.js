@@ -12,7 +12,7 @@ function TopCompany({data}){
 
 return (
 
-  <div className="sm:mx-0 shadow-2xl py-2 bg-white rounded-lg mt-3">
+  <div className="sm:mx-0  py-2 bg-white rounded-lg mt-3">
 
     <div className="mt-5 text-black bg-white sm:px-3 py-1   leading-tight w-full mb-5
     " > 
@@ -45,12 +45,12 @@ justify-left mb-0  md:mx-3  ">
     >
 
     <a key={key}  style={{'width':'200px'}} 
-    className="  cursor-pointer mx-2   md:m-1 md:p-0 
-    rounded  pb-1 bg-white md:border-0    ">
+    className="  cursor-pointer mx-2   md:m-1 md:p-0 m-0 
+    rounded  pb-1 bg-white md:border-0     "  >
  
 
- <div className="flex sm:inline-block px-3 py-1 mx-0 hover:shadow-2xl
- sm:mx-2 shadow sm:shadow-sm sm:rounded-lg sm:px-1 overflow-hidden">
+ <div className="flex sm:inline-block my-0 px-3 py-1 mx-0 hover:shadow-2xl
+ sm:mx-2 shadow sm:shadow-sm sm:rounded-lg sm:px-1 overflow-hidden sm:my-4" style={{'marginBottom':'-14px'}}>
     
     <p className="justify-center w-1/4 sm:w-full flex rounded-full ">
     { data.images && data.images[0] ?

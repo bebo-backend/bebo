@@ -193,7 +193,7 @@ setMenu(true)
   <Layout title={title} value={title}>
   
        
-  <p className=" text-2xl flex justify-between pt-3 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
+  <p className=" text-2xl flex justify-between pt-3 pb-3 sm:pb-0 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
     text-white" style={{'backgroundColor':'#01718f'}} >
 <p className="  w-full">
 <Breadcrumb className="flex w-full" Seperator=" > ">

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import useUser from '../../lib/useUser'
 import { useRouter} from 'next/router'
 import fetchJson from '../../lib/fetchJson'
-import {Avatar,Button} from "antd";
+import {Avatar} from "antd";
 import {BASE_IMG_URL,BASE_URL} from '../../settings'
 import {UserOutlined, ShoppingFilled,CloudUploadOutlined} from '@ant-design/icons';
 import Search from '../search'
@@ -27,11 +27,13 @@ const Header = ({tag=true}) => {
        sm:justify-start pb-0  ">
         <ul className="flex-inline sm:flex w-full py-0 my-0 shadow mb-3">
 
-        <div className="w-full sm:w-1/6 mx-0 fixed sm:relative bg-blue-900 sm:bg-white py-2  z-40  md:mr-3 my-0 
+        <div className="w-full sm:w-1/6 mx-0 fixed sm:relative bg-blue-900 sm:bg-white pt-1 pb-2  
+        z-40  md:mr-3 my-0 
         sm:py-0 flex justify-center items-center bg-white ">
        
         <Link href="/">
-         <h2 className="font-extrabold text-2xl sm:text-lg px-2 rounded sm:mt-0 mt-1 mb-0   text-white cursor-pointer mb-0
+         <h2 className="font-extrabold text-2xl sm:text-lg px-2 rounded sm:mt-0 mt-1 mb-0
+          border-2 border-white sm:border-0   text-white cursor-pointer mb-0
           relative sm:p-1 sm:bg-black">beBO</h2>
         </Link>
 
@@ -41,13 +43,13 @@ const Header = ({tag=true}) => {
         <Search/>
         </div>
 
-        <div className="flex-shrink md:m-2 w-full  py-1 md:w-2/3 md:px-3 justify-evenly md:justify-evenly flex items-start">
+        <div className="flex-shrink md:m-2 w-full  py-1 md:w-2/3 md:px-3 justify-around md:justify-evenly flex items-start">
 
         <Link href='/upload-item'>
         <a className="
       capitalize
          cursor-pointer mr-3   leading-loose  hover:text-purple-300 
-         p-1 rounded-sm  px-3 text-blue-800 text-base
+         p-1 rounded-sm  px-3 text-gray-900 text-base 
 
          "><CloudUploadOutlined className=" text-base ml-4 sm:ml-1 mr-1" /> sell</a>
                 </Link>
@@ -82,10 +84,11 @@ const Header = ({tag=true}) => {
 
       {user?.isLoggedIn ? (
 
-        <Button type='ghost' className="
- text-md font-bold
-         cursor-pointer ml-3  leading-loose flex items-end hover:text-purple-300 
-         p-1  px-3 border-0 border-blue-500 border-1 rounded
+        <a type='ghost' className="
+ text-md 
+         cursor-pointer ml-3  leading-loose flex items-end hover:bg-teal-600 text-gray-900 
+         pt-1  px-5 border-0 border-teal-700 border-2 rounded
+1  px-3 border-0 border-blue-500 border-1 rounded
 
           " href='/logout' onClick={async (e) => {
           e.preventDefault()
@@ -93,17 +96,17 @@ const Header = ({tag=true}) => {
           router.push('/login')
         }}>
 Logout
-        </Button>
+        </a>
 
       ):(
 
         <Link href='/login'>
-        <Button type='ghost' className="
- text-md font-bold
-         cursor-pointer ml-3  leading-loose flex items-end hover:text-purple-300 
-         p-1  px-3 border-0 border-blue-500 border-1 rounded
+        <a type='ghost' className="
+ text-md 
+         cursor-pointer ml-3  leading-loose flex items-end hover:bg-teal-600 text-gray-900 
+         pt-1  px-5 border-0 border-teal-700 border-2 rounded
 
-         ">Login</Button>
+         ">Login</a>
                 </Link>
       )}
 

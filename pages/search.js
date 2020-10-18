@@ -45,7 +45,7 @@ if (!index || index===0) return BASE_URL+"search_data?search="+search+"&page="+p
 return BASE_URL+"search_data?search="+search+"&page="+index+"&limit="+LIMIT+"&tags="+tags
 },fetcher)
 
-if (!data) return null
+if (!data) return <p className="flex justify-center items-center h-screen w-sreen text-2xl text-pink-600"> <LoadingOutlined /> </p>
 
 
 
@@ -296,7 +296,7 @@ setMenu(true)
   <Layout title={search ? "You search for "+search:"You search for All"} value={search}>
   
        
-   <p className=" text-2xl flex justify-between pt-3 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
+   <p className=" text-2xl flex justify-between pt-3 pb-3 sm:pb-0 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
     text-white" style={{'backgroundColor':'#01718f'}} >
 <p className="  w-full">
 <Breadcrumb className="flex w-full" Seperator=" > ">
