@@ -15,7 +15,7 @@ CarOutlined,PayCircleOutlined,CheckOutlined} from '@ant-design/icons';
 const Step2=({handlechange, data})=>{
 
 
-return <div className="mb-10">
+return <div className="mb-10 sm:mr-10">
 
 <h2 className='text-xl md:text-2xl font-bold mb-5'> ADDITIONAL DETAILS </h2>
  

@@ -14,7 +14,7 @@ const Step1=({handlechange,data})=>{
 
 
 
- return <form className="mb-10">
+ return <form className="mb-10 sm:mr-10">
  <h2 className='text-xl md:text-2xl font-bold mb-5 uppercase'> Details:  </h2>
  <hr className="mb-3" />
 
@@ -22,7 +22,7 @@ const Step1=({handlechange,data})=>{
 <div className="grp-input">
 <label className="capitalize font-semibold my-2 text-base " htmlFor="title">Title (*) </label>
 <div>
-<Input name="title" prefix={<InfoCircleFilled/>}   className="my-4 h-12   " required allowClear
+<Input name="title" prefix={<InfoCircleFilled />}   className="my-4 h-12   " required allowClear
 onChange={e=>handlechange(e.target.value,'title')} autoFocus  autoComplete="true"  placeholder="eg. 3 Bedroom Flats, New Gks Generator(Black)"
 />
 

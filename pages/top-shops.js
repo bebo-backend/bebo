@@ -26,9 +26,28 @@ if (!index || index===0) return BASE_URL+'popular-shop?page='+page+"&limit="+LIM
 return BASE_URL+'popular-shop?page='+index+"&limit="+LIMIT
 },fetcher)
 
-if (!data) return <p className="flex justify-center items-center h-screen w-sreen text-2xl text-pink-600"> <LoadingOutlined /> </p>;
+if (!data){return <Layout title="Top beBO accounts">
+  
+    {data &&   <div className="md:mb-20" >
+ 
+   <TopCompany data={data.res} />
+     <div className="mx-auto mt-10 mb-20 w-1/2 md:w-1/3">
+          <button
+            className="bg-red-600 border-solid border-2 hover:bg-white border-red-600 text-white hover:text-red-600 font-bold py-2 px-4 rounded-full w-full"
+            disabled={!data.next}
+            onClick={e=>setPage(page+1)}
+          >
+            {data.next ?'Load More Product': 'No more Product'}
+          </button>
+
+        </div>
+
+    </div>    }
 
 
+
+  </Layout>
+}
 
 
 return (

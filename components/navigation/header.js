@@ -24,17 +24,17 @@ const Header = ({tag=true}) => {
   return (
     <header className=" bg-white  ">
       <nav className=" flex inset-y-0 top-0 text-black px-0 w-full md:px-5 items-end justify-center
-       sm:justify-start pb-0  ">
-        <ul className="flex-inline sm:flex w-full py-0 my-0 shadow mb-3">
+       sm:justify-start pb-0 shadow py-0  ">
+        <ul className="flex-inline sm:flex w-full py-0 my-0 ">
 
-        <div className="w-full sm:w-1/6 mx-0 fixed sm:relative bg-blue-700 sm:bg-white pt-1 pb-2  
+        <div className="w-full sm:w-1/6 mx-0 fixed sm:relative bg-white pt-1 pb-1  
         z-40  md:mr-3 my-0 
         sm:py-0 flex justify-center items-center bg-white ">
        
         <Link href="/">
-         <h2 className="font-extrabold text-2xl sm:text-lg px-2 rounded sm:mt-0 mt-1 mb-0
-          border-2 border-white sm:border-0   text-white cursor-pointer mb-0
-          relative sm:p-1 sm:bg-blue-500">beBO</h2>
+         <h2 className="font-extrabold text-2xl sm:text-lg px-2 sm:mt-0 mt-0 mb-0
+     text-black cursor-pointer mb-0
+          relative  border-2 border-black rounded  ">beBO</h2>
         </Link>
 
         </div>
@@ -51,14 +51,14 @@ const Header = ({tag=true}) => {
          cursor-pointer mr-3   leading-loose  hover:text-purple-300 
          p-1 rounded-sm  px-3 text-gray-900 text-base 
 
-         "><CloudUploadOutlined className=" text-md ml-4 sm:ml-1 mr-1" /> sell</a>
+         ">sell</a>
                 </Link>
         
         
         {
         user?.isLoggedIn ?(
 <i className="cursor-pointer hover:border-b-2">
-          <Avatar  src={BASE_IMG_URL+user?.image} style={{"width":'35px','height':'35px',
+          <Avatar  src={BASE_IMG_URL+user?.image} style={{"width":'33px','height':'33px',
         }} onClick={e=>router.push('/dashboard/profile')}><h2 className="text-base font-bold 
         uppercase">
           {user?.username.slice(0,2)}</h2>
@@ -66,7 +66,8 @@ const Header = ({tag=true}) => {
           </i>
         ) : (
           <i className="cursor-pointer  hover:border-b-2">
-          <Avatar className="cursor-pointer" onClick={e=>router.push('/dashboard/profile')} style={{"width":'35px','height':'35px',
+          <Avatar className="cursor-pointer" onClick={e=>router.push('/dashboard/profile')} 
+          style={{"width":'33px','height':'33px',
           }} icon={<UserOutlined></UserOutlined>} className=""></Avatar> </i>
         )
 
@@ -86,9 +87,9 @@ const Header = ({tag=true}) => {
 
         <a type='ghost' className="
  text-md 
-         cursor-pointer ml-3  leading-loose flex items-end hover:bg-teal-600 text-gray-900 
+         cursor-pointer ml-3  leading-loose flex items-end bg-teal-600 text-white hover:bg-teal-300
          pt-1  px-5 border-0 
-1  px-3  rounded
+1  px-3  pb-1
 
           " href='/logout' onClick={async (e) => {
           e.preventDefault()
@@ -103,9 +104,9 @@ Log out
         <Link href='/login'>
         <a type='ghost' className="
  text-md 
-         cursor-pointer ml-3  leading-loose flex items-end hover:bg-teal-600 text-gray-900 
-         pt-1  px-5 
-
+         cursor-pointer ml-3  leading-loose flex items-end bg-teal-600 text-white hover:bg-teal-300
+         pt-1  px-5 border-0 
+1  px-3 pb-1
          ">Log in</a>
                 </Link>
       )}
@@ -117,7 +118,7 @@ Log out
         </ul>
       </nav>
      
-{tag && (  <div className="flex inline-flex w-full px-0 md:px-1 mx-0 pb-2 pt-1">
+{tag && (  <div className="flex inline-flex w-full px-0 md:px-1 mx-0 pb-2 pt-1 mt-3">
 <Tag />
 </div>)}
     

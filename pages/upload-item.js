@@ -211,7 +211,7 @@ const stepMove=(value)=>{
 
 
 
-<div className="bg-white py-3 sm:mx-5 shadow-xl my-5 text-white" style={{'backgroundColor':'#01718f'}}>
+<div className="bg-white py-3 sm:mx-5  my-5 text-white" style={{'backgroundColor':'#01718f'}}>
     <div className="flex w-full justify-center mt-2 mb-0 " >  
     <span className="text-4xl font-extrabold mb-0 text-white">Sell Hub</span>
     
@@ -233,8 +233,8 @@ const stepMove=(value)=>{
     </div>
 
 
-<div className="flex w-full justify-center">
-      <div className=" w-full sm:w-3/4 my-8 mx-4 px-5  sm:px-10 mt-0 bg-white py-5 mt-3 shadow-2xl rounded-lg ">
+<div className="flex w-full justify-left">
+      <div className=" w-full  my-8 mx-0 px-5 sm:px-10  sm:px-10 mt-0 bg-white py-5 mt-3 rounded-lg ">
 
                     {step==0 &&
 
