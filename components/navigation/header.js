@@ -74,7 +74,7 @@ const Header = ({tag=true}) => {
       
       
       <Link href="/cart">
-    <a className="hover:text-black">
+    <a className="hover:text-black text-blue-500">
       <ShoppingFilled  className="mx-4 pr-0 " style={{"fontSize":'35px'}} />
         <span className="font-bold absolute text-white text-base mt-2 mr-1 cursor-pointer "
         style={{'marginLeft':'-38px'}}> {cart?.data.len && cart?.data.len}</span>
