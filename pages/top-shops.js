@@ -16,7 +16,7 @@ import {LoadingOutlined} from '@ant-design/icons';
 
 
 const Home = () => {
-const LIMIT = 25
+const LIMIT = 44
 const [page,setPage] = useState(1)
 const {data,error,mutate,size,setSize,isReachingEnd}=useSWRInfinite((index,previousPageData)=>{
 

@@ -34,7 +34,7 @@ const [menu,setMenu] = useState(true)
 // search && console.log('search',Object.values(search))
 const baseUrl = BASE_URL+"search_data?search="+search+Object.values(url).join("+")
 
-const LIMIT = 25
+const LIMIT = 44
 
 
 const {data,error,mutate,size,setSize,isReachingEnd}=useSWRInfinite((index,previousPageData)=>{
@@ -296,15 +296,15 @@ setMenu(true)
   <Layout title={search ? "You search for "+search:"You search for All"} value={search}>
   
        
-   <p className=" text-2xl flex justify-between pt-3 pb-3 sm:pb-0 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
+   <p className=" text-lg flex justify-between pt-3 pb-3 sm:pb-0 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
     text-white" style={{'backgroundColor':'#01718f'}} >
 <p className="  w-full">
 <Breadcrumb className="flex w-full" Seperator=" > ">
 
 
-      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md sm:text-lg text-white"  >{search}
+      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >{search}
        </Breadcrumb.Item>
-      <Breadcrumb.Item className="text-sm leading-tight md:text-base text-white" >Page: {page}, ({Object.keys(data.res).length}) results </Breadcrumb.Item>
+      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-white" >Page: {page}, ({Object.keys(data.res).length}) products found </Breadcrumb.Item>
 
  
       </Breadcrumb> 

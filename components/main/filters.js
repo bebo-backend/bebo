@@ -27,11 +27,6 @@ return (
     <Button className="bg-blue-500 text-white  p-2 px-1 
     rounded cursor-pointer hover:bg-blue-300" onClick={clearFilters}>Clear x</Button>
     </div>
-       
-    <p className="text-2xl font-bold px-0 mb-6  py-0 leading-tight w-full text-black
-     " style={{'textAlign':'left','fontFamily':'serif'}}>
-{search ? search :'All'}
-    </p>
 
  
 

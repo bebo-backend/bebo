@@ -15,10 +15,10 @@ const Home = ({topCompany,dailyDeals}) => (
   <Layout>
 
 
-    <div className="m-0 px-2 py-4" style={{'backgroundColor':'#01718f'}}>   
+    <div className="m-0 px-2 py-2" style={{'backgroundColor':'#01718f'}}>   
 
-  <p className="text-base md:text-3xl  font-extrabold rounded-lg
-  mt-3 text-white  sm:px-5 py-4 md:py-1 center w-full
+  <p className="text-lg md:text-3xl  font-extrabold rounded-lg
+  mt-3 text-white  sm:px-5 py-3 md:py-1 center w-full
      " style={{'textAlign':'center'}}>
     Find things you'll love. Support independent sellers. Only on beBO.
 

@@ -34,7 +34,7 @@ const [menu,setMenu] = useState(true)
 // search && console.log('search',Object.values(search))
 const baseUrl = BASE_URL+"search_data?search="+title+Object.values(url).join("+")
 
-const LIMIT = 25
+const LIMIT = 44
 
 
 const {data,error,mutate,size,setSize,isReachingEnd}=useSWRInfinite((index,previousPageData)=>{

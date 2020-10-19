@@ -50,7 +50,7 @@ justify-left mb-0  md:mx-3  ">
  
 
  <div className="flex sm:inline-block my-0 px-3 py-1 mx-0 hover:shadow-2xl
- sm:mx-2 shadow sm:shadow-sm sm:rounded-lg sm:px-1 overflow-hidden sm:my-4" style={{'marginBottom':'-14px'}}>
+ sm:mx-4 shadow sm:shadow-sm sm:rounded-lg sm:px-1 overflow-hidden sm:my-4" style={{'marginBottom':'-14px'}}>
     
     <p className="justify-center w-1/4 sm:w-full flex rounded-full ">
     { data.images && data.images[0] ?
@@ -71,19 +71,19 @@ md:mb-3 flex flex-col justify-center items-left ml-4 sm:ml-0 sm:mx-3"
      allowClear={false} disabled> 
     </Rate> ({data.submit_user.rate_count}) </p>
 
-<p className="">
+<p className="w-full sm:w-48 px-1 ">
     { data.submit_user.image ?
       <Avatar className="ml-2" src={BASE_IMG_URL+data.submit_user.image} icon={<UserOutlined></UserOutlined>}
-       style={{'marginLeft':'0px',"width":'35px','height':'35px',
+       style={{'marginLeft':'0px',"width":'32px','height':'32px',
       }}>
     </Avatar>:
 
-      <Avatar className="cursor-pointer"  style={{"width":'35px','height':'35px',
+      <Avatar className="cursor-pointer"  style={{"width":'32px','height':'32px',
     }} icon={<UserOutlined></UserOutlined>} className=""></Avatar> 
     }
 <span className=" font-bold ml-3 mb-3 md:mb-3
-   text-lg text-gray-900 h-4 w-6" >
-<Typography.Text style={{'maxWidth':'70%'}} ellipsis={true}>  
+   text-base text-gray-900 h-4  " >
+<Typography.Text style={{'width':'70%'}} ellipsis={true}>  
    {data.submit_user.agencyname}</Typography.Text>
    </span> 
 

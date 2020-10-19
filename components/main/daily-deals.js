@@ -59,7 +59,7 @@ justify-left mb-0 mx-0  md:mx-3 sm:mx-0 md:mx-1  ">
       w-full sm:w-64 px-2 sm:block  py-1 mx-0 
      sm:mx-0  sm:rounded-lg sm:px-0 sm:my-2 my-0  ">
 
-    <p className="mb-0  justify-center w-1/4 sm:w-full flex ml-0">
+    <p className="mb-0  justify-center w-2/4 sm:w-full flex ml-0">
 
        
 
@@ -87,16 +87,17 @@ md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
 <span className="hidden sm:inline">
 
     { data.submit_user.image ?
-      <Avatar src={BASE_IMG_URL+data.submit_user.image} icon={<UserOutlined></UserOutlined>} style={{"width":'33px','height':'33px',
+      <Avatar src={BASE_IMG_URL+data.submit_user.image} icon={<UserOutlined></UserOutlined>} 
+      style={{"width":'30px','height':'30px',
       }}>
     </Avatar>:
 
-      <Avatar className="cursor-pointer"  style={{"width":'33px','height':'33px',
+      <Avatar className="cursor-pointer"  style={{"width":'30px','height':'30px',
     }} icon={<UserOutlined></UserOutlined>} className=""></Avatar> 
     }
     </span>
  <Link href={"/shop/"+data.submit_user.agencyname.replace('&','and')}>
-  <a  className=" ml-3 sm:text-base text-blue-500">
+  <a  className=" ml-3 test-md text-blue-500">
 <Typography.Text style={{'maxWidth':'70%','color':'#01718f'}} ellipsis={true}  >  
    {data.submit_user.agencyname}</Typography.Text> </a>
    </Link>
@@ -114,8 +115,8 @@ md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
 
 
 
-<span className=" font-bold ml-0 mt-1 sm:mt-3 mb-0 md:mb-3
-   text-base text-gray-900 h-4 w-6 w-full" >
+<span className="  ml-0 mt-1 sm:mt-3 mb-0 md:mb-3
+   text-md font-bold text-black  h-4 w-6 w-full" >
 <Typography.Text style={{'maxWidth':'100%'}} ellipsis={true}>  
    {data.title}</Typography.Text>
    </span> 

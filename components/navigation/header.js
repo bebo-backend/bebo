@@ -27,14 +27,14 @@ const Header = ({tag=true}) => {
        sm:justify-start pb-0  ">
         <ul className="flex-inline sm:flex w-full py-0 my-0 shadow mb-3">
 
-        <div className="w-full sm:w-1/6 mx-0 fixed sm:relative bg-blue-900 sm:bg-white pt-1 pb-2  
+        <div className="w-full sm:w-1/6 mx-0 fixed sm:relative bg-blue-700 sm:bg-white pt-1 pb-2  
         z-40  md:mr-3 my-0 
         sm:py-0 flex justify-center items-center bg-white ">
        
         <Link href="/">
          <h2 className="font-extrabold text-2xl sm:text-lg px-2 rounded sm:mt-0 mt-1 mb-0
           border-2 border-white sm:border-0   text-white cursor-pointer mb-0
-          relative sm:p-1 sm:bg-black">beBO</h2>
+          relative sm:p-1 sm:bg-blue-500">beBO</h2>
         </Link>
 
         </div>
@@ -74,7 +74,7 @@ const Header = ({tag=true}) => {
       
       
       <Link href="/cart">
-    <a className="text-black">
+    <a className="hover:text-black">
       <ShoppingFilled  className="mx-4 pr-0 " style={{"fontSize":'35px'}} />
         <span className="font-bold absolute text-white text-base mt-2 mr-1 cursor-pointer "
         style={{'marginLeft':'-38px'}}> {cart?.data.len && cart?.data.len}</span>

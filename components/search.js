@@ -24,7 +24,7 @@ return (
 <Input  className="h-10 " allowClear 
 onChange={handleInput} 
 placeholder="Search for anything on beBO" prefix={<p className="m-1 rounded-full 
-p-1 font-extrabold text-xl text-red-800 ">B</p>}
+p-1 font-extrabold text-xl text-yellow-500 ">B</p>}
  suffix={<Link href={"/search?search="+inputdata}><i className="cursor-pointer"><SearchOutlined style={{
     'fontSize':'23px'
 }}  /></i></Link>}
