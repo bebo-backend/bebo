@@ -32,9 +32,9 @@ const Header = ({tag=true}) => {
         sm:py-0 flex justify-center items-center bg-white ">
        
         <Link href="/">
-         <h2 className="font-extrabold text-2xl sm:text-lg px-2 sm:mt-0 mt-0 mb-0
-     text-black cursor-pointer mb-0
-          relative  border-2 border-black rounded  ">beBO</h2>
+         <h2 className="font-extrabold text-2xl sm:text-lg px-2 sm:mt-0 mt-2 mb-1
+     text-white cursor-pointer sm:mb-0
+          relative   rounded  " style={{'backgroundColor':'#01718f'}}>beBO</h2>
         </Link>
 
         </div>
@@ -118,7 +118,7 @@ Log out
         </ul>
       </nav>
      
-{tag && (  <div className="flex inline-flex w-full px-0 md:px-1 mx-0 pb-2 pt-1 mt-3">
+{tag && (  <div className="flex inline-flex w-full px-1 md:px-1 mx-0 pb-2 pt-1 mt-3">
 <Tag />
 </div>)}
     

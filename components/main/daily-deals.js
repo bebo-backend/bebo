@@ -26,7 +26,7 @@ return (
 
     
        
-   <p className="text-lg md:text-2xl font-bold mb-0 text-gray-900 md:ml-5 md:px-5  py-5 center leading-tight w-full
+   <p className="text-lg md:text-2xl ml-3 font-bold mb-0 text-gray-900 md:ml-5 md:px-5  py-5 center leading-tight w-full
      " style={{'textAlign':'left'}}>
 {title}
 {title &&
@@ -66,7 +66,7 @@ justify-left mb-0 mx-0  md:mx-3 sm:mx-0 md:mx-1  ">
     { data.images && data.images[0] ?
    
       
-      <img alt="first image"  style={{'height':'190px','width':'380px'}} className="
+      <img alt="first image"  style={{'height':'190px','width':'100%'}} className="
        rounded-tl rounded-tr object-cover mb-0 mt-1"
         src={BASE_IMG_URL+last(data.images).images} />:
 <FileJpgOutlined className="text-5xl" style={{
@@ -75,7 +75,7 @@ justify-left mb-0 mx-0  md:mx-3 sm:mx-0 md:mx-1  ">
     }
     </p>
 
-<div className="w-3/4   sm:w-full mb-0  md:block 
+<div className="w-2/4   sm:w-full mb-0  md:block 
 md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
    
     <p className="text-gray-500 mt-0 mb-1">
@@ -106,7 +106,8 @@ md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
   <hr className="my-0 my-1 border-b-1 sm:border-b-2 border-gray-200" />
 
 <p className='mb-0 sm:mb-1 sm:mt-1 text-gray-500 text-sm   '> 
-<CheckOutlined className=" text-black text-sm mr-2" /> Instock
+<i className="hidden sm:flex">
+<CheckOutlined className=" text-black text-sm mr-2" /> Instock</i>
     <Tag className=" rounded-none capitalize mb-0  " color="pink" style={{
       'marginLeft':'15px','border':'0px solid',
       'borderRadius':'13px','minWidth':'60px','backgroundColor':'red','color':'white',
@@ -116,7 +117,7 @@ md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
 
 
 <span className="  ml-0 mt-1 sm:mt-3 mb-0 md:mb-3
-   text-md font-bold text-black  h-4 w-6 w-full" >
+   text-md font-bold text-black   sm:h-4 w-6 w-full" >
 <Typography.Text style={{'maxWidth':'100%'}} ellipsis={true}>  
    {data.title}</Typography.Text>
    </span> 

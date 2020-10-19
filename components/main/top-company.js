@@ -19,7 +19,7 @@ return (
 
     
        
-    <p className="text-lg md:text-2xl ml-3 font-bold mb-0 text-gray-900 md:ml-5 md:px-5  py-3 center leading-tight w-full
+    <p className="text-lg md:text-2xl ml-4 font-bold mb-0 text-gray-900 md:ml-5 md:px-5  py-3 center leading-tight w-full
      " style={{'textAlign':'left'}}>
  Trending bebo accounts
    <Link href='/top-shops'>

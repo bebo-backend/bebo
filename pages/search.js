@@ -651,7 +651,7 @@ setMenu(true)
     </p>
 
 
-<div className="mx-3 shadow-2xl rounded-lg">
+<div className="sm:mx-3 shadow-2xl rounded-lg">
 
 <div className=" md:flex flex-inline mt-0 py-5 pl-0 w-full bg-white pr-5  "> 
 
@@ -665,10 +665,10 @@ setMenu(true)
 </div>
 
 
-<div className="  md:w-3/4 w-full ml-3 mt-6"> 
+<div className="  md:w-3/4 w-full mx-1 sm:ml-3 mt-6 "> 
 
 
-<div className="md:flex flex-inline mb-10">
+<div className="md:flex flex-inline mb-10 px-0">
 <div className="w-full flex justify-end "> 
 
 {Object.keys(filters).length > 0 &&
@@ -689,7 +689,7 @@ Filters:
 
 
 
-<div className="flex mr-3 w-full mb-3 justify-end">
+<div className="flex sm:mr-3 px-0 w-full mb-3 justify-end">
  {loading && <LoadingOutlined />}   {sortComp(Options)}
  </div>
 
@@ -698,8 +698,8 @@ Filters:
 
   </div>
 
- <div className="mr-5 md:mr-0 w-full " style={{'marginTop':'-39px'}}>
-  <div className="w-full  block sm:inline-block
+ <div className="mr-5 md:mr-0 w-full  " style={{'marginTop':'-39px'}}>
+  <div className="w-full  block sm:inline-block 
 justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
 
 {data.res.map(e=>(

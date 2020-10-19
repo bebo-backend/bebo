@@ -15,11 +15,11 @@ const Main=({data=[]})=>{
     >
     <a key={data.id} style={{'width':'260px'}} className="
    
- cursor-pointer bg-white  m-0 sm:m-2 pb-0 px-0 py-0  rounded  ">
+   cursor-pointer bg-white  m-0 sm:m-2 pb-0 px-0 py-0  rounded  ">
     
 
      <div className="flex sm:inline-block shadow sm:shadow-sm hover:shadow-2xl
-      w-full sm:w-64 px-2 sm:block  py-1 mx-0 
+      w-full sm:w-64 px-0 sm:block  py-1 mx-0 
      sm:mx-0  sm:rounded-lg sm:px-0 sm:my-2 my-0  ">
 
     <p className="mb-0  justify-center w-2/4 sm:w-full flex ml-0">
@@ -29,7 +29,7 @@ const Main=({data=[]})=>{
     { data.images && data.images[0] ?
    
       
-      <img alt="first image"  style={{'height':'190px','width':'380px'}} className="
+      <img alt="first image"  style={{'height':'190px','width':'100%'}} className="
        rounded-tl rounded-tr object-cover mb-0 mt-1"
         src={BASE_IMG_URL+last(data.images).images} />:
 <FileJpgOutlined className="text-5xl" style={{
@@ -38,7 +38,7 @@ const Main=({data=[]})=>{
     }
     </p>
 
-<div className="w-3/4   sm:w-full mb-0  md:block 
+<div className="w-2/4   sm:w-full mb-0  md:block 
 md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
    
     <p className="text-gray-500 mt-0 mb-1">
@@ -69,7 +69,8 @@ md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
   <hr className="my-0 my-1 border-b-1 sm:border-b-2 border-gray-200" />
 
 <p className='mb-0 sm:mb-1 sm:mt-1 text-gray-500 text-sm   '> 
-<CheckOutlined className=" text-black text-sm mr-2" /> Instock
+<i className="hidden sm:flex">
+<CheckOutlined className=" text-black text-sm mr-2" /> Instock</i>
     <Tag className=" rounded-none capitalize mb-0  " color="pink" style={{
       'marginLeft':'15px','border':'0px solid',
       'borderRadius':'13px','minWidth':'60px','backgroundColor':'red','color':'white',
@@ -79,7 +80,7 @@ md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
 
 
 <span className="  ml-0 mt-1 sm:mt-3 mb-0 md:mb-3
-   text-md font-bold text-black  h-4 w-6 w-full" >
+   text-md font-bold text-black   sm:h-4 w-6 w-full" >
 <Typography.Text style={{'maxWidth':'100%'}} ellipsis={true}>  
    {data.title}</Typography.Text>
    </span> 
