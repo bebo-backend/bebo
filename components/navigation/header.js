@@ -51,7 +51,7 @@ const Header = ({tag=true}) => {
          cursor-pointer mr-3   leading-loose  hover:text-purple-300 
          p-1 rounded-sm  px-3 text-gray-900 text-base 
 
-         "><CloudUploadOutlined className=" text-base ml-4 sm:ml-1 mr-1" /> sell</a>
+         "><CloudUploadOutlined className=" text-md ml-4 sm:ml-1 mr-1" /> sell</a>
                 </Link>
         
         
@@ -87,15 +87,15 @@ const Header = ({tag=true}) => {
         <a type='ghost' className="
  text-md 
          cursor-pointer ml-3  leading-loose flex items-end hover:bg-teal-600 text-gray-900 
-         pt-1  px-5 border-0 border-teal-700 border-2 rounded
-1  px-3 border-0 border-blue-500 border-1 rounded
+         pt-1  px-5 border-0 
+1  px-3  rounded
 
           " href='/logout' onClick={async (e) => {
           e.preventDefault()
           await mutateUser(fetchJson('/api/auth/logout'))
           router.push('/login')
         }}>
-Logout
+Log out
         </a>
 
       ):(
@@ -104,9 +104,9 @@ Logout
         <a type='ghost' className="
  text-md 
          cursor-pointer ml-3  leading-loose flex items-end hover:bg-teal-600 text-gray-900 
-         pt-1  px-5 border-0 border-teal-700 border-2 rounded
+         pt-1  px-5 
 
-         ">Login</a>
+         ">Log in</a>
                 </Link>
       )}
 
