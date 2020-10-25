@@ -120,7 +120,7 @@ Sign out
       </nav>
       </div>
      
-{tag && (  <div className="flex inline-flex w-full px-1 md:px-1 mx-0 pb-2 pt-6 mt-32 sm:mt-20">
+{tag && (  <div className="flex inline-flex w-full px-1 md:px-1 mx-0 pb-2 pt-6 mt-4">
 <Tag />
 </div>)}
     

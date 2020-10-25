@@ -19,7 +19,7 @@ const handleInput=async e=>{
 
 return (
 
-    <div className="w-full mx-6 sm:mx-10 flex justify-center  m-0 items-start"> 
+    <div className="w-full mx-5 flex justify-center  m-0 items-start"> 
    
 <Input  className="h-8 " allowClear 
 onChange={handleInput} 
