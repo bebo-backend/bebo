@@ -21,7 +21,7 @@ return (
 
     <div className="w-full mx-6 sm:mx-10 flex justify-center  m-0 items-start"> 
    
-<Input  className="h-10 " allowClear 
+<Input  className="h-8 " allowClear 
 onChange={handleInput} 
 placeholder="Search for anything on beBO" prefix={<p className="m-1 rounded-full 
 p-1 font-extrabold text-xl text-yellow-500 ">B</p>}
