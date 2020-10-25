@@ -51,7 +51,7 @@ router.push(url)
 
     </p>
 
-<p className="bg-white h-12 flex items-center rounded" style={{'border':'1px solid silver'}}>
+<p className="bg-white h-12 flex items-center rounded my-6" style={{'border':'1px solid silver'}}>
     <Select  className="w-full" style={{'opacity':'1'}} onChange={value=>handleChange(value)} 
  placeholder={<span className="font-bold"> <EnvironmentFilled className="mr-2" /> Pick Region</span>} 
  showSearch={true} allowClear={true} bordered={false}>
