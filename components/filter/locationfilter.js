@@ -1,9 +1,8 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import {Radio,Empty} from "antd";
-import {EnvironmentOutlined} from '@ant-design/icons';
-// import {city} from "../../actions/location"
+import {Select,Empty} from "antd";
+import {EnvironmentFilled} from '@ant-design/icons';
 import gistfile1 from '../../contrib/gistfile1'
 
 
@@ -16,48 +15,75 @@ import gistfile1 from '../../contrib/gistfile1'
     constructor(props){
     super(props)
 
+this.state= {
+}
   
 }
 
 
+componentDidMount(){
 
+  this.setState({mobile:this.isMobile()})
+}
 
 handleChange=(e)=>{
-const filterurl = "&location="+e.target.value
+const filterurl = "&location="+e
 
-this.props.handleSearch(filterurl,e.target.value,'location')
+this.props.handleSearch(filterurl,e,'location')
 
 }
+
+isMobile=(e)=>{
+// console.log('width ',window.innerWidth <= 761)
+return window.innerWidth <= 600 
+}
+
     
     render(){
 
 // console.log('city '+this.props.city())
 
       return (
-<div className="my-3 w-full text-base" >
-<p className="mb-2 font-semibold"> Location <EnvironmentOutlined></EnvironmentOutlined></p>
+<div className="my-3 w-full text-base"  >
+<p className="mb-2 font-semibold"><EnvironmentFilled className="mr-2" /> Region </p>
 
-<div  className="ml-1 h-64 overflow-y-scroll">
-<Radio.Group onChange={e=>this.handleChange(e)}  >
+<div  className="ml-0" style={{'height':'310px'}} >
 
-{gistfile1 ? Object.values(gistfile1).map((e,index)=>(
+
+
+
+
+
+<Select  className="w-full mr-10" onChange={value=>this.handleChange(value)} 
+ placeholder="Pick region" showSearch={true} allowClear={true} open={this.state.mobile ?
+ this.props.menu?false:true : this.props.menu ? true:false}>
+
+
+
+
+{gistfile1 && Object.values(gistfile1).map((e,index)=>(
   Object.values(e.state.locals).map(city=>(
-
-  <Radio style={{'marginBottom':'8px'}} key={city.name} value={city.name}> { city.name + ', '+e.state.name}</Radio>
+   <Select.Option value={city.name} key={city.name}>{ city.name + ', '+e.state.name}</Select.Option>
+ 
     ))
   
 )) 
 
 
-: <Empty description="No City Available">
-City (0) found
-</Empty>
 
-}
+
+  }
 
 
 
-</Radio.Group>
+
+    
+
+    </Select> 
+
+
+
+
 </div>
 
         </div>

@@ -1,7 +1,7 @@
 
 import {Avatar,Rate,Tag,Statistic,Button,Modal} from 'antd';
 import { BASE_IMG_URL,BASE_URL } from '../../settings'
-import {CheckOutlined,UserOutlined,EnvironmentOutlined,CarOutlined,LoadingOutlined} from '@ant-design/icons';
+import {CheckOutlined,UserOutlined,EnvironmentFilled,CarFilled,LoadingOutlined} from '@ant-design/icons';
 import Link from 'next/link'
 import axios from 'axios'
 import {mutate} from 'swr'
@@ -68,7 +68,7 @@ axios.get(BASE_URL+"addrate/"+data.id+'/'+value+'/'+username).then(res=>{
 
 {contact && data && <Modal closable={false}  
       visible={contact} centered
-      title={<h2>Exclusive Seller: <Avatar src={BASE_IMG_URL+data.submit_user.image} style={{"width":'35px',
+      title={<h2 className="mt-10">Exclusive Seller: <Avatar src={BASE_IMG_URL+data.submit_user.image} style={{"width":'35px',
 'height':'35px'}} icon={<UserOutlined />}></Avatar> 
 
 <span  className="ml-3 font-bold text-base uppercase ">{data.submit_user.agencyname}
@@ -141,7 +141,7 @@ axios.get(BASE_URL+"addrate/"+data.id+'/'+value+'/'+username).then(res=>{
 
 
 
-<Link href={"/shop/"+data.submit_user.agencyname.replace('&','and')}>
+<Link href={"/@/"+data.submit_user.agencyname.replace('&','and')}>
 <a className="text-4xl font-bold mb-0 mx-0 cursor-pointer z-60 text-black"> {data.submit_user.agencyname} </a>
 </Link>
 <p className="my-0"></p>
@@ -163,13 +163,13 @@ className="rounded-full"> Exclusive</Tag>}</p>
 
 
 
-<p className="flex-inline shadow-lg p-2 rounded-lg pl-4">
-<p className="mb-0">
+<p className="flex-inline shadow-sm pt-2 rounded-lg pl-4">
+<p className="mb-0 pb-0">
   <span className='mr-3'>Negotiable:</span> 
   <span className='capitalize font-bold text-base mb-1'> {data.negotiable}  </span>
 </p>
 
-<p className="flex">
+<p className="flex pb-0">
 
  {data.from_price != 0 ? <>
 <Statistic  valueStyle={{'fontSize':'2.2rem'}} prefix={"₦"} value={data.from_price} ></Statistic>  
@@ -206,11 +206,11 @@ rounded-md mt-3 text-white  hover:bg-teal-500 my-4'>
 }
 
   <div onClick={e=>{ setContacts(true);}} className='btn w-full center h-10 flex
-   justify-center items-center bg-red-700
-rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
+   justify-center items-center 
+rounded-md mt-3 text-white  hover:bg-teal-500 my-4' style={{'backgroundColor':'#01718f'}}>
 
 <a className="sm:text-lg text-base font-extrabold text-white w-full "style={{'textAlign':'center'}}
-> View Contacts</a>
+> Show Contacts</a>
 
 
 </div>
@@ -225,7 +225,7 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 <Avatar src={BASE_IMG_URL+data.submit_user.image} style={{"width":'35px',
 'height':'35px'}} icon={<UserOutlined />}></Avatar> 
 
-<span  className="ml-3 font-bold text-base"><Link href={"/shop/"+data.submit_user.agencyname.replace('&','and')}>
+<span  className="ml-3 font-bold text-base"><Link href={"/@/"+data.submit_user.agencyname.replace('&','and')}>
 <a className="text-lg font-bold mb-0 mx-0 cursor-pointer z-60"> {data.submit_user.agencyname} </a>
 </Link>
 </span>
@@ -241,9 +241,9 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 <div className="odd:bg-gray-700 flex flex-col">
 
 <p className=" flex sm:block p-2 pl-4 rounded-lg my-0">
- <p className='mb-2 mr-2'> Acquire: </p>
+ <p className='mb-2 mr-2 font-semibold'> Acquire: </p>
 
-  <p className='capitalize text-base font-semibold mb-0'> {data.acquire_type} </p> 
+  <p className='capitalize text-base  mb-0'> {data.acquire_type} </p> 
 
 
 </p>
@@ -252,17 +252,17 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 
 { data.condition && 
 	<p className=" flex sm:block p-2 pl-4 rounded-lg my-0">
- <p className='mb-2 mr-2'> Condition: </p>
+ <p className='mb-2 mr-2 font-semibold'> Condition: </p>
 
-  <p className='capitalize text-base font-semibold mb-0'> {data.condition} </p> 
+  <p className='capitalize text-base  mb-0'> {data.condition} </p> 
 </p>
 
 }
 
 	<p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
- <p className='mb-2 mr-2'> Location: </p>
+ <p className='mb-2 mr-2 font-semibold'> Location: </p>
 
-  <p className='capitalize text-base font-semibold mb-0'><EnvironmentOutlined /> {data.address} </p> 
+  <p className='capitalize text-base  mb-0'><EnvironmentFilled className="mr-2 text-base" /> {data.address} </p> 
 </p>
 
 
@@ -274,9 +274,9 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 {data.duration &&
 
 <p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
- <p className='mb-2 mr-2'> Duration: </p>
+ <p className='mb-2 mr-2 font-semibold'> Duration: </p>
 
-  <p className='capitalize text-base font-semibold mb-0'> {data.dur_count} {
+  <p className='capitalize text-base  mb-0'> {data.dur_count} {
      getDuration(data.duration)} </p> 
 
 </p>
@@ -288,27 +288,27 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 
 
 <p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
- <p className='mb-2 mr-2'> Delivery <CarOutlined />: </p>
+ <p className='mb-2 mr-2 font-semibold'><CarFilled className="mr-2 text-base" /> Delivery : </p>
 
-  <p className='capitalize text-base font-semibold mb-0'> {data.with_delivery =='Yes'? " Provided by seller":" Not Provided"} </p> 
+  <p className='capitalize text-base  mb-0'> {data.with_delivery =='Yes'? " Provided by seller":" Not Provided"} </p> 
 </p>
 
 
 
 {data.delivery_company &&
 	<p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
- <p className='mb-2 mr-2'> Delivery Company: </p>
+ <p className='mb-2 mr-2 font-semibold'> Delivery Company: </p>
 
-  <p className='capitalize text-base font-semibold mb-0'> {data.delivery_company} </p> 
+  <p className='capitalize text-base  mb-0'> {data.delivery_company} </p> 
 </p>
 
 
 }
 
 	<div className="flex sm:block my-0 p-2 pl-4 rounded-lg">
- <p className='mb-2 mr-2'> Payments Method: </p>
+ <p className='mb-2 mr-2 font-semibold'> Payments Method: </p>
 
-  <p className='capitalize text-base font-semibold mb-0'>{data.payment_type} </p> 
+  <p className='capitalize text-base mb-0'>{data.payment_type} </p> 
 </div>
 
 

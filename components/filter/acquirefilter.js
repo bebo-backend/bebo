@@ -43,7 +43,7 @@ this.props.handleSearch(filterurl,e.target.value,'acquisition')
       return (
 <div className="my-3 text-base" >
 <p className="mb-2 font-semibold"> Acquisition</p>
-<span className="ml-5">
+<span className="ml-0">
 <Radio.Group onChange={e=>this.handleChange(e)}   buttonStyle="outline">
 
 <Radio value="sale">Sale</Radio><Radio value="rent">Rental</Radio>

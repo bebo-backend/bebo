@@ -59,11 +59,12 @@ return true
 
 
 
- return <div className="mb-20">
+ return <div className="mb-20 sm:mx-10">
 
- <h2 className='text-xl md:text-2xl font-bold mb-5'> PICTURE(S) UPLOAD <CloudUploadOutlined className="mx-5"/>  </h2>
+ <h2 className='text-xl md:text-2xl font-bold mb-5  text-gray-700'> PICTURE(S) UPLOAD <CloudUploadOutlined className="mx-5"/>  </h2>
  <hr className="mb-5" />
 
+<div className="p-4 bg-gray-200" style={{'border':'1px dashed '}}>
  <div className="block w-full">
 <div className="flex justify-center" style={{'textAlign':'center'}}>
 <Upload onRemove={file=>removeImage(file)} beforeUpload={(file,FileList)=>{updateImage(file,FileList); 
@@ -88,6 +89,7 @@ acknowledge that you agree to beBO Shop's<Button type="link">Terms of  Service a
 Community Guidelines </Button> </p>
 
 
+</div>
 </div>
 
 

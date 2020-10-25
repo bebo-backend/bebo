@@ -37,7 +37,7 @@ this.props.handleSearch(filterurl,e.target.value,'duration')
       return (
 <div className="my-3 w-full text-base" >
 <p className="mb-2 font-semibold"> Duration </p>
-<span className="ml-5">
+<span className="ml-0">
 <Radio.Group onChange={e=>this.handleChange(e)}  buttonStyle="solid">
 
 <Radio value="weekly"> Weekly</Radio><br/>

@@ -14,16 +14,17 @@ const Step1=({handlechange,data})=>{
 
 
 
- return <form className="mb-10 sm:mr-10">
- <h2 className='text-xl md:text-2xl font-bold mb-5 uppercase'> Details:  </h2>
- <hr className="mb-3" />
+ return <form className="mb-10 sm:mx-10">
+ <h2 className='text-xl md:text-2xl font-bold mb-5 uppercase text-gray-700'> Details:  </h2>
+ <hr className="mb-8" />
 
 
 <div className="grp-input">
-<label className="capitalize font-semibold my-2 text-base " htmlFor="title">Title (*) </label>
+<label className="capitalize font-semibold my-2 text-lg  " htmlFor="title">Title * </label>
 <div>
-<Input name="title" prefix={<InfoCircleFilled />}   className="my-4 h-12   " required allowClear
-onChange={e=>handlechange(e.target.value,'title')} autoFocus  autoComplete="true"  placeholder="eg. 3 Bedroom Flats, New Gks Generator(Black)"
+<Input name="title" prefix={<InfoCircleFilled />}   className="my-4 h-12 mb-8   " required allowClear
+onChange={e=>handlechange(e.target.value,'title')} autoFocus  autoComplete="true" 
+ placeholder="eg. 3 Bedroom Flats, New Gks Generator(Black)" value={data['title']} 
 />
 
 
@@ -32,12 +33,14 @@ onChange={e=>handlechange(e.target.value,'title')} autoFocus  autoComplete="true
 </div>
 
 <div className="grp-input">
-<label className="capitalize text-md font-semibold my-2 "  htmlFor="cate">Category (*) </label>
+<label className="capitalize text-lg font-semibold my-2 "  htmlFor="cate">Category * </label>
 
-<p>
-<Cascader  className="my-4 h-12 border-2 border-gray-300 hover:border-2 hover:border-blue-300" style={{'marginTop':'10px'}} bordered={false}
+<p className="bg-white my-4 mb-8 py-1  flex items-center w-full  rounded" style={{'border':'1px solid silver'}}>
+<Cascader  className="h-8 w-full  hover:border-2 hover:border-blue-300" bordered={false}
 displayRender={(e,f)=>e } expandTrigger="hover" 
-placeholder="Select Category" options={Options} onChange={e=>handlechange(e,'category')} />
+ options={Options} onChange={e=>handlechange(e,'category')} 
+placeholder={ data['category'] ?data['category']:"Select Category"}
+ />
 
 </p>
 </div>
@@ -47,9 +50,10 @@ placeholder="Select Category" options={Options} onChange={e=>handlechange(e,'cat
 
 <div className="grp-input">
 
-<label className="capitalize text-md font-semibold my-2 " htmlFor="locn">Address (*) </label>
-<Input  className="my-4 h-12 " name="locn" required allowClear  prefix={<EnvironmentFilled/>}
-onChange={e=>handlechange(e.target.value,'location')}  autoComplete="true"  placeholder="eg. Ikeja, Lagos State"
+<label className="capitalize text-lg font-semibold my-2 " htmlFor="locn">Address * </label>
+<Input  className="my-4 h-12 mb-8" name="locn" required allowClear  prefix={<EnvironmentFilled/>}
+onChange={e=>handlechange(e.target.value,'location')}
+ value={data['location']}  autoComplete="true"  placeholder="eg. Ikeja, Lagos State"
 />
 
 </div>
@@ -61,16 +65,18 @@ onChange={e=>handlechange(e.target.value,'location')}  autoComplete="true"  plac
  <Col>
  
  
-<label className="capitalize text-md font-semibold my-2 "  htmlFor="email">Shop E-mail (*)</label>
-<Input  className="my-4 h-12   " name="email" required allowClear prefix={<MailFilled/>} type="email"  
-onChange={e=>handlechange(e.target.value,'email')}   autoComplete="true"  placeholder="eg. beBO@gks.co"
+<label className="capitalize text-lg font-semibold my-2 "  htmlFor="email">E-mail *</label>
+<Input  className="my-4 h-12  mb-8 " name="email" required allowClear prefix={<MailFilled/>} type="email"  
+onChange={e=>handlechange(e.target.value,'email')}   autoComplete="true" value={data['email']}
+  placeholder="eg. beBO@gks.co"
 /> 
 </Col>
 
  <Col>  
-<label  htmlFor="tel" className="capitalize text-md font-semibold my-2 " >Shop Phone-No (*)</label>
-<Input className="my-4 h-12   " name="tel" required allowClear prefix={<PhoneFilled/>} type="tel" 
-onChange={e=>handlechange(e.target.value,'tel')}  autoComplete="true"  placeholder="i.e. 08061344475, 08061344475"
+<label  htmlFor="tel" className="capitalize text-lg font-semibold my-2 " >Phone-No *</label>
+<Input className="my-4 h-12   mb-8" name="tel" required allowClear prefix={<PhoneFilled/>} type="tel" 
+onChange={e=>handlechange(e.target.value,'tel')}  autoComplete="true"  
+value={data['tel']} placeholder="i.e. 08061344475, 08061344475"
 /> 
 
 
@@ -84,9 +90,10 @@ onChange={e=>handlechange(e.target.value,'tel')}  autoComplete="true"  placehold
 
 <div className="grp-input">
 
-<label htmlFor="tel" className="capitalize text-md font-semibold my-2 " >Shop Website (Optional) </label>
-<Input className="my-4 h-12   " name="website"  required allowClear prefix={"http://"} type="text"
- onChange={e=>handlechange(e.target.value,'website')}  autoComplete="true"  placeholder="i.e. www.alaba21store.com"
+<label htmlFor="tel" className="capitalize text-lg font-semibold my-2 " >Website (Optional) </label>
+<Input className="my-4 h-12   mb-8" name="website"  required allowClear prefix={"http://"} type="text"
+ onChange={e=>handlechange(e.target.value,'website')} 
+ value={data['website']} autoComplete="true"  placeholder="i.e. www.alaba21store.com"
 /> 
 </div>
 
@@ -94,9 +101,9 @@ onChange={e=>handlechange(e.target.value,'tel')}  autoComplete="true"  placehold
 
 <div className="grp-input">
 
-<label htmlFor="tel" className="capitalize text-md font-semibold my-2 " >Whatsapp Contact (Optional) </label>
-<Input className="my-4 h-12   " name="whatsapp_no" required allowClear prefix={<WhatsAppOutlined />} type="text"
-onChange={e=>handlechange(e.target.value,'whatsapp_no')}    autoComplete="true"  placeholder="Enter your whatsapp contact"
+<label htmlFor="tel" className="capitalize text-lg font-semibold my-2 " >Whatsapp Contact (Optional) </label>
+<Input className="my-4 h-12 " name="whatsapp_no" required allowClear prefix={<WhatsAppOutlined />} type="text"
+onChange={e=>handlechange(e.target.value,'whatsapp_no')}  value={data['whatsapp_no']}   autoComplete="true"  placeholder="Enter your whatsapp contact"
 /> 
 </div>
 

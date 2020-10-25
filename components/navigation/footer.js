@@ -26,7 +26,7 @@ const Footer = () => {
     <h2 className="text-lg font-bold"> Buy & Sell </h2>
     
     <li className=" text-base">Registration </li>
-    <li  className=" text-base"> Buying & renting help</li>
+    <li  className=" text-base"> Advertise</li>
     <li  className=" text-base"> Start selling </li>
     <li  className=" text-base">Delivery </li>
     
@@ -48,6 +48,7 @@ const Footer = () => {
     <h2 className="text-lg font-bold"> About beBO  </h2>
     
     <li className=" text-base">Company info  </li>
+    <li className=" text-base">We are hiring </li>
     <li  className=" text-base">  Advertise with us</li>
     <li  className=" text-base"> Policies </li>
     
@@ -59,7 +60,7 @@ const Footer = () => {
     <ul className="m-3" > 
     <h2 className="text-lg font-bold">  beBo sites </h2>
     
-    <li className=" text-base">Lagos </li>
+    <li className=" text-base">Nigeria </li>
 
     <li  className=" text-base">  Powered by Gks </li>
    

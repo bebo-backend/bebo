@@ -133,7 +133,7 @@ const steps=(step)=>{
 >
 
 
-      <Steps.Step title={<p className="font-bold hidden sm:block capitalize"> DETAILS </p>}>
+      <Steps.Step title={<p className="font-bold hidden sm:block capitalize "> DETAILS </p>}>
 
       </Steps.Step>
        <Steps.Step   title={<p className="font-bold hidden sm:block capitalize"> MORE DETAILS </p>} >
@@ -211,7 +211,7 @@ const stepMove=(value)=>{
 
 
 
-<div className="bg-white py-3 sm:mx-5  my-5 text-white" style={{'backgroundColor':'#01718f'}}>
+<div className="bg-white py-3 mx-0  my-5 text-white" style={{'backgroundColor':'#01718f'}}>
     <div className="flex w-full justify-center mt-2 mb-0 " >  
     <span className="text-4xl font-extrabold mb-0 text-white">Sell Hub</span>
     
@@ -221,7 +221,7 @@ const stepMove=(value)=>{
 
     <div className="flex w-full justify-center mt-0 mb-2 ">  
     <p className=" text-lg text-white mx-3" style={{'textAlign':'center'}}>
-    Upload item to your beBO account for Sale, Rental or Exchange
+   Post your product (ads) for Sale, Rental and Exchange 
     </p> 
     </div>
 
@@ -234,12 +234,13 @@ const stepMove=(value)=>{
 
 
 <div className="flex w-full justify-left">
-      <div className=" w-full  my-8 mx-0 px-5 sm:px-10  sm:px-10 mt-0 bg-white py-5 mt-3 rounded-lg ">
+      <div className=" w-full sm:mx-20  my-8 mx-0 px-5 sm:px-10  sm:px-10 mt-0 
+      bg-white py-5 mt-3 rounded-lg shadow-lg pt-10  ">
 
                     {step==0 &&
 
                         <div>
-                      <Step1 handlechange={onChange}   />
+                      <Step1 handlechange={onChange} data={formValue}   />
                     
                       {stepMove(0)}
                       </div>
@@ -271,7 +272,7 @@ const stepMove=(value)=>{
   {step==3 &&
     <div>
   
-  <Step4 handlechange={onChange}   />
+  <Step4 handlechange={onChange}  data={formValue}  />
   {stepMove(3)}
   </div>
   
@@ -282,7 +283,7 @@ const stepMove=(value)=>{
   
     <div>
   
-  <Step5 handlechange={onChange} submitForm={submitForm}  />
+  <Step5 handlechange={onChange} submitForm={submitForm} data={formValue}  />
   {stepMove(4)}
   </div>
   

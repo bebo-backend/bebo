@@ -2,7 +2,8 @@ import GroupPics from './group-pictures'
 import {Empty,Button,Avatar,Input,Rate} from 'antd';
 import { BASE_IMG_URL,BASE_URL } from '../../settings'
 import {useState} from 'react'
-import {LeftOutlined,RightOutlined,ArrowRightOutlined,UserOutlined,HeartOutlined} from '@ant-design/icons';
+import {LeftOutlined,RightOutlined,ArrowRightOutlined,UserOutlined,ClockCircleFilled,
+EyeFilled} from '@ant-design/icons';
 import Review from './reviews'
 import Description from './description'
 import ItemInfo from './item-info'
@@ -10,6 +11,8 @@ import Link from 'next/link'
 import {useRouter} from 'next/router'
 import axios from 'axios'
 import {mutate} from 'swr'
+import moment from 'moment'
+
 
 const Index=({data,user})=>{
 
@@ -19,6 +22,15 @@ const [step, setStep] = useState(0)
 const [stateReview, setStateReview] = useState(0)
 const router = useRouter()
 
+const createDate=(date)=>{
+const newdate = date.split('T')[0]
+const time = date.split('T')[1]
+
+return date
+
+
+
+}
 
 const submitReview=()=>{
 
@@ -59,7 +71,7 @@ const stepMove=(value)=>{
 
 
 
- return <div className="mx-0 md:ml-1 mb-10 md:mx-0 w-full rounded-lg ">
+ return <div className="mx-0 md:ml-1 mb-2 md:mx-0 w-full rounded-lg ">
 <div className=" p-2 justify-center px-0 md:justify-left md:px-0  flex overflow-y-hidden"
  style={{'maxHeight':'600px'}}>
 <GroupPics  images={data.images && data.images} step={step} />
@@ -68,7 +80,7 @@ const stepMove=(value)=>{
 
 
 
-<div className="sm:w-5/6 mx-1 flex" style={{'maxHeight':'530px'}}>  
+<div className="sm:w-5/6 mx-0 mb-4 flex" style={{'maxHeight':'530px'}}>  
 
 
 
@@ -80,6 +92,12 @@ const stepMove=(value)=>{
 
 
 </div>
+
+</div>
+
+<div className="flex text-gray-700">
+<p className="mx-3"><ClockCircleFilled className="mr-2 text-base" /> Posted {createDate(data.created)} </p> | <p className="mx-3">
+<EyeFilled  className="mr-2 text-base" /> {data.views} views </p>
 
 </div>
 <div>  

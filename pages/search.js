@@ -9,7 +9,7 @@ import Filters from '../components/main/filters'
 import { BASE_URL } from '../settings'
 import axios from 'axios'
 import Link from 'next/link'
-import {Breadcrumb,Cascader,Typography,Tag} from "antd";
+import {Breadcrumb,Cascader,Typography,Tag,Empty} from "antd";
 import {sortBy,reverse} from 'lodash'
 import {useState,useEffect} from 'react'
 import {LoadingOutlined,MenuOutlined} from '@ant-design/icons';
@@ -270,12 +270,13 @@ setMenu(true)
    <p className=" text-lg flex justify-between pt-3 pb-3 sm:pb-0 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
     text-white" style={{'backgroundColor':'#01718f'}} >
 <p className="  w-full">
-<Breadcrumb className="flex w-full" Seperator=" > ">
-
+<Breadcrumb className="flex w-full">
+ <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >Ads
+       </Breadcrumb.Item>
 
       <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >{search}
        </Breadcrumb.Item>
-      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-white" >Page: {page}, ({Object.keys(ssrData.res).length}) products found </Breadcrumb.Item>
+      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-white" >Page: {page}, ( {Object.keys(ssrData.res).length} products found ) </Breadcrumb.Item>
 
  
       </Breadcrumb> 
@@ -299,7 +300,7 @@ setMenu(true)
 }}> 
 
 
-<Filters search={search} handleSearch={handleSearch} clearFilters={clearFilters}  />
+<Filters search={search} handleSearch={handleSearch} clearFilters={clearFilters} menu={menu}  />
 
 </div>
 
@@ -337,8 +338,9 @@ Filters:
 
   </div>
 
- <div className="mr-5 md:mr-0 w-full " style={{'marginTop':'-39px'}}>
-  <div className="w-full  block sm:inline-block
+{Object.keys(ssrData.res).length > 0 ?
+ <div className="mr-5 md:mr-0 w-full  " style={{'marginTop':'-39px'}}>
+  <div className="w-full  block sm:inline-block 
 justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
 
 {ssrData.res.map(e=>(
@@ -347,20 +349,31 @@ justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
   ))}
 </div>
 
-
+{ssrData.next &&
   <div className="mx-auto mt-10 mb-20 w-1/2 md:w-1/3">
           <button
             className="bg-red-600 border-solid 
             border-2 hover:bg-white border-red-600 text-white 
             hover:text-red-600 font-bold py-2 px-4 rounded-full w-full"
-            disabled={!ssrData.next}
+            disabled={!data.next}
             onClick={e=>setPage(page+1)}
           >
-            {ssrData.next ?'Load More Product': 'No Product (0)'}
+              'More Product'
           </button>
 
         </div>
+        }
  </div>
+
+:
+
+
+<Empty description="No product found">(0) product found</Empty>
+
+
+
+} 
+
 
 </div>
 
@@ -631,12 +644,14 @@ setMenu(true)
    <p className=" text-lg flex justify-between pt-3 pb-3 sm:pb-0 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
     text-white" style={{'backgroundColor':'#01718f'}} >
 <p className="  w-full">
-<Breadcrumb className="flex w-full" Seperator=" > ">
+<Breadcrumb className="flex w-full" >
 
+ <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >Ads
+       </Breadcrumb.Item>
 
       <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >{search}
        </Breadcrumb.Item>
-      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-white" >Page: {page}, ({Object.keys(data.res).length}) products found </Breadcrumb.Item>
+      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-white" >Page: {page}, ( {Object.keys(data.res).length} products found ) </Breadcrumb.Item>
 
  
       </Breadcrumb> 
@@ -660,7 +675,7 @@ setMenu(true)
 }}> 
 
 
-<Filters search={search} handleSearch={handleSearch} clearFilters={clearFilters}  />
+<Filters search={search} handleSearch={handleSearch} clearFilters={clearFilters} menu={menu}  />
 
 </div>
 
@@ -698,6 +713,7 @@ Filters:
 
   </div>
 
+{Object.keys(data.res).length > 0 ?
  <div className="mr-5 md:mr-0 w-full  " style={{'marginTop':'-39px'}}>
   <div className="w-full  block sm:inline-block 
 justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
@@ -708,7 +724,7 @@ justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
   ))}
 </div>
 
-
+{data.next &&
   <div className="mx-auto mt-10 mb-20 w-1/2 md:w-1/3">
           <button
             className="bg-red-600 border-solid 
@@ -717,11 +733,24 @@ justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
             disabled={!data.next}
             onClick={e=>setPage(page+1)}
           >
-            {data.next ?'Load More Product': 'No Product (0)'}
+              'More Product'
           </button>
 
         </div>
+        }
  </div>
+
+:
+
+
+<Empty description="No product found">(0) product found</Empty>
+
+
+
+} 
+
+
+
 
 </div>
 

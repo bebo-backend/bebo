@@ -15,7 +15,7 @@ import useSWRInfinite from "swr";
 
 const SgProfile = () => {
   const { user,mutateUser } = useUser({ redirectTo: '/login' })
-const LIMIT = 25
+const LIMIT = 40
 const [page,setPage] = useState(1)
 const [update,setUpdate] = useState(false)
 
@@ -74,7 +74,7 @@ style={{"width":'137px','height':'137px'
 <p className="flex w-full justify-center">
 <h1 className="text-4xl font-extrabold m-0 px-5 text-white">{account.data.agencyname}</h1> 
 </p>
-<span  className="pl-5 text-white m-0 text-base wrap">www.bebo.vercel.app/shop/{account.data.agencyname}  </span>
+<span  className="pl-5 text-white m-0 text-base wrap">www.bebo.vercel.app/@/{account.data.agencyname}  </span>
 <table className="table m-2">
 
 <tr >

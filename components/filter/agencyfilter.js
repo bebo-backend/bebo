@@ -60,7 +60,7 @@ const {getTopCompany} = this.state
 <p className="mb-0 font-semibold"> Shops</p>
 
 <div  className="address">
-<ul className="ml-5" style={{'paddingLeft':'0px',
+<ul className="ml-0" style={{'paddingLeft':'0px',
 'overflowY':'scroll','overflow-x':'hidden','maxHeight':'300px'}}>
 
 {getTopCompany ? getTopCompany.map((e,index)=>(

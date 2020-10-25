@@ -58,7 +58,7 @@ return (
   <Layout title="My cart">
 
   
-<div className="flex-inline sm:flex mt-0 pt-5 sm:pl-5 w-full bg-white sm:pr-5"> 
+<div className="flex-inline sm:flex mt-0 pt-1 sm:pl-1 w-full bg-white sm:pr-1"> 
 
 
 
@@ -138,7 +138,7 @@ return (
 
 {content && 
 
-<div className="w-full sm:m-6  shadow p-1 sm:p-5 sm:rounded-lg text-white p-2 " style={{'backgroundColor':'#01718f'}}> 
+<div className="w-full sm:my-6  shadow p-1 sm:p-5  text-white p-2 " style={{'backgroundColor':'#01718f'}}> 
 <div className="flex-inline sm:flex justify-between mb-5" >
 
 <p className="text-2xl mb-0 font-bold">My Shopping Bag: {Object.keys(content.data).length} items</p>

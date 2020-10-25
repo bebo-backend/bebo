@@ -92,9 +92,7 @@ setForm(data)
 
   return (
     <Layout title="Sign up" >
-      <div className=" flex w-full justify-center flex-no-wrap" style={{'backgroundColor':'#01718f'}}>
-
-      <Modal visible={created} centered title="Registration successful"  okType="primary" okText={
+     <Modal visible={created} centered title="Registration successful"  okType="primary" okText={
      <a onClick={e=>router.push('/login')}> Login to Continue </a>
         
              } cancelText={<a onClick={e=>{e.preventDefault();
@@ -109,7 +107,27 @@ setForm(data)
         
         
                     </Modal>
+
+
+
+      <div className=" flex w-full flex-col sm:flex-row justify-center sm:flex-no-wrap" style={{'backgroundColor':'#01718f'}}>
+
+     
+<div className="text-white flex flex-col justify-start items-center mt-24 font-extrabold px-4 sm:w-1/2  ">
+
+<span className="text-3xl sm:text-6xl font-extrabold my-3 ">Advertise... </span>
+
+<p className=" text-lg sm:text-3xl text-yellow-500" style={{'textAlign':'center',
+}}> your product on beBO for Sale, Rent and Exchange  </p>
+
+</div>
+
         <RegisterForm  errorMessage={errorMsg} onSubmit={handleSubmit} onChange={onChange} load={Load} />
+
+
+      
+
+
       </div>      
 
     </Layout>

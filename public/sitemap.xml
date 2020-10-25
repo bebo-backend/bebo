@@ -35,6 +35,10 @@
                       </url>
                   
                       <url>
+                          <loc>bebo.vercel.app//@/[shopname]</loc>
+                      </url>
+                  
+                      <url>
                           <loc>bebo.vercel.app//blog/[id]</loc>
                       </url>
                   
@@ -44,10 +48,6 @@
                   
                       <url>
                           <loc>bebo.vercel.app//dashboard/profile</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>bebo.vercel.app//shop/[shopname]</loc>
                       </url>
                   
                       <url>

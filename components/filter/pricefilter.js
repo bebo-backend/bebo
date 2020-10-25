@@ -85,7 +85,7 @@ this.props.handleSearch(filterurl,e.target.value,'price')
 <div className="mb-3 mt-4 text-base" >
 
 <p  className="mb-3 font-semibold">Price (₦) </p> 
-<table className="ml-5">
+<table className="ml-0">
 
 <tbody>
 

@@ -14,12 +14,12 @@ return (
 
   <div className="sm:mx-0  py-2 bg-white rounded-lg mt-3">
 
-    <div className="mt-5 text-black bg-white sm:px-3 py-1   leading-tight w-full mb-5
+    <div className="mt-2 text-black bg-white sm:px-3 py-1   leading-tight w-full mb-5
     " > 
 
     
        
-    <p className="text-lg md:text-2xl ml-4 font-bold mb-0 text-gray-900 md:ml-5 md:px-5  py-3 center leading-tight w-full
+    <p className="text-lg md:text-2xl ml-4 font-bold mb-0 text-gray-900 md:ml-5 md:px-5  pb-3 center leading-tight w-full
      " style={{'textAlign':'left'}}>
  Trending bebo accounts
    <Link href='/top-shops'>
@@ -40,7 +40,7 @@ justify-left mb-0  md:mx-3  ">
 
   data.map((data,key)=>(
 
-    <Link href={"/shop/"+data.submit_user.agencyname.replace('&','and')}
+    <Link href={"/@/"+data.submit_user.agencyname.replace('&','and')}
 
     >
 
@@ -56,7 +56,7 @@ justify-left mb-0  md:mx-3  ">
     { data.images && data.images[0] ?
       
       <img alt="first image" className="
-      object-cover mt-6 mr-0 md:mt-3 rounded-full h-20 w-20 sm:h-40 sm:w-40 " src={BASE_IMG_URL+last(data.images).images} />:
+      object-cover mt-6 mr-0 md:mt-3 rounded-full h-20 w-20 sm:h-32 sm:w-32 " src={BASE_IMG_URL+last(data.images).images} />:
 <FileJpgOutlined style={{
   'fontSize':'70px','textAlign':'center'
 }}  /> 
@@ -64,10 +64,10 @@ justify-left mb-0  md:mx-3  ">
     </p>
 
 <div className="w-3/4   sm:w-full mb-0 mb:4  md:block 
-md:mb-3 flex flex-col justify-center items-left ml-4 sm:ml-0 sm:mx-3" 
+md:mb-3 flex flex-col justify-center items-left ml-2 sm:ml-0 sm:mx-3" 
 >
-    <p className="text-gray-500 mb-4 sm:mb-2 mx-0 my-1 md:my-1">
-    <Rate style={{'fontSize':'15px'}} defaultValue={0} value={data.submit_user.rate}
+    <p className="text-gray-500 mb-2 sm:mb-2 mx-0 my-1 md:my-1" style={{'zIndex':'0'}}>
+    <Rate style={{'fontSize':'15px','zIndex':'0'}} defaultValue={0} value={data.submit_user.rate}
      allowClear={false} disabled> 
     </Rate> ({data.submit_user.rate_count}) </p>
 

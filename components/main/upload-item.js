@@ -24,7 +24,7 @@ return (
    </p>
    
 <div style={{'textAlign':'center'}} className=" flex flex-1 items-start text-lg mt-0 pt-0 ">   
-Create a beBO account to Sell, Rent or Exchange your product </div>  
+Create a beBO account to advertise your product for Sell, Rent and Exchange </div>  
 </div>
 
 </div>

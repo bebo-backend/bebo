@@ -6,22 +6,68 @@ import TopCompany from '../components/main/top-company'
 import DailyDeals from '../components/main/daily-deals'
 import { BASE_URL } from '../settings'
 import axios from 'axios'
+import {Select} from "antd";
+import {EnvironmentFilled} from '@ant-design/icons';
+import gistfile1 from '../contrib/gistfile1'
+import {useRouter} from 'next/router'
 
 
 
 
+const Home = ({topCompany,dailyDeals}) => {
 
-const Home = ({topCompany,dailyDeals}) => (
+const router = useRouter()
+
+const handleChange=(e)=>{
+
+const page=1
+const LIMIT=44
+
+const url ="search?search="+e+"&page="+page+"&limit="+LIMIT
+
+
+router.push(url)
+
+}
+    
+
+
+  return (
   <Layout>
 
 
     <div className="m-0 px-2 py-2" >   
+
+
+
+
+
+
 
   <p className="text-lg md:text-3xl  font-extrabold rounded-lg
   mt-3 text-black  sm:px-5 py-3 md:py-1 center w-full
      " style={{'textAlign':'center'}}>
     Find things you'll love. Support independent sellers. Only on beBO.
 
+    </p>
+
+<p className="bg-white h-12 flex items-center rounded" style={{'border':'1px solid silver'}}>
+    <Select  className="w-full" style={{'opacity':'1'}} onChange={value=>handleChange(value)} 
+ placeholder={<span className="font-bold"> <EnvironmentFilled className="mr-2" /> Pick Region</span>} 
+ showSearch={true} allowClear={true} bordered={false}>
+
+{gistfile1 && Object.values(gistfile1).map((e,index)=>(
+  Object.values(e.state.locals).map(city=>(
+   <Select.Option value={city.name} key={city.name}>{ city.name + ', '+e.state.name}</Select.Option>
+ 
+    ))
+  
+)) 
+  }
+
+
+
+    </Select> 
     </p>
      </div>  
 
@@ -31,7 +77,7 @@ const Home = ({topCompany,dailyDeals}) => (
 
     <TopCompany data={topCompany} />
 
- <div className="flex  flex-wrap md:flex-no-wrap justify-evenly mb-8 pt-5 mx-0  md:px-5 ">
+ <div style={{'backgroundColor':'#01718f'}} className="flex  flex-wrap md:flex-no-wrap justify-evenly mb-8 py-5 mx-0  md:px-5 ">
 
 
  <UploadItem />
@@ -46,6 +92,7 @@ const Home = ({topCompany,dailyDeals}) => (
 
   </Layout>
 )
+}
 
 export default Home
 

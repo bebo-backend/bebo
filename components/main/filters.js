@@ -16,7 +16,7 @@ import DeliveryFilter from '../filter/deliveryfilter'
 
 
 
-function Filters({search="",handleSearch=e=>e,clearFilters}){
+function Filters({search="",handleSearch=e=>e,clearFilters,menu}){
 
 return (
 
@@ -24,8 +24,13 @@ return (
     md:mx-0 py-2 pl-6 sm:border-b-0 border-b-2 border-gray-400  " > 
 
 <div className="flex justify-end">
-    <Button className="bg-blue-500 text-white  p-2 px-1 
-    rounded cursor-pointer hover:bg-blue-300" onClick={clearFilters}>Clear x</Button>
+            <span className="
+ text-md 
+         cursor-pointer ml-3  leading-loose flex items-end bg-teal-600 text-white hover:bg-teal-300
+         pt-1  px-2 border-0 
+1  px-3  pb-1 w-20 mx-1
+
+          "  onClick={clearFilters}>Clear x</span>
     </div>
 
  
@@ -33,7 +38,7 @@ return (
 
 
 
-
+<LocationFilter search={search} handleSearch={handleSearch} menu={menu} ></LocationFilter>
 <AcquireFilter search={search} handleSearch={handleSearch}></AcquireFilter>
 
 
@@ -49,7 +54,7 @@ return (
 
 <DeliveryFilter search={search} handleSearch={handleSearch}></DeliveryFilter>
 
-<LocationFilter search={search} handleSearch={handleSearch}></LocationFilter>
+
 
 
   <DurationFilter search={search} handleSearch={handleSearch}></DurationFilter>

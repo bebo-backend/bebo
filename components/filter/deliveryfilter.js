@@ -33,7 +33,7 @@ this.props.handleSearch(filterurl,e.target.value,'delivery')
       return (
 <div className="my-3 w-full text-base" >
 <p className="mb-2 font-semibold"> With Delivery</p>
-<span className="ml-5">
+<span className="ml-0">
 <Radio.Group  onChange={e=>this.handleChange(e)} >
 
 <Radio value="yes">Yes</Radio><Radio value="no">No</Radio>

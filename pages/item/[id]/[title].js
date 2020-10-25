@@ -8,33 +8,57 @@ import ItemInfo from '../../../components/item-view/item-info'
 import useUser from '../../../lib/useUser'
 import Cartrecommend from '../../../components/cartrecommend'
 
+import {Breadcrumb,Typography} from "antd";
+import {fetcher} from '../../../lib/ax-fetch'
+import useSWRInfinite from "swr";
 
 
 
 
+const Item = ({id}) =>{
 
-const Item = ({data}) =>{
 
-
-  {data && axios.get(BASE_URL+"addview/"+data.id)}
 
   const router = useRouter();
   const { user, mutateUser } = useUser()
+const response = axios.get(BASE_URL+"addview/"+id)
+
+const {data,error,mutate,size,setSize,isReachingEnd}=useSWRInfinite((index,previousPageData)=>{
+
+if (previousPageData && previousPageData.length === 0) return null
+if (!index || index===0) return BASE_URL+'toview/'+id
+
+return BASE_URL+'toview/'+id
+
+},fetcher)
+
+if (!data) return  <p className="flex justify-center items-center h-screen w-sreen text-4xl text-pink-600"> <LoadingOutlined /> </p>;
 
 
-const arrayData = []
-if(data){
-  arrayData.push(data)}
-
-  if (router.isFallback) {
-  return <p className="flex justify-center items-center h-screen w-sreen text-4xl text-pink-600"> <LoadingOutlined /> </p>;
-    
-  }
 
 
 return (
 
   <Layout title={data && data.title}>
+
+   {data && <p className=" text-2xl flex justify-between pt-3 pb-3 sm:pb-0 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
+    text-white" style={{'backgroundColor':'#01718f'}} >
+<p className="  w-full">
+<Breadcrumb className="flex w-full" >
+
+  <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >Ad
+       </Breadcrumb.Item>
+
+      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >{data.title}
+       </Breadcrumb.Item>
+      
+ 
+      </Breadcrumb> 
+
+      </p> 
+      </p>
+}
+
 
   { data && 
 <div className="flex-inline sm:flex mt-0 pl-1 shadow-none pt-5 md:pl-1 w-full bg-white pr-5"> 
@@ -62,7 +86,7 @@ return (
 }
 
 
-{Object.keys(arrayData).length > 0 && <Cartrecommend content={arrayData} /> }
+{Object.keys(data).length > 0 && <Cartrecommend content={response.data} /> }
 
   </Layout>
 )
@@ -75,37 +99,38 @@ export default Item
 
 
 
-export const getStaticPaths= async ()=>{
+// export const getStaticPaths= async ()=>{
 
-const  response = await axios.get(BASE_URL+'getallitem')
+// const  response = await axios.get(BASE_URL+'getallitem')
 
-  const paths = response.data.map((item) => ({
-    params: { 'id': String(item.id),'title':String(item.title)},
-  }))
-
-
-
-  return {
-    paths,
-    fallback:true
-  }
-}
+//   const paths = response.data.map((item) => ({
+//     params: { 'id': String(item.id),'title':String(item.title)},
+//   }))
 
 
 
+//   return {
+//     paths,
+//     fallback:true
+//   }
+// }
 
-export const getStaticProps = async({params})=>{
 
-const {id}=params
 
-const  response = await axios.get(BASE_URL+'toview/'+id)
 
+export const getServerSideProps = async({query})=>{
+
+const {id}=query
+
+// const  response = await axios.get(BASE_URL+'toview/'+id)
+axios.get(BASE_URL+"addview/"+id)
 
 
   return {
     props:{
-      data:response.data ?response.data:[]
-    },revalidate:1
+      // data:response.data ?response.data:[],
+      id
+    }
   }
 
 

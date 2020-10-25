@@ -27,7 +27,7 @@ return (
    
 <div style={{'textAlign':'center'}} className=" flex flex-1 items-start text-lg mt-0 pt-0 ">   
 
-Be an independent seller by uploading item with Sell Hub to your beBo account
+Be an independent seller by posting your product with Sell Hub on beBO
 
 </div>   
  
