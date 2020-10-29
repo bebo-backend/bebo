@@ -87,7 +87,7 @@ const Header = ({tag=true}) => {
       {user?.isLoggedIn ? (
 
         <Button type='primary' className="
- text-lg font-bold 
+ text-md font-bold 
          cursor-pointer ml-3  leading-loose  text-white 
          pt-1  px-1 border-0  font-sans
  pb-1 w-20 mx-1 uppercase
@@ -104,7 +104,7 @@ Sign out
 
         <Link href='/login'>
         <Button type='primary' className="
- text-lg font-bold
+ text-md font-bold
          cursor-pointer ml-3  leading-loose  text-white 
          pt-1  px-1 border-0 
 1    pb-1 w-20 mx-1 uppercase   font-sans 

@@ -13,19 +13,19 @@ const Form = ({ errorMessage, onSubmit,onChange=f=>f,load=false }) => (
    
  {errorMessage &&
   <div className="mb-5" ><Alert showIcon type="error" message={errorMessage}></Alert></div> }
-<p style={{'marginBottom':'5px'}}>
-  <p className="text-md font-semibold " htmlFor="username" style={{'marginBottom':'3px'}}>Email</p>
+<p style={{'marginBottom':'3px'}}>
+  <p className="text-md font-semibold " htmlFor="username" style={{'marginTop':'3px'}}>Email</p>
 
 <Input type="email" name="username"  prefix={<MailOutlined/>} allowClear
 onChange={onChange}  placeholder="you@domain.com"
- className="my-3 mb-6 h-10 rounded border-white"
+ className="my-3 mb-6 h-10 rounded border-white" style={{'marginTop':'3px'}}
 />
 </p>
 
 <p>
 <p  className="text-md font-semibold mt-6 " style={{'marginBottom':'3px'}}>Password</p>
 
-<Input.Password name="password" onChange={onChange} placeholder="Password" style={{'marginBottom':'5px'}}
+<Input.Password name="password" onChange={onChange} placeholder="Password" style={{'marginTop':'3px','marginBottom':'5px'}}
  allowClear prefix={<SecurityScanOutlined></SecurityScanOutlined>}  className="my-3 h-10 mb-6"
  ></Input.Password>
   
