@@ -1,4 +1,8 @@
 module.exports = {
+    future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
   theme: {
     screens: {
       sm: '640px',
@@ -17,11 +21,7 @@ module.exports = {
       colors: {
         cyan: '#9cdbff',
       },
-      spacing: {
-        '96': '24rem',
-        '128': '32rem',
-      },
-      variants: {
+        variants: {
         appearance: ['responsive'],
         backgroundColor: ['responsive', 'hover', 'focus'],
         fill: [],

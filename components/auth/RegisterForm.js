@@ -12,32 +12,39 @@ const RegisterForm = ({ errorMessage, onSubmit,onChange=f=>f,load=false }) => (
   <p className="center border-b-2 border-gray-300 pb-3 text-lg leading-tight text-black font-bold 
  uppercase" style={{'textAlign':'center'}}> Create new  account</p>
    
-
+<div className="grp-input">
 
   <label className="text-md font-semibold " htmlFor="agencyname">Full Name * </label>
 <Input name="username"  className="my-3 h-10 mb-6 border-white" required autoCapitalize 
  allowClear prefix={<UserAddOutlined></UserAddOutlined>}
 onChange={onChange}  autoFocus autoComplete={true} placeholder="Owner Full Name"
 />
+</div>
 
+<div className="grp-input">
  <label className="text-md font-semibold " htmlFor="store">Business/Company Name *</label>
 <Input name="store"  className="my-3 h-10 mb-6 border-white" required allowClear  type="text" prefix={<ShopOutlined/>}
 onChange={onChange} autoComplete="true"  placeholder="ie. Alaba21store electronics, Odeba Food & Beverages, GS Mall etc."
 />
 
+</div>
+<div className="grp-input">
 <label className="text-md font-semibold "  htmlFor="email">E-mail *</label>
 <Input name="username"  className="my-3 h-10 mb-6 border-white" required   allowClear prefix={<MailOutlined/>} type="email" 
 onChange={onChange} 
 autoComplete={true}placeholder="you@domain.com"
 />
+</div>
 
-
+<div className="grp-input">
 <label className="text-md font-semibold "  htmlFor="tel">Phone Number *</label>
 <Input name="tel"  className="my-3 h-10 mb-6 border-white" required   allowClear prefix={<PhoneOutlined/>} type="tel" 
 onChange={onChange} 
  placeholder="08123546778 etc."
 />
 
+</div>
+<div className="grp-input">
 
 <label className="text-md font-semibold "  htmlFor="website">Website <i className="text-gray-600">(Optional) </i></label>
 <Input name="website"  className="my-3 h-10 mb-6 border-white" allowClear prefix={"https"}
@@ -45,12 +52,14 @@ onChange={onChange}
 placeholder="www.teba.now.sh"
 />
 
+</div>
+<div className="grp-input">
 <label className="text-md font-semibold " >Password *</label>
 
 <Input.Password  className="my-3 h-10 mb-6 border-white" required name="password" onChange={onChange} placeholder="Password"
  allowClear prefix={<SecurityScanOutlined></SecurityScanOutlined>}
   autoComplete={true}></Input.Password>
-  
+  </div>
 <div className="grp-input">
 <label htmlFor="req" className="capitalize text-md font-semibold my-2 ">About Company </label>
 <div>

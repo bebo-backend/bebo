@@ -13,14 +13,15 @@ const Form = ({ errorMessage, onSubmit,onChange=f=>f,load=false }) => (
    
  {errorMessage &&
   <div className="mb-5" ><Alert showIcon type="error" message={errorMessage}></Alert></div> }
-
+<p>
   <label className="text-md font-semibold " htmlFor="username">Email</label>
 <Input type="email" name="username"  prefix={<MailOutlined/>} allowClear
 onChange={onChange}  placeholder="you@domain.com"
  className="my-3 mb-6 h-10 rounded border-white"
 />
+</p>
 
-
+<p>
 <label  className="text-md font-semibold mt-6 " >Password</label>
 
 <Input.Password name="password" onChange={onChange} placeholder="Password"
@@ -28,7 +29,7 @@ onChange={onChange}  placeholder="you@domain.com"
  ></Input.Password>
   
 
-
+</p>
 <div className='btn w-full center h-10 flex justify-center items-center bg-red-700
 rounded-md mt-3 text-white  hover:bg-red-500'>
 <button className="text-md uppercase font-extrabold "  
