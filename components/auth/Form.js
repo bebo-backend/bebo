@@ -13,8 +13,8 @@ const Form = ({ errorMessage, onSubmit,onChange=f=>f,load=false }) => (
    
  {errorMessage &&
   <div className="mb-5" ><Alert showIcon type="error" message={errorMessage}></Alert></div> }
-<p style={{'marginBottom':'10px'}}>
-  <p className="text-md font-semibold " htmlFor="username">Email</p>
+<p style={{'marginBottom':'5px'}}>
+  <p className="text-md font-semibold " htmlFor="username" style={{'marginBottom':'3px'}}>Email</p>
 
 <Input type="email" name="username"  prefix={<MailOutlined/>} allowClear
 onChange={onChange}  placeholder="you@domain.com"
@@ -23,9 +23,9 @@ onChange={onChange}  placeholder="you@domain.com"
 </p>
 
 <p>
-<p  className="text-md font-semibold mt-6 " >Password</p>
+<p  className="text-md font-semibold mt-6 " style={{'marginBottom':'3px'}}>Password</p>
 
-<Input.Password name="password" onChange={onChange} placeholder="Password"
+<Input.Password name="password" onChange={onChange} placeholder="Password" style={{'marginBottom':'5px'}}
  allowClear prefix={<SecurityScanOutlined></SecurityScanOutlined>}  className="my-3 h-10 mb-6"
  ></Input.Password>
   
@@ -42,7 +42,7 @@ onClick={onSubmit}>CONTINUE {load && <LoadingOutlined /> }</button>
 
   <div className='w-full flex justify-center mt-6 capitalize '>
   
-  <p className=" border-b-2 text-gray-500 border-black font-extrabold flex justify-center">
+  <p className=" border-b-2 text-gray-900 border-black font-extrabold flex justify-center uppercase">
   <span>Sign in with</span></p>
 
 
