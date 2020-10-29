@@ -13,8 +13,9 @@ const Form = ({ errorMessage, onSubmit,onChange=f=>f,load=false }) => (
    
  {errorMessage &&
   <div className="mb-5" ><Alert showIcon type="error" message={errorMessage}></Alert></div> }
-<p>
-  <label className="text-md font-semibold " htmlFor="username">Email</label>
+<p style={{'marginBottom':'10px'}}>
+  <p className="text-md font-semibold " htmlFor="username">Email</p>
+
 <Input type="email" name="username"  prefix={<MailOutlined/>} allowClear
 onChange={onChange}  placeholder="you@domain.com"
  className="my-3 mb-6 h-10 rounded border-white"
@@ -22,7 +23,7 @@ onChange={onChange}  placeholder="you@domain.com"
 </p>
 
 <p>
-<label  className="text-md font-semibold mt-6 " >Password</label>
+<p  className="text-md font-semibold mt-6 " >Password</p>
 
 <Input.Password name="password" onChange={onChange} placeholder="Password"
  allowClear prefix={<SecurityScanOutlined></SecurityScanOutlined>}  className="my-3 h-10 mb-6"

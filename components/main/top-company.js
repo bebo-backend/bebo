@@ -111,9 +111,10 @@ md:mb-3 flex flex-col ml-2 sm:ml-0 sm:mx-3 "
 
 
 :
+<div className='w-full flex justify-center' >
 
-
-<Empty description="No Popular Shop found">(0) Item(s) found</Empty>}
+<Empty description="No Popular Shop found">(0) Item(s) found</Empty>
+</div>}
  
 
   </div>   
