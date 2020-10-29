@@ -52,6 +52,7 @@ data.user.password = userForm.password
   data.phone_no = userForm.tel
   data.agencyname = userForm.store
   data.website = userForm.website
+  data.about = userForm.about
 
     // const {message,error,user} = await axios.post(BASE_URL+"signup/", data);
 
@@ -113,12 +114,13 @@ setForm(data)
       <div className=" flex w-full flex-col sm:flex-row justify-center sm:flex-no-wrap" style={{'backgroundColor':'#01718f'}}>
 
      
-<div className="text-white flex flex-col justify-start items-center mt-24 font-extrabold px-4 sm:w-1/2  ">
+<div className="text-white flex flex-col justify-start items-center mt-32 font-extrabold px-4 sm:w-1/2  ">
 
-<span className="text-3xl sm:text-6xl font-extrabold my-3 ">Advertise... </span>
+<span className="text-4xl sm:text-6xl font-extrabold my-3 ">Showcase... </span>
 
-<p className=" text-lg sm:text-3xl text-yellow-500" style={{'textAlign':'center',
-}}> your product on beBO for Sale, Rent and Exchange  </p>
+<i className=" text-2xl sm:text-5xl" style={{'textAlign':'center','fontFamily':'serif'
+}}> your product Online on  </i>
+<span className="text-4xl sm:text-6xl font-extrabold my-3 text-yellow-400 ">teba.com.ng</span>
 
 </div>
 

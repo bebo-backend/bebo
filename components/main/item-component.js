@@ -15,14 +15,14 @@ const Main=({data=[]})=>{
     >
     <a key={data.id} style={{'width':'260px'}} className="
    
-       cursor-pointer bg-white  m-0 sm:m-2 pb-0 px-0 py-0  rounded  ">
+          cursor-pointer bg-white  m-0 sm:m-2 pb-0 px-0 py-0  rounded  ">
     
 
-     <div className="flex sm:inline-block shadow sm:shadow-md hover:shadow-2xl
+     <div className="flex sm:inline-block  sm:shadow-md sm:hover:shadow-2xl
       w-full sm:w-64 px-2 sm:block  py-1 mx-0 
      sm:mx-0  sm:rounded-lg sm:px-0 sm:my-2 my-0  ">
 
-    <p className="mb-0  justify-center w-2/4 sm:w-full flex ml-0">
+    <p className="mb-0  justify-center w-2/5 sm:w-full flex ml-0">
 
        
 
@@ -38,7 +38,7 @@ const Main=({data=[]})=>{
     }
     </p>
 
-<div className="w-2/4   sm:w-full mb-0  md:block 
+<div className="w-3/5   sm:w-full mb-0  md:block 
 md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
    
     <p className="text-red-600 mt-0 mb-1" style={{'marginTop':'-23px'}}>
@@ -47,7 +47,7 @@ md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
     </Rate> ({data.submit_user.rate_count}) </p>
 
 <span className="">
-<span className="hidden sm:inline">
+<span className="inline">
 
     { data.submit_user.image ?
       <Avatar src={BASE_IMG_URL+data.submit_user.image} icon={<UserOutlined></UserOutlined>} 
@@ -68,12 +68,12 @@ md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
 
   <hr className="my-0 my-1 border-b-1 sm:border-b-2 border-gray-200" />
 
-<p className='mb-0 sm:mb-1 sm:mt-1 text-gray-500 text-sm   '> 
+<p className='mb-0 sm:mb-1 sm:mt-1 text-gray-500 text-sm  '> 
 <i className="hidden sm:inline">
 <CheckOutlined className=" text-black text-sm mr-2" /> Instock</i>
     <Tag className=" rounded-none capitalize mb-0  " style={{
       'marginLeft':'15px','border':'0px solid',
-      'borderRadius':'13px','minWidth':'60px','backgroundColor':'teal','color':'white',
+      'borderRadius':'13px','minWidth':'60px','backgroundColor':'red','color':'white',
       'textAlign':'center'}} >{data.acquire_type=='rent'?'rental':data.acquire_type }</Tag></p>
 
 
@@ -90,21 +90,22 @@ md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
 
 <p  className="  capitalize
  h-6  
- overflow-hidden text-gray-700 my-1 mt-2 sm:mt-1
-text-sm leading-tight"  ><EnvironmentOutlined />  
+ overflow-hidden text-gray-700 my-1 mt-2 sm:mt-1 mx-0
+text-sm leading-tight"  >
 <Typography.Text style={{'maxWidth':'100%','marginLeft':'5px'}} ellipsis={true}>  
-   {data.address}</Typography.Text> </p>
+ <EnvironmentOutlined className="mr-1" />   {data.address}</Typography.Text> </p>
 
-<p className="flex justify-end mb-0">
+<p className="flex justify-end mb-0 mx-2">
  {data.from_price != 0 ? <>
-<Statistic  valueStyle={{'fontSize':'1.2rem','color':'teal','fontWeight':'bold'}} prefix={"₦"} value={data.from_price}></Statistic>  
+<Statistic  valueStyle={{'fontSize':'1.2rem','color':'red','fontWeight':'bold'}} prefix={"₦"} value={data.from_price}></Statistic>  
 <span className=" flex text-base font-bold items-center mx-1">-</span>
-<Statistic valueStyle={{'fontSize':'1.2rem','color':'teal','fontWeight':'bold'}}prefix={"₦"} value={data.to_price}></Statistic> 
+<Statistic valueStyle={{'fontSize':'1.2rem','color':'red','fontWeight':'bold'}} prefix={"₦"} value={data.to_price}></Statistic> 
 
 </>:
-<Statistic prefix={"₦"} valueStyle={{'fontSize':'1.2rem','color':'teal','fontWeight':'bold'}} value={data.price}></Statistic> }
+<Statistic prefix={"₦"} valueStyle={{'fontSize':'1.2rem','color':'red','fontWeight':'bold'}} value={data.price}></Statistic> }
 </p>
 
+<hr className=" sm:hidden" />
 
 </div>
 </div>

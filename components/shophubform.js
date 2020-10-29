@@ -42,7 +42,7 @@ onChange={onChange}
 <label className="text-md font-semibold my-2 "  htmlFor="website">Website</label>
 <Input name="website"  className="my-3 h-12 border-white" allowClear prefix={"WWW"}
 onChange={onChange} 
-placeholder="www.bebo.now.sh"
+placeholder="www.teba.now.sh"
 />
 
 <label className="text-md font-semibold " >Password *</label>

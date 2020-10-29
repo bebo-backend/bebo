@@ -21,7 +21,7 @@ return (
        
     <p className="text-lg md:text-2xl ml-4 font-bold mb-0 text-gray-900 md:ml-5 md:px-5  pb-3 center leading-tight w-full
      " style={{'textAlign':'left'}}>
- Trending bebo accounts
+ Trending seller
    <Link href='/top-shops'>
  
     <a className="ml-0 p-1 font-bold">   <button className="mx-0 p-1 font-extrabold text-gray-900 " 
@@ -49,22 +49,22 @@ justify-left mb-0  md:mx-3  ">
     rounded  pb-1 bg-white md:border-0     "  >
  
 
- <div className="flex sm:inline-block my-0 px-3 py-1 mx-0 hover:shadow-2xl
- sm:mx-4 shadow sm:shadow-sm sm:rounded-lg sm:px-1 overflow-hidden sm:my-4" style={{'marginBottom':'-14px'}}>
+ <div className="flex sm:inline-block my-0 px-3 sm:py-1 mx-0 sm:hover:shadow-2xl
+ sm:mx-4  sm:shadow-sm sm:rounded-lg sm:px-1 overflow-hidden sm:my-4" style={{'marginBottom':'-14px'}}>
     
     <p className="justify-center w-1/4 sm:w-full flex rounded-full ">
     { data.images && data.images[0] ?
       
       <img alt="first image" className="
-      object-cover mt-6 mr-0 md:mt-3 rounded-full h-20 w-20 sm:h-32 sm:w-32 " src={BASE_IMG_URL+last(data.images).images} />:
+      object-cover mr-0 mt-3 rounded-full h-20 w-20 sm:h-32 sm:w-32 " src={BASE_IMG_URL+last(data.images).images} />:
 <FileJpgOutlined style={{
   'fontSize':'70px','textAlign':'center'
 }}  /> 
     }
     </p>
 
-<div className="w-3/4   sm:w-full mb-0 mb:4  md:block 
-md:mb-3 flex flex-col justify-center items-left ml-2 sm:ml-0 sm:mx-3" 
+<div className="w-3/4   sm:w-full mb-0 mb:4  
+md:mb-3 flex flex-col ml-2 sm:ml-0 sm:mx-3 " 
 >
     <p className="text-gray-500 mb-2 sm:mb-2 mx-0 my-1 md:my-1" style={{'zIndex':'0'}}>
     <Rate style={{'fontSize':'15px','zIndex':'0'}} defaultValue={0} value={data.submit_user.rate}
@@ -81,13 +81,27 @@ md:mb-3 flex flex-col justify-center items-left ml-2 sm:ml-0 sm:mx-3"
       <Avatar className="cursor-pointer"  style={{"width":'32px','height':'32px',
     }} icon={<UserOutlined></UserOutlined>} className=""></Avatar> 
     }
-<span className=" font-bold ml-3 mb-3 md:mb-3
+<span className=" font-bold ml-3 mb-1 md:mb-2
    text-base text-gray-900 h-4  " >
 <Typography.Text style={{'width':'70%'}} ellipsis={true}>  
    {data.submit_user.agencyname}</Typography.Text>
    </span> 
 
 </p>
+
+<p className="w-full sm:w-48 px-1 py-0 ">
+  
+<span className="
+   text-base  h-4  " >
+<Typography.Text style={{'width':'98%'}} ellipsis={true}>  
+   {data.submit_user.about ?data.submit_user.about :'About company'} </Typography.Text>
+   </span> 
+
+</p>
+
+
+
+<hr className=" sm:hidden" />
 </div>
 </div>
     </a>

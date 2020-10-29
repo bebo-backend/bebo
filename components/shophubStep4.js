@@ -51,7 +51,7 @@ defaultValue={data['delivery']? data['delivery']:"no"} buttonStyle="outline">
 
 }
 <p className="flex justify-center text-2xl font-bold 
-text-gray-400">Watch out for beBo Courier - Currently not available  </p>
+text-gray-400">Watch out for teba Courier - Currently not available  </p>
 </div>
 
 }

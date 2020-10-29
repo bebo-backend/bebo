@@ -47,7 +47,7 @@ return window.innerWidth <= 600
 <div className="my-3 w-full text-base"  >
 <p className="mb-2 font-semibold"><EnvironmentFilled className="mr-2" /> Region </p>
 
-<div  className="ml-0" style={{'height':'310px'}} >
+<div  className="ml-0 mb-4" >
 
 
 
@@ -55,8 +55,7 @@ return window.innerWidth <= 600
 
 
 <Select  className="w-full mr-10" onChange={value=>this.handleChange(value)} 
- placeholder="Pick region" showSearch={true} allowClear={true} open={this.state.mobile ?
- this.props.menu?false:true : this.props.menu ? true:false}>
+ placeholder="Pick region" showSearch={true} allowClear={true} >
 
 
 

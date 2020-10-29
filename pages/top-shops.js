@@ -56,16 +56,18 @@ return (
     {data &&   <div className="md:mb-20" >
  
    <TopCompany data={data.res} />
-     <div className="mx-auto mt-10 mb-20 w-1/2 md:w-1/3">
+   
+   {data.next && <div className="mx-auto mt-10 mb-20 w-1/2 md:w-1/3">
           <button
             className="bg-red-600 border-solid border-2 hover:bg-white border-red-600 text-white hover:text-red-600 font-bold py-2 px-4 rounded-full w-full"
             disabled={!data.next}
             onClick={e=>setPage(page+1)}
           >
-            {data.next ?'Load More Product': 'No more Product'}
+            More Product
           </button>
 
         </div>
+      }
 
     </div>    }
 

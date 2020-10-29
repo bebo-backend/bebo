@@ -16,9 +16,9 @@ const Footer = () => {
 
   return (
     <footer className="sm:border-t-2 sm:shadow-md border-gray-200 inset-y-0 bottom-0   ">
-    <p className="text-gray-400 mt-10 hidden sm:block">Please do not use Opera mini for better performance </p>
-   <div className="sm:flex justify-evenly 
-    sm:flex-wrap mt-4 ml-6  md:mt-1">
+    <p className="text-gray-400 mt-4 hidden sm:block">Please do not use Opera mini for better performance </p>
+   <div className="flex justify-evenly 
+    flex-wrap mt-4 ml-6  md:mt-1">
 
   
 
@@ -28,7 +28,7 @@ const Footer = () => {
     <li className=" text-base">Registration </li>
     <li  className=" text-base"> Advertise</li>
     <li  className=" text-base"> Start selling </li>
-    <li  className=" text-base">Delivery </li>
+
     
     
     </ul>
@@ -37,15 +37,15 @@ const Footer = () => {
     <ul className="m-3" > 
     <h2 className="text-lg font-bold">Stay Connected  </h2>
     
-    <li  className=" text-base"> <a href="https://www.facebook.com/beBO"> <FacebookOutlined></FacebookOutlined> Facebook </a> </li>
-    <li  className=" text-base"> <a href="https://www.twitter.com/beBO"> <TwitterCircleFilled></TwitterCircleFilled> Twitter </a>  </li>
-    <li  className=" text-base"><a href="https://www.linkedin.com/beBO"><LinkedinOutlined></LinkedinOutlined>  Linkedin </a></li>
+    <li  className=" text-base"> <a href="https://www.facebook.com/teba"> <FacebookOutlined></FacebookOutlined> Facebook </a> </li>
+    <li  className=" text-base"> <a href="https://www.twitter.com/teba"> <TwitterCircleFilled></TwitterCircleFilled> Twitter </a>  </li>
+    <li  className=" text-base"><a href="https://www.linkedin.com/teba"><LinkedinOutlined></LinkedinOutlined>  Linkedin </a></li>
     
     
     </ul>
 
     <ul className="m-3" > 
-    <h2 className="text-lg font-bold"> About beBO  </h2>
+    <h2 className="text-lg font-bold"> About teba  </h2>
     
     <li className=" text-base">Company info  </li>
     <li className=" text-base">We are hiring </li>
@@ -58,9 +58,9 @@ const Footer = () => {
 
 
     <ul className="m-3" > 
-    <h2 className="text-lg font-bold">  beBo sites </h2>
+    <h2 className="text-lg font-bold">  teba sites </h2>
     
-    <li className=" text-base">Nigeria </li>
+    <li className=" text-base"> <span className="text-green-700 bg-green-700 rounded-full">-</span> Nigeria </li>
 
     <li  className=" text-base">  Powered by Gks </li>
    

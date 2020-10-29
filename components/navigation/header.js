@@ -3,7 +3,7 @@ import Link from 'next/link'
 import useUser from '../../lib/useUser'
 import { useRouter} from 'next/router'
 import fetchJson from '../../lib/fetchJson'
-import {Avatar} from "antd";
+import {Avatar,Button} from "antd";
 import {BASE_IMG_URL,BASE_URL} from '../../settings'
 import {UserOutlined, ShoppingFilled,CloudUploadOutlined} from '@ant-design/icons';
 import Search from '../search'
@@ -24,8 +24,8 @@ const Header = ({tag=true}) => {
   return (
     <header className=" bg-white  " >
     <div className="sm:fixed w-full" style={{'z-index':'9999'}}>
-      <nav className=" flex inset-y-0 top-0 text-black px-0 w-full md:px-5 items-end justify-center
-       sm:justify-start pb-0 shadow-sm py-0 " style={{'backgroundColor':'#01718f'}}>
+      <nav className=" flex inset-y-0 top-0 text-black px-2 w-full md:px-5 items-end justify-center
+       sm:justify-start pb-0 shadow-sm py-1 h-14  " style={{'backgroundColor':'#01718f'}}>
         <ul className="flex-inline sm:flex w-full py-0 my-0 ">
 
         <div className="w-full sm:w-1/6 mx-0 hidden sm:inline sm:relative pt-1 pb-1  
@@ -33,26 +33,26 @@ const Header = ({tag=true}) => {
         sm:py-0 flex justify-center items-center bg-white ">
        
         <Link href="/">
-         <h2 className="font-extrabold text-2xl sm:text-2xl md:text-3xl px-2 sm:mt-0 sm:mt-2 sm:mb-1
-     text-black cursor-pointer sm:mb-0
-          relative   rounded  " style={{'textAlign':'center'}} >beBO</h2>
+         <h2 className="font-extrabold text-3xl z px-2 sm:mt-0 sm:mt-2 sm:mb-1
+     text-black cursor-pointer sm:mb-0  font-sans 
+          relative   rounded  " style={{'textAlign':'center'}} >teba</h2>
         </Link>
 
         </div>
 
-        <div className="flex-shrink  w-full flex justify-center items-center sm:mb-3 mb-1  sm:my-3 p-0 mt-3 ">
+        <div className="flex-shrink  w-full flex justify-center items-center my-2 p-0 mt-3 ">
         <Search/>
         </div>
 
-        <div className="flex-shrink md:m-2 w-full  py-1 md:w-2/3 md:px-3 justify-around md:justify-evenly flex items-start">
+        <div className="flex-shrink pb-2 sm:pb-0 md:m-2 w-full  py-1 md:w-2/3 md:px-3 justify-around md:justify-evenly flex items-start">
 
         <Link href='/upload-item'>
         <a className="
       
          cursor-pointer mr-3   leading-loose  hover:text-purple-300 
-         p-1 rounded-sm  px-3 text-base uppercase text-white
+         p-1 rounded-sm  px-3 text-md uppercase text-white  font-mono font-bold
 
-         ">sell</a>
+         ">create</a>
                 </Link>
         
         
@@ -61,7 +61,7 @@ const Header = ({tag=true}) => {
 <i className="cursor-pointer hover:border-b-2">
           <Avatar  src={BASE_IMG_URL+user?.image} style={{"width":'33px','height':'33px',
         }} onClick={e=>router.push('/dashboard/profile')}><h2 className="text-base font-bold 
-        uppercase">
+        uppercase  font-mono">
           {user?.username.slice(0,2)}</h2>
           </Avatar>
           </i>
@@ -86,29 +86,29 @@ const Header = ({tag=true}) => {
 
       {user?.isLoggedIn ? (
 
-        <a type='ghost' className="
- text-md 
-         cursor-pointer ml-3  leading-loose flex items-end bg-teal-600 text-white hover:bg-teal-300
-         pt-1  px-2 border-0 
-1  px-3  pb-1 w-20 mx-1
+        <Button type='primary' className="
+ text-lg font-bold 
+         cursor-pointer ml-3  leading-loose  bg-teal-600 text-white hover:bg-teal-300
+         pt-1  px-1 border-0  font-sans
+ pb-1 w-20 mx-1 uppercase
 
-          " href='/logout' onClick={async (e) => {
+          "  href='/logout' onClick={async (e) => {
           e.preventDefault()
           await mutateUser(fetchJson('/api/auth/logout'))
           router.push('/login')
-        }}>
+        }} style={{'textAlign':'center'}}>
 Sign out
-        </a>
+        </Button>
 
       ):(
 
         <Link href='/login'>
-        <a type='ghost' className="
- text-md 
-         cursor-pointer ml-3  leading-loose flex items-end bg-teal-600 text-white hover:bg-teal-300
-         pt-1  px-2 border-0 
-1  px-3  pb-1 w-20 mx-1
-         ">Sign in</a>
+        <Button type='primary' className="
+ text-lg font-bold
+         cursor-pointer ml-3  leading-loose  bg-teal-600 text-white hover:bg-teal-300
+         pt-1  px-1 border-0 
+1    pb-1 w-20 mx-1 uppercase   font-sans 
+         " style={{'textAlign':'center'}}>Sign in</Button>
                 </Link>
       )}
 
@@ -120,7 +120,7 @@ Sign out
       </nav>
       </div>
      
-{tag && (  <div className="flex inline-flex w-full px-1 md:px-1 mx-0 pb-2 pt-6 mt-4 sm:mt-20">
+{tag && (  <div className="flex inline-flex w-full px-1 md:px-1 mx-0 pb-2 pt-4 mt-2 sm:mt-16">
 <Tag />
 </div>)}
     

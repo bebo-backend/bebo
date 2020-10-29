@@ -21,16 +21,16 @@ return (
     rounded-lg shadow-2xl justify-center" > 
  
   
- <p className="uppercase text-base font-extrabold pt-3 py-2 mb-5 border-b-2">Profile data</p>
+ <p className="uppercase text-base font-extrabold pt-3 py-2 mb-5 border-b-2 border-black">Profile data</p>
  <p className="">Username:</p>
- <p className="capitalize text-base font-semibold text-gray-900 my-2 ">
+ <p className="capitalize text-base font-semibold text-gray-900 mb-4 ">
  {data.user.username}</p>
  <p className="">Shop Name:</p>
- <p className="capitalize text-base font-semibold text-gray-900 my-2  ">
+ <p className="capitalize text-base font-semibold text-gray-900 mb-4  ">
  {data.agencyname}</p>
 
  <p className="">Account Created:</p>
- <p className="capitalize text-base font-semibold text-gray-900 my-2  ">
+ <p className="capitalize text-base font-semibold text-gray-900 mb-4  ">
  {data.created.split("T")[0]}</p>
 
 
@@ -42,17 +42,17 @@ return (
      rounded-lg shadow-2xl justify-center overflow-hidden"   > 
  
   
- <p className="uppercase text-base font-extrabold pt-3 py-2 mb-5 border-b-2 ">contact info</p>
+ <p className="uppercase text-base font-extrabold pt-3 py-2 mb-5 border-b-2 border-black ">contact info</p>
 
  <p className="">Phone Number: <PhoneFilled/></p>
- <p className="capitalize text-base font-semibold text-gray-900 my-2  ">
+ <p className="capitalize text-base font-semibold text-gray-900 mb-4  ">
  {data.phone_no} </p> 
 
  <p className="">E-mail: <MailFilled/></p>
- <p className=" text-base font-semibold text-gray-900 my-2 ">
+ <p className=" text-base font-semibold text-gray-900 mb-4 ">
  {data.user.email} </p>
  <p className="">Website:</p>
- <p className="text-base font-semibold  text-gray-900 my-2 ">
+ <p className="text-base font-semibold  text-gray-900 mb-4 ">
  {data.website ? data.website:"not available"}</p>
 
      </div>
@@ -89,7 +89,7 @@ return (
 
 
 
-export function ItemInfo({itemdata,mutateProperty,setPage,page}){
+export function ItemInfo({itemdata,mutateProperty,setPage,page,about}){
 
 
 return (
@@ -100,29 +100,30 @@ return (
  bg-white rounded-lg shadow-2xl justify-center " style={{'marginTop':'-40px'}} > 
 
 
+ <p className="text-2xl px-0 py-0 center leading-tight  mb-4
+     font-sans border-black border-b-2 " >ABOUT </p>
 
+    <pre className="my-6 text-md sm:text-base px-3 leading-relaxed  whitespace-pre-wrap"> {about} </pre>
 
        
     <p className="sm:text-3xl text-lg text-gray-900 px-0 py-3 pt-6 center 
-    leading-tight w-full font-extrabold mb-1 
+    leading-tight w-full font-extrabold mb-1  uppercase mt-6
      " style={{'textAlign':'center'}}>
- Build your beBO account
+ Build your teba account
 
     </p>
-    <p className="text-lg px-0 py-0 center leading-tight w-full text-gray-700 mb-4
-     font-sans " style={{'textAlign':'center'}}> Showcase your collections, by uploading your item with Sell Hub </p>
+    <p className="sm:text-2xl px-0 py-0 center leading-tight w-full text-gray-900 mb-4
+     font-sans " style={{'textAlign':'center'}}> Showcase your collections, by uploading your product(s) with Ads Hub </p>
     
     <div className="uppercase text-blue-800 font-bold text-lg w-full center  flex justify-center " >
     <Link href="/upload-item">
-    <Button type="ghost" size='large'>
+    <Button type="primary" size='large'>
     <a className="px-5 py-2 my-4 hover:text-blue-300 cursor-pointer text-white text-base">
-    <CloudUploadOutlined /> Sell Hub </a></Button>
+    <CloudUploadOutlined /> Ads Hub </a></Button>
   </Link>  </div>
  
- 
-<hr className="my-3" />   
 
-<p className=" text-lg  font-bold mt-5">Collections ({itemdata && Object.keys(itemdata.res).length})</p>
+<p className=" sm:text-2xl text-lg  font-bold mt-5 font-sans border-b-2 border-black">Ads (Product) ({itemdata && Object.keys(itemdata.res).length})</p>
 <table className="table-auto overflow-scroll w-full">
 
 
@@ -143,7 +144,7 @@ return (
 <p  className=" border-b-2 border-gray-300 p-1 px-5 m-1 mb-4  font-extrabold text-lg capitalize text-white "
  style={{'fontFamily':'monopo'}}>
 
- <h2><i className="mr-5 text-base">Exclusive Seller:</i> <Avatar src={BASE_IMG_URL+item.submit_user.image} style={{"width":'35px',
+ <h2><i className="mr-5 text-base">Exclusive Adser:</i> <Avatar src={BASE_IMG_URL+item.submit_user.image} style={{"width":'35px',
 'height':'35px'}} icon={<UserOutlined />}></Avatar> 
 
 <span  className="ml-3 font-bold text-lg uppercase">You
@@ -210,7 +211,7 @@ return (
 
 
 
- <p className='mb-2 text-gray-700'> Delivery: <span className='uppercase text-base font-semibold mb-0'> {item.with_delivery =='Yes'? " Provided by seller":" Not Provided"} </span> </p>
+ <p className='mb-2 text-gray-700'> Delivery: <span className='uppercase text-base font-semibold mb-0'> {item.with_delivery =='Yes'? " Provided by Adser":" Not Provided"} </span> </p>
 
 {item.delivery_company &&<>
 
@@ -263,21 +264,23 @@ rounded-full mt-3 px-3 text-white hover:bg-blue-400" onClick={e=>removeItem(item
 
 </table>
 
-{ itemdata && Object.keys(itemdata).length <= 0 && <div className="w-full flex justify-center mt-5">
-    <Empty description="No collection available"><p className="text-base font-semibold">Upload item on Shop Hub</p></Empty>
+{ itemdata && Object.keys(itemdata.res).length <= 0 && <div className="w-full flex justify-center mt-5">
+    <Empty description="No collection available"><p className="text-base font-semibold">Upload product with Ads hub</p></Empty>
     </div>
 }
 
-<div className="mx-auto mt-10 mb-20 w-1/2 md:w-1/3">
+{itemdata.next && <div className="mx-auto mt-10 mb-20 w-1/2 md:w-1/3">
           <button
             className="bg-red-600 border-solid border-2 hover:bg-white border-red-600 text-white hover:text-red-600 font-bold py-2 px-4 rounded-full w-full"
             disabled={!itemdata.next}
             onClick={e=>setPage(page+1)}
           >
-            {itemdata.next ?'Load More Product': 'No more Product'}
+            More Product
           </button>
 
         </div>
+
+      }
 
 
      </div>

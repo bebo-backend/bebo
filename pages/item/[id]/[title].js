@@ -7,7 +7,7 @@ import ImgReview from '../../../components/item-view/img-review'
 import ItemInfo from '../../../components/item-view/item-info'
 import useUser from '../../../lib/useUser'
 import Cartrecommend from '../../../components/cartrecommend'
-
+import Link from 'next/link'
 import {Breadcrumb,Typography} from "antd";
 import {fetcher} from '../../../lib/ax-fetch'
 import useSWRInfinite from "swr";
@@ -48,6 +48,12 @@ return (
 
   <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >Ad
        </Breadcrumb.Item>
+
+     <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >
+     <Link href={"/search?search="+data.category}><a className='text-white' style={{'color':'white'}}>
+     {data.category} </a></Link>
+       </Breadcrumb.Item>
+     
 
       <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >{data.title}
        </Breadcrumb.Item>

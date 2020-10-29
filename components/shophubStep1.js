@@ -68,7 +68,7 @@ onChange={e=>handlechange(e.target.value,'location')}
 <label className="capitalize text-lg font-semibold my-2 "  htmlFor="email">E-mail *</label>
 <Input  className="my-4 h-12  mb-8 " name="email" required allowClear prefix={<MailFilled/>} type="email"  
 onChange={e=>handlechange(e.target.value,'email')}   autoComplete="true" value={data['email']}
-  placeholder="eg. beBO@gks.co"
+  placeholder="eg. teba@gks.co"
 /> 
 </Col>
 

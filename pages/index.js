@@ -47,7 +47,7 @@ router.push(url)
   <p className="text-lg md:text-3xl  font-extrabold rounded-lg
   mt-3 text-black  sm:px-5 py-3 md:py-1 center w-full
      " style={{'textAlign':'center'}}>
-    Find things you'll love. Support independent sellers. Only on beBO.
+    Find things you'll love. Support independent sellers. Only on teba.
 
     </p>
 
@@ -77,7 +77,7 @@ router.push(url)
 
     <TopCompany data={topCompany} />
 
- <div style={{'backgroundColor':'#01718f'}} className="flex  flex-wrap md:flex-no-wrap justify-evenly mb-8 py-5 mx-0  md:px-5 ">
+ <div  className="flex  flex-wrap md:flex-no-wrap justify-evenly mb-8 py-5 mx-0  md:px-5 ">
 
 
  <UploadItem />

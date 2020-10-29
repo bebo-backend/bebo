@@ -213,7 +213,7 @@ const stepMove=(value)=>{
 
 <div className="bg-white py-3 mx-0  my-5 text-white" style={{'backgroundColor':'#01718f'}}>
     <div className="flex w-full justify-center mt-2 mb-0 " >  
-    <span className="text-4xl font-extrabold mb-0 text-white">Sell Hub</span>
+    <span className="text-4xl font-extrabold mb-0 text-white">Ads Hub</span>
     
 
     </div>
@@ -221,7 +221,7 @@ const stepMove=(value)=>{
 
     <div className="flex w-full justify-center mt-0 mb-2 ">  
     <p className=" text-lg text-white mx-3" style={{'textAlign':'center'}}>
-   Post your product (ads) for Sale, Rental and Exchange 
+   Create a product (ads) for Sale, Rental and Exchange 
     </p> 
     </div>
 

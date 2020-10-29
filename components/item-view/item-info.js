@@ -1,5 +1,5 @@
 
-import {Avatar,Rate,Tag,Statistic,Button,Modal} from 'antd';
+import {Avatar,Rate,Tag,Statistic,Button,Modal,Table} from 'antd';
 import { BASE_IMG_URL,BASE_URL } from '../../settings'
 import {CheckOutlined,UserOutlined,EnvironmentFilled,CarFilled,LoadingOutlined} from '@ant-design/icons';
 import Link from 'next/link'
@@ -61,6 +61,78 @@ axios.get(BASE_URL+"addrate/"+data.id+'/'+value+'/'+username).then(res=>{
 })
 
 }
+
+  const contactDataSource = data && Object.keys(data).length ? [
+        {
+          key: '1',
+          name: <span className="font-bold">Type</span>,
+          value: data.acquire_type,
+      
+        }, 
+        {
+            key: '2',
+            name: <span className="font-bold">Condition</span>,
+            value:  data.condition,
+          },
+
+          {
+            key: '3',
+            name: <span className="font-bold"><EnvironmentFilled /> Location</span>,
+            value: <span className="wrap">  {data.address}</span>,
+          },
+
+                    
+          {
+            key: '4',
+            name: <span className="font-bold">Delivery</span>,
+            value: data.with_delivery ,
+          },
+                    
+        data.with_delivery !=='No' &&  {
+            key: '5',
+            name: <span className="font-bold">Delivery Company</span>,
+            value: data.delivery_company ,
+          },
+
+                    
+          {
+            key: '6',
+            name: <span className="font-bold">Payments Method</span>,
+            value: data.payment_type ,
+          },
+          { key:'7',
+          name:data.acquire_type=='rent' && <span className="font-bold">Duration</span>,
+          value: data.acquire_type=='rent' && data.duration &&
+
+<p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
+
+
+  <p className='capitalize text-base  mb-0'> {data.duration} {
+     getDuration(data.dur_count)} </p> 
+
+</p>
+
+
+
+}
+      ]:[];
+      
+      const contactColumns = [
+        {
+       
+            dataIndex: 'name',
+            key: 'name',
+          },
+        {
+          
+          dataIndex: 'value',
+          key: 'value',
+        },
+   
+      ];
+
+
+
 
 
  return <div className="mb-10 md:pr-2  px-5  md:px-1" style={{'marginLeft':'-15px'}}>
@@ -142,7 +214,7 @@ axios.get(BASE_URL+"addrate/"+data.id+'/'+value+'/'+username).then(res=>{
 
 
 <Link href={"/@/"+data.submit_user.agencyname.replace('&','and')}>
-<a className="text-4xl font-bold mb-0 mx-0 cursor-pointer z-60 text-black"> {data.submit_user.agencyname} </a>
+<a className="sm:text-4xl text-2xl font-bold mb-0 mx-0 cursor-pointer z-60 text-black"> {data.submit_user.agencyname} </a>
 </Link>
 <p className="my-0"></p>
 <span className="text-lg  text-gray-600 mt-0"> ({data.submit_user.rate_count}) 
@@ -150,11 +222,11 @@ axios.get(BASE_URL+"addrate/"+data.id+'/'+value+'/'+username).then(res=>{
 <span className="mx-5"><Rate onChange={e=>handleRate(e)} defaultValue={data.submit_user.rate} allowClear={false}
 > </Rate> </span> {rateLoad &&  <LoadingOutlined />}</span>
 
-<p className="text-3xl font-normal leading-tight mt-3 mb-2 " > {data.title}</p>
+<p className="sm:text-2xl text-lg font-normal leading-tight mt-3 my-4 " > {data.title}</p>
 
 
-<p>{data.submit_user.rate >=0 && <Tag color="grey" style={{'paddingRight':'10px',
-'borderRadius':'10px','border':'0px solid','paddingLeft':'10px'}} 
+<p>{data.submit_user.rate >=0 && <Tag  style={{'paddingRight':'10px',
+'borderRadius':'10px','border':'0px solid','paddingLeft':'10px','backgroundColor':'red','color':'white'}} 
 className="rounded-full"> Exclusive</Tag>}</p>
 
 
@@ -181,45 +253,10 @@ className="rounded-full"> Exclusive</Tag>}</p>
 </p>
 </p>
 
-<p className="mt-0 text-gray-500"> Local taxes included (where applicable) </p>
-{isLoggedIn ?
-	<div onClick={e=>addToCart()} className='btn w-full center h-10 flex
-	 justify-center items-center bg-blue-700
-rounded-md mt-3 text-white  hover:bg-blue-500 my-4'>
 
-<a className="text-lg text-white font-extrabold "
-> Save to cart {load &&  <LoadingOutlined />}</a>
-
-
-</div>
-
-
- :<div className='btn w-full center h-10 flex justify-center items-center bg-teal-700
-rounded-md mt-3 text-white  hover:bg-teal-500 my-4'>
-<Link href="/login">
-<a className="sm:text-lg text-base font-extrabold text-white w-full "style={{'textAlign':'center'}}
-> Login to Save to cart</a>
-</Link>
-
-</div>
-
-}
-
-  <div onClick={e=>{ setContacts(true);}} className='btn w-full center h-10 flex
-   justify-center items-center 
-rounded-md mt-3 text-white  hover:bg-teal-500 my-4' style={{'backgroundColor':'#01718f'}}>
-
-<a className="sm:text-lg text-base font-extrabold text-white w-full "style={{'textAlign':'center'}}
-> Show Contacts</a>
-
-
-</div>
-
-
-
-<p className=" mb-1 mt-2 text-red-700 text-base" style={{
+<p className=" mb-1 mt-2 text-gray-500 text-base" style={{
 	'fontFamily':'serif'
-}}>Exclusive Seller on beBO: </p>
+}}>Exclusive Seller on teba: </p>
 
 
 <Avatar src={BASE_IMG_URL+data.submit_user.image} style={{"width":'35px',
@@ -240,76 +277,45 @@ rounded-md mt-3 text-white  hover:bg-teal-500 my-4' style={{'backgroundColor':'#
 
 <div className="odd:bg-gray-700 flex flex-col">
 
-<p className=" flex sm:block p-2 pl-4 rounded-lg my-0">
- <p className='mb-2 mr-2 font-semibold'> Acquire: </p>
+  <div onClick={e=>{ setContacts(true);}} className='btn w-full center h-10 flex
+   justify-center items-center 
+rounded-md mt-3 text-white  hover:bg-teal-500 my-4' style={{'backgroundColor':'red'}}>
 
-  <p className='capitalize text-base  mb-0'> {data.acquire_type} </p> 
-
-
-</p>
-
+<a className="sm:text-lg text-base font-extrabold text-white w-full "style={{'textAlign':'center'}}
+> Show Contacts</a>
 
 
-{ data.condition && 
-	<p className=" flex sm:block p-2 pl-4 rounded-lg my-0">
- <p className='mb-2 mr-2 font-semibold'> Condition: </p>
-
-  <p className='capitalize text-base  mb-0'> {data.condition} </p> 
-</p>
-
-}
-
-	<p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
- <p className='mb-2 mr-2 font-semibold'> Location: </p>
-
-  <p className='capitalize text-base  mb-0'><EnvironmentFilled className="mr-2 text-base" /> {data.address} </p> 
-</p>
-
-
-
-
-
-
-{data.acquire_type=='rent' && <div>
-{data.duration &&
-
-<p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
- <p className='mb-2 mr-2 font-semibold'> Duration: </p>
-
-  <p className='capitalize text-base  mb-0'> {data.dur_count} {
-     getDuration(data.duration)} </p> 
-
-</p>
-
-
-}
 </div>
-}
+
+  <p>  <Table  sortDirections={["ascend","descend"]}  tableLayout="auto" 
+
+      dataSource={contactDataSource} 
+      columns={contactColumns} />
+      </p>
 
 
-<p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
- <p className='mb-2 mr-2 font-semibold'><CarFilled className="mr-2 text-base" /> Delivery : </p>
+{isLoggedIn ?
+  <div onClick={e=>addToCart()} className='btn w-full center h-10 flex
+   justify-center items-center bg-blue-700
+rounded-md mt-3 text-white  hover:bg-blue-500 my-4'>
 
-  <p className='capitalize text-base  mb-0'> {data.with_delivery =='Yes'? " Provided by seller":" Not Provided"} </p> 
-</p>
-
-
-
-{data.delivery_company &&
-	<p className="flex sm:block my-0 p-2 pl-4 rounded-lg">
- <p className='mb-2 mr-2 font-semibold'> Delivery Company: </p>
-
-  <p className='capitalize text-base  mb-0'> {data.delivery_company} </p> 
-</p>
+<a className="text-lg text-white font-extrabold "
+> Save Product {load &&  <LoadingOutlined />}</a>
 
 
-}
-
-	<div className="flex sm:block my-0 p-2 pl-4 rounded-lg">
- <p className='mb-2 mr-2 font-semibold'> Payments Method: </p>
-
-  <p className='capitalize text-base mb-0'>{data.payment_type} </p> 
 </div>
+
+
+ :<div className='btn w-full center h-10 flex justify-center items-center bg-teal-700
+rounded-md mt-3 text-white  hover:bg-teal-500 my-4'>
+<Link href="/login">
+<a className="sm:text-lg text-base font-extrabold text-white w-full "style={{'textAlign':'center'}}
+> Login to Save to cart</a>
+</Link>
+
+</div>
+
+}
 
 
 

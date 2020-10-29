@@ -9,7 +9,7 @@ import Filters from '../../components/main/filters'
 import { BASE_URL } from '../../settings'
 import axios from 'axios'
 import Link from 'next/link'
-import {Breadcrumb,Cascader,Typography,Tag,Empty} from "antd";
+import {Breadcrumb,Cascader,Typography,Tag,Empty,Rate,Table} from "antd";
 import {sortBy,reverse} from 'lodash'
 import {useState,useEffect} from 'react'
 import {LoadingOutlined,MenuOutlined} from '@ant-design/icons';
@@ -28,6 +28,7 @@ const [loading,setLoading] = useState()
 const [filters,setFilters] = useState({})
 const [url,setUrl] = useState({})
 const [page,setPage] = useState(1)
+const [curView,setcurView] = useState(0)
 const [menu,setMenu] = useState(true)
 
 
@@ -436,6 +437,51 @@ setMenu(true)
 
 
 
+     const contactDataSource = data && Object.keys(data).length ? [
+        {
+          key: '1',
+          name: 'Email',
+          value: data.res.[0].submit_user.user.email,
+      
+        }, 
+        {
+            key: '2',
+            name: 'Website',
+            value:  data.res.[0].submit_user.website ? data.res.[0].submit_user.website : <span className='text-gray-500'> Website not available for seller </span>,
+          },
+
+          {
+            key: '3',
+            name: 'Phone',
+            value:  data.res.[0].submit_user.phone_no,
+          },
+
+                    
+          {
+            key: '4',
+            name: 'Rating',
+            value:    <span className="text-red-600 mt-0 mb-1" style={{'marginTop':'-23px'}}>
+    <Rate style={{'fontSize':'15px'}} defaultValue={0} value={data.res[0].submit_user.rate}
+     allowClear={false} disabled> 
+    </Rate> ({data.res[0].submit_user.rate_count}) </span>
+          }
+      ]:[];
+      
+      const contactColumns = [
+        {
+       
+            dataIndex: 'name',
+            key: 'name',
+          },
+        {
+          
+          dataIndex: 'value',
+          key: 'value',
+        },
+   
+      ];
+
+
 
   return (
   <Layout title={title} value={title}>
@@ -466,7 +512,7 @@ setMenu(true)
     </p>
 
 
-<div className=" md:flex flex-inline mt-0 pt-5 pl-0 w-full bg-white pr-5" style={{  'backgroundColor':'white'}}> 
+<div className=" md:flex inline mt-0 pt-5 pl-0 w-full bg-white pr-5" style={{  'backgroundColor':'white'}}> 
 
 <div className="md:w-1/4 w-full mt-0 pr-5 md:border-r-2 border-gray-300 " style={{
   'display':isMobile()? isMobile() && !menu ? 'block':'none' : menu ? 'block':'none',
@@ -481,6 +527,17 @@ setMenu(true)
 
 <div className="  md:w-3/4 w-full ml-3 mt-6 bg-white"> 
 
+
+ <span className="text-base px-2 py-0 center leading-tight  mb-0 text-black
+     font-mono border-teal-900 border-r-2 w-20 mx-0 cursor-pointer " onClick={e=>setcurView(1)}  style={{
+'color':curView=== 1 ? "blue":"silver",'textAlign':'center'
+}}>About</span>
+
+
+ <span className="text-base px-2 py-0 center leading-tight  mb-0 
+     font-mono  w-20 cursor-pointer " onClick={e=>setcurView(0)}  style={{
+'color':curView=== 0 ? "blue":"silver",'textAlign':'center'
+}} >Product (Ads)</span>
 
 <div className="md:flex flex-inline mb-10">
 <div className="w-full flex justify-end "> 
@@ -511,6 +568,8 @@ Filters:
  </div>
 
   </div>
+
+{curView === 0 ?<>
 
 {Object.keys(data.res).length > 0 ?
  <div className="mr-5 md:mr-0 w-full  " style={{'marginTop':'-39px'}}>
@@ -544,8 +603,19 @@ justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
 
 <Empty description="No product found">(0) product found</Empty>
 
+} </>
+:
+<div className="mr-5 md:mr-0 w-full  " style={{'marginTop':'-39px'}}>
+<pre className="my-6 text-sm sm:text-base px-3  whitespace-pre-wrap text-gray-700"> {data.res[0].submit_user.about?
+  data.res[0].submit_user.about: "* Write about your business or company"} </pre>
 
+  <p>  <Table  sortDirections={["ascend","descend"]} tableLayout="auto" 
 
+      dataSource={contactDataSource} 
+      columns={contactColumns} />
+      </p>
+
+</div>
 }
 
 </div>
@@ -569,7 +639,24 @@ justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
 export default Shop
 
 
+// const TransformData=(data=[])=>{
 
+
+// return Object.keys(data).map((value,index)=>{
+
+//   return {
+// key:index,
+// value:data.[value],
+// phone:data.phone_no,
+// website:data.website ?data.website:'No website for seller',
+// rating: <span> <Rate style={{'fontSize':'15px'}} defaultValue={0} value={data.rate}
+//      allowClear={false} disabled> 
+//     </Rate>  ({data.submit_user.rate_count})  </span>
+    
+
+// }})
+
+// }
 
 
 

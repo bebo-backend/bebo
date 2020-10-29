@@ -8,11 +8,11 @@ function UploadDetail(){
 return (
 
     <div className="flex md:flex-col w-full  md:w-1/3 lg:w-1/4  md:justify-center items-center  py-5 sm:p-5
- shadow-2xl rounded-lg bg-white m-2 "> 
+ sm:shadow-2xl rounded-lg bg-white m-2 px-2 "> 
 
  <p className="text-2xl font-extrabold px-3 py-0 center leading-tight md:w-full"
  style={{'textAlign':'center'}}>
-<ShoppingFilled className="text-5xl" /></p>
+<ShoppingFilled className="text-5xl mx-2" /></p>
       
       <div>
    <p className="text-2xl font-extrabold text-gray-900 px-0 mb-1 py-0 center leading-tight w-full"

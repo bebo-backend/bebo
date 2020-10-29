@@ -72,9 +72,9 @@ style={{"width":'137px','height':'137px'
 
 <div className="block text-white">
 <p className="flex w-full justify-center">
-<h1 className="text-4xl font-extrabold m-0 px-5 text-white">{account.data.agencyname}</h1> 
+<h1 className="text-4xl font-extrabold m-0 sm:px-5 text-white">{account.data.agencyname}</h1> 
 </p>
-<span  className="pl-5 text-white m-0 text-base wrap">www.bebo.vercel.app/@/{account.data.agencyname}  </span>
+<span  className="pl-5 text-white m-0 text-2xl wrap  font-sans ">www.teba.vercel.app/@/{account.data.agencyname}  </span>
 <table className="table m-2">
 
 <tr >
@@ -100,7 +100,7 @@ style={{"width":'137px','height':'137px'
     <div className="block sm:flex w-full  md:px-3">
 
     <ProfileInfo data={account.data} mutateAccount={mutateAccount} />
-    <ItemInfo itemdata={property && property} page={page} setPage={setPage} mutateProperty={mutateProperty} />
+    <ItemInfo itemdata={property && property} page={page} setPage={setPage} mutateProperty={mutateProperty} about={account.data.about} />
 
     </div>
 

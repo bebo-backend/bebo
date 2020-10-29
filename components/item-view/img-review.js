@@ -24,9 +24,9 @@ const router = useRouter()
 
 const createDate=(date)=>{
 const newdate = date.split('T')[0]
-const time = date.split('T')[1]
+const time = date.split('T')[1].split('.')[0]
 
-return date
+return newdate+ " at " +time
 
 
 
@@ -151,7 +151,7 @@ const stepMove=(value)=>{
 {user?.isLoggedIn ?
   <form className="flex items-center mt-5">
  <Avatar src={BASE_IMG_URL+user.image} icon={<UserOutlined></UserOutlined>}  
- style={{"width":'48px','height':'48px','marginTop':'1px'}} className="mt-3">
+ style={{"width":'35px','height':'32px','marginTop':'1px'}} className="mt-3">
 </Avatar>
  <Input className="h-12 ml-3 " name="review" required allowClear 
 onChange={e=>setStateReview(e.target.value)}  

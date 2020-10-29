@@ -19,14 +19,13 @@ const handleInput=async e=>{
 
 return (
 
-    <div className="w-full mx-5 flex justify-center  m-0 items-start"> 
+    <div className="w-full mx-1 flex justify-center  m-0 items-start"> 
    
 <Input  className="h-8 " allowClear 
 onChange={handleInput} 
-placeholder="Search for anything on beBO" prefix={<p className="m-1 rounded-full 
-p-1 font-extrabold text-xl text-yellow-500 ">B</p>}
+placeholder="Search for anything on teba" 
  suffix={<Link href={"/search?search="+inputdata}><i className="cursor-pointer hover:text-gray-600"><SearchOutlined style={{
-    'fontSize':'23px'
+    'fontSize':'20px'
 }}  /></i></Link>}
 />  
 

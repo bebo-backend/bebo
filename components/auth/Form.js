@@ -17,19 +17,19 @@ const Form = ({ errorMessage, onSubmit,onChange=f=>f,load=false }) => (
   <label className="text-md font-semibold " htmlFor="username">Email</label>
 <Input type="email" name="username"  prefix={<MailOutlined/>} allowClear
 onChange={onChange}  placeholder="you@domain.com"
- className="my-3 h-12 rounded border-white"
+ className="my-3 mb-6 h-10 rounded border-white"
 />
 
 
-<label  className="text-md font-semibold " >Password</label>
+<label  className="text-md font-semibold mt-6 " >Password</label>
 
 <Input.Password name="password" onChange={onChange} placeholder="Password"
- allowClear prefix={<SecurityScanOutlined></SecurityScanOutlined>}  className="my-3 h-12"
+ allowClear prefix={<SecurityScanOutlined></SecurityScanOutlined>}  className="my-3 h-10 mb-6"
  ></Input.Password>
   
 
 
-<div className='btn w-full center h-12 flex justify-center items-center bg-red-700
+<div className='btn w-full center h-10 flex justify-center items-center bg-red-700
 rounded-md mt-3 text-white  hover:bg-red-500'>
 <button className="text-md uppercase font-extrabold "  
 onClick={onSubmit}>CONTINUE {load && <LoadingOutlined /> }</button>
@@ -52,11 +52,11 @@ onClick={onSubmit}>CONTINUE {load && <LoadingOutlined /> }</button>
   <FacebookFilled  style={{'fontSize':'45px','marginRight':'20px'}} />
   </div>
 
-  <div className='btn w-full center h-12 flex justify-center items-center bg-blue-700
+  <div className='btn w-full center h-10 flex justify-center items-center bg-blue-700
 rounded-md mt-3 text-white  hover:bg-blue-500'>
 <Link href="/signup">
 <button className="text-md font-extrabold "
->New to beBO? Sign Up</button>
+>New to teba? Sign Up</button>
 </Link>
 
 </div>

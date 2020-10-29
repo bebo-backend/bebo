@@ -84,8 +84,8 @@ return true
 <p className="font-bold text-lg"> Drag and drop image files to upload</p>
   <p className="font-bold text-base"> You can upload multiple images</p>
 
-<p className="text-base mb-5" > By uploading your product or item to beBO, you 
-acknowledge that you agree to beBO Shop's<Button type="link">Terms of  Service and 
+<p className="text-base mb-5" > By uploading your product or item to teba, you 
+acknowledge that you agree to teba Shop's<Button type="link">Terms of  Service and 
 Community Guidelines </Button> </p>
 
 

@@ -141,7 +141,18 @@ async function UpdateValue(e){
   onChange={UpdateValue}  autoComplete="true"  placeholder={data && data.website}
   />
   
-  
+    
+<div className="grp-input">
+<label htmlFor="req" className="capitalize text-md font-semibold my-2 ">About Company </label>
+<div>
+<textarea name="about" className="p-3 my-4 mb-4 rounded w-full h-32 "  
+style={{'border':'1px solid silver'}} onChange={UpdateValue} 
+ placeholder={data.about ? data.about:"Write about your business or company"} >
+</textarea> 
+</div>
+
+
+</div>
   </form>
   
      }
