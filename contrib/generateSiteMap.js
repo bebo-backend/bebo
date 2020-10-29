@@ -23,7 +23,7 @@ async function generateSiteMap() {
               const route = path === '/index' ? '' : path
               return `
                       <url>
-                          <loc>${`bebo.vercel.app/${route}`}</loc>
+                          <loc>${`bebo.vercel.app${route}`}</loc>
                       </url>
                   `
             })
