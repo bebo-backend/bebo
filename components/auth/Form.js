@@ -28,7 +28,7 @@ const Form = ({ errorMessage, onSubmit,onChange=f=>f,load=false }) => (
   <div className="mb-5" ><Alert showIcon type="error" message={errorMessage}></Alert></div> }
 
 
-<div style={{'marginBottom':'3px'}}>
+<div style={{'marginBottom':'3px'}} className="mt-3">
   <p className="text-md font-semibold " htmlFor="username" >Email</p>
 
 <div className="my-3 mb-6 ">
@@ -62,7 +62,7 @@ onClick={onSubmit}>CONTINUE {load && <LoadingOutlined /> }</button>
 
   <div className='w-full flex justify-center mt-6 capitalize '>
   
-  <p className=" border-b-2 text-gray-900 border-black font-extrabold flex justify-center uppercase">
+  <p className="w-full border-b-2 text-gray-900 border-gray-400 font-extrabold flex justify-center uppercase">
   <span>Sign in with</span></p>
 
 

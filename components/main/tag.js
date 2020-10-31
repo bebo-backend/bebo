@@ -16,7 +16,7 @@ const {search,tag} = router.query
 
 return (
 
-    <div className="mt-0 w-full flex flex-row flex-wrap justify-around md:justify-center md:mx-1 w-full " style={{
+    <div className="mt-0 w-full flex flex-row flex-wrap justify-evenly md:justify-center md:mx-1 w-full " style={{
         'textAlign':'center'
     }}> 
       <Link  href="/">

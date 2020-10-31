@@ -48,7 +48,7 @@ const Header = ({tag=true}) => {
         <Search/>
         </div>
 
-        <div className="flex-shrink pb-2 sm:pb-0 md:m-2 w-full  py-1 md:w-2/3 md:px-3 justify-evenly  flex items-center">
+        <div className="flex-shrink pb-2 sm:pb-0 md:m-2 w-full  py-1 md:w-2/3 md:px-3 justify-around md:justify-evenly  flex items-center">
 
         <Link href='/upload-item'>
         <a className="
@@ -124,7 +124,7 @@ Sign out
       </nav>
       </div>
      
-{tag && (  <div className="flex inline-flex w-full px-1 md:px-1 mx-0 pb-2 pt-4 mt-3 sm:mt-20 ">
+{tag && (  <div className="flex inline-flex w-full px-1 md:px-1 mx-0 pb-2 pt-4 mt-3 sm:mt-16 ">
 <Tag />
 </div>)}
     

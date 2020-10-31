@@ -10,18 +10,10 @@ const RegisterForm = ({ errorMessage, onSubmit,onChange=f=>f,load=false }) => (
   <form className="w-full sm:w-1/2 lg:w-1/3 my-8 md:mx-4 px-5 sm:m-10 rounded-lg shadow-2xl sm:p-5 sm:px-10 py-10
   border-1 bg-white">
   
-
-        <Link href="/">
-       <a className="text-3xl  font-sans font-extrabold flex 
-       justify-center items-center  
-  ">
-            <span className="text-black">te</span><span className="text-yellow-600">ba.</span>
-            </a>
-        </Link>
         <p className="center border-b-2 border-black pb-3 text-lg leading-tight text-black font-bold 
  uppercase" style={{'textAlign':'center'}}> Create new  account</p>
    
-<div className="grp-input">
+<div className="grp-input"  className="mt-3">
 
   <label className="text-md font-semibold " htmlFor="agencyname">Full Name * </label>
 

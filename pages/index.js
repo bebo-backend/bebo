@@ -76,7 +76,7 @@ router.push(url)
 
 
 
-    <TopCompany data={topCompany} />
+ <DailyDeals data={dailyDeals} />
 
  <div  className="flex  flex-wrap md:flex-no-wrap justify-evenly mb-8 py-5 mx-0  md:px-5 ">
 
@@ -89,7 +89,8 @@ router.push(url)
 
  </div>
 
- <DailyDeals data={dailyDeals} />
+    <TopCompany data={topCompany} />
+
 
  <div className="mx-auto mt-2 mb-4 w-full flex justify-center">
 

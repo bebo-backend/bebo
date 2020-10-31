@@ -83,12 +83,15 @@ onChange={e=>handlechange(e.target.value,'email')}   autoComplete="true" value={
 
  <div className="w-full sm:w-1/2">  
 <label  htmlFor="tel" className="capitalize text-lg font-semibold my-2 " >Phone-No *</label>
-<Input className="my-4 h-12   mb-8" name="tel" required allowClear prefix={<PhoneOutlined/>} type="tel" 
+
+<div className="my-4 mb-8 " >
+<Input className=" h-12 " name="tel" required allowClear prefix={<PhoneOutlined/>} type="tel" 
 onChange={e=>handlechange(e.target.value,'tel')}  autoComplete="true"  
 value={data['tel']} placeholder="i.e. 08061344475, 08061344475"
 /> 
 
 
+</div>
 </div>
 
 </div>
