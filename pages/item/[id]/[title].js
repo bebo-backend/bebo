@@ -67,7 +67,7 @@ return (
 
 
   { data && 
-<div className="flex-inline sm:flex mt-0 pl-1 shadow-none pt-5 md:pl-1 w-full bg-white pr-5"> 
+<div className="flex-inline sm:flex mt-0 pl-1 shadow-none pt-5 md:pl-1 w-full bg-white sm:pr-5"> 
 
 <div className="sm:w-3/4 w-full flex  "> 
 
@@ -92,7 +92,7 @@ return (
 }
 
 
-{Object.keys(data).length > 0 && <Cartrecommend content={response.data} /> }
+{Object.keys(data).length > 0 && <Cartrecommend content={data} /> }
 
   </Layout>
 )

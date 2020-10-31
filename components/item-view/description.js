@@ -56,13 +56,13 @@ issue
 }
 <hr className="mt-2"/>
 
-{show === 0 && <pre className="my-6 text-sm sm:text-base px-3  whitespace-pre-wrap"> {data.description} </pre>}
+{show === 0 && <pre className="my-6 text-sm sm:text-base sm:px-3  whitespace-pre-wrap"> {data.description} </pre>}
 
-{show === 1 && <pre className="my-6 text-sm sm:text-base px-3  whitespace-pre-wrap"> {data.exchange_item} </pre>}
+{show === 1 && <pre className="my-6 text-sm sm:text-base sm:px-3  whitespace-pre-wrap"> {data.exchange_item} </pre>}
 
-{show === 2 && <pre className="my-6 text-sm sm:text-base px-3  whitespace-pre-wrap"> {data.requirement} </pre>}
+{show === 2 && <pre className="my-6 text-sm sm:text-base sm:px-3  whitespace-pre-wrap"> {data.requirement} </pre>}
 
-{show === 3 && <pre className="my-6 text-sm sm:text-base px-3 whitespace-pre-wrap"> {data.issue} </pre>}
+{show === 3 && <pre className="my-6 text-sm sm:text-base sm:px-3 whitespace-pre-wrap"> {data.issue} </pre>}
 
 
 

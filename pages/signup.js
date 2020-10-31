@@ -7,6 +7,7 @@ import {Modal, Alert} from "antd";
 import { useRouter } from 'next/router'
 import {BASE_URL} from '../settings'
 import axios from 'axios'
+import Link from 'next/link'
 
 
 
@@ -111,16 +112,22 @@ setForm(data)
 
 
 
-      <div className=" flex w-full flex-col sm:flex-row justify-center sm:flex-no-wrap" style={{'backgroundColor':'#01718f'}}>
+      <div className=" items-center flex w-full flex-col sm:flex-row justify-center sm:flex-no-wrap" style={{'backgroundColor':'#01718f'}}>
 
      
-<div className="text-white flex flex-col justify-start items-center mt-32 font-extrabold px-4 sm:w-1/2  ">
 
-<span className="text-4xl sm:text-6xl font-extrabold my-3 ">Showcase... </span>
+<div className="text-white flex flex-col justify-start items-center mt-12 font-extrabold px-4 sm:w-1/2  ">
 
-<i className=" text-2xl sm:text-5xl" style={{'textAlign':'center','fontFamily':'serif'
-}}> your product Online on  </i>
-<span className="text-4xl sm:text-6xl font-extrabold my-3 text-yellow-400 ">teba.com.ng</span>
+ <Link href="/">
+       <a className="text-5xl  font-sans font-extrabold flex 
+       justify-center items-center  
+  ">
+            <span className="text-black">te</span><span className="text-yellow-600">ba.</span>
+            </a>
+        </Link>
+
+<span className="text-4xl sm:text-6xl font-extrabold mb-1 " style={{'textAlign':'center'}}>Make your product known</span>
+
 
 </div>
 

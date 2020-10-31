@@ -12,7 +12,7 @@ import Link from 'next/link'
 import {Breadcrumb,Cascader,Typography,Tag,Empty} from "antd";
 import {sortBy,reverse} from 'lodash'
 import {useState,useEffect} from 'react'
-import {LoadingOutlined,MenuOutlined} from '@ant-design/icons';
+import {LoadingOutlined,BarsOutlined} from '@ant-design/icons';
 import remove from 'lodash'
 import {fetcher} from '../lib/ax-fetch'
 import useSWRInfinite from "swr";
@@ -284,7 +284,7 @@ setMenu(true)
       </p>
 
   <span className="flex justify-end  flex-shrink ">
-<MenuOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-white " onClick={e=>setMenu(!menu)} style={{
+<BarsOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-white " onClick={e=>setMenu(!menu)} style={{
   'color':'white'
 }} />
 </span> 
@@ -349,20 +349,22 @@ justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
   ))}
 </div>
 
-{ssrData.next &&
-  <div className="mx-auto mt-10 mb-20 w-1/2 md:w-1/3">
-          <button
-            className="bg-red-600 border-solid 
-            border-2 hover:bg-white border-red-600 text-white 
-            hover:text-red-600 font-bold py-2 px-4 rounded-full w-full"
-            disabled={!data.next}
-            onClick={e=>setPage(page+1)}
-          >
-              'More Product'
-          </button>
+  <div className="mx-auto mt-2 mb-4 w-full flex justify-center">
 
+    
+          <a style={{'border':'1px solid'}}
+            className=" hover:bg-blue-500
+            hover:text-white font-bold py-2 px-8 rounded"
+
+             disabled={!ssrData.next}
+            onClick={e=>setPage(page+1)}
+       
+          >
+              More product
+          </a>
+  
         </div>
-        }
+
  </div>
 
 :
@@ -659,7 +661,7 @@ setMenu(true)
       </p>
 
   <span className="flex justify-end  flex-shrink ">
-<MenuOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-white " onClick={e=>setMenu(!menu)} style={{
+<BarsOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-white " onClick={e=>setMenu(!menu)} style={{
   'color':'white'
 }} />
 </span> 
@@ -724,20 +726,25 @@ justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
   ))}
 </div>
 
-{data.next &&
-  <div className="mx-auto mt-10 mb-20 w-1/2 md:w-1/3">
-          <button
-            className="bg-red-600 border-solid 
-            border-2 hover:bg-white border-red-600 text-white 
-            hover:text-red-600 font-bold py-2 px-4 rounded-full w-full"
-            disabled={!data.next}
-            onClick={e=>setPage(page+1)}
-          >
-              'More Product'
-          </button>
 
+  <div className="mx-auto mt-2 mb-4 w-full flex justify-center">
+
+    
+          <a style={{'border':'1px solid'}}
+            className=" hover:bg-blue-500
+            hover:text-white font-bold py-2 px-8 rounded"
+
+             disabled={!data.next}
+            onClick={e=>setPage(page+1)}
+       
+          >
+              More product
+          </a>
+  
         </div>
-        }
+
+ 
+        
  </div>
 
 :

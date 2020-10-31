@@ -25,7 +25,7 @@ const ShopHub = () => {
   })
 
   const router = useRouter()
-  const [errorMsg, setErrorMsg] = useState('')
+  const [errorMsg, setErrorMsg] = useState([])
   const initialFormData = {
     images:[],
     acquire_type:'sale',
@@ -69,7 +69,55 @@ const transformData=(data)=>{
 
   }
 
-const submitForm= async ()=>{
+  const availableField=()=>{
+const requiredField =['title','category','location','email','tel','description']
+let returnData = []
+
+    Object.keys(requiredField).map(field=>{
+
+if(!formValue[requiredField[field]]){
+returnData = [...returnData,<span>At least <i className="font-bold capitalize">{requiredField[field]}</i> field is required</span>]
+
+
+} else if (formValue[requiredField[field]] === " " || formValue[requiredField[field]] === "" || formValue[requiredField[field]] === null ){
+returnData = [...returnData,<span> <i className="font-bold capitalize">{requiredField[field]}</i> field must contain data</span>]
+
+
+
+} }
+
+
+      )
+
+    setErrorMsg(returnData)
+
+    return returnData
+  }
+
+const validateForm = ()=>{
+
+let returnData = availableField()
+
+Object.keys(formValue).map(value=>{
+
+
+if (value === "images" && Object.keys(formValue[value]).length == 0 ){
+returnData  = [...returnData,<span>At least <i className="font-bold">one (1) image</i> is required</span>]
+
+
+}
+
+
+})
+
+setErrorMsg(returnData)
+
+return returnData;
+
+}
+
+
+const submitFormUpload= async ()=>{
 
   setStartUpdate(true)
 
@@ -77,7 +125,8 @@ const submitForm= async ()=>{
       ...formValue,username:user.username
   }
   
- 
+
+
  await axios.post(BASE_URL +"store/upload/", transformData(updateData),{
       headers:{
           'content-type':'multipart/form-data'
@@ -95,12 +144,30 @@ setStartUpdate(false)
           })
 
 
+
+
+
 }
 
 
+const submitForm=()=>{
+
+
+
+if (Object.keys(validateForm()).length === 0){
+
+  submitFormUpload()
+
+} else {
+
+  null
+}
+}
 
 
   async function onChange(e,type_data){
+
+
 
     if (type_data =="category"){
 
@@ -178,7 +245,7 @@ const stepMove=(value)=>{
 
 
   return (
-    <Layout title="Sell Hub - Upload" >
+    <Layout title="Ads Hub - Upload product" >
     <Modal visible={updateDone} centered title="Upload successful"  okType="primary" okText={
         <a onClick={e=>{ setUpdateDone(false); setStartUpdate(false);}}> Upload More </a>
            
@@ -213,7 +280,7 @@ const stepMove=(value)=>{
 
 <div className="bg-white py-3 mx-0  my-5 text-white" style={{'backgroundColor':'#01718f'}}>
     <div className="flex w-full justify-center mt-2 mb-0 " >  
-    <span className="text-4xl font-extrabold mb-0 text-white">Ads Hub</span>
+    <span className="text-4xl font-extrabold mb-0 text-white font-mono">Ads Hub</span>
     
 
     </div>
@@ -283,7 +350,7 @@ const stepMove=(value)=>{
   
     <div>
   
-  <Step5 handlechange={onChange} submitForm={submitForm} data={formValue}  />
+  <Step5 handlechange={onChange} submitForm={submitForm} data={formValue} error={errorMsg}  />
   {stepMove(4)}
   </div>
   

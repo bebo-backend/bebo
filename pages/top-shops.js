@@ -10,6 +10,7 @@ import {fetcher} from '../lib/ax-fetch'
 import useSWRInfinite from "swr";
 import {useState} from 'react'
 import {LoadingOutlined} from '@ant-design/icons';
+import {Breadcrumb} from "antd";
 
 
 
@@ -26,23 +27,11 @@ if (!index || index===0) return BASE_URL+'popular-shop?page='+page+"&limit="+LIM
 return BASE_URL+'popular-shop?page='+index+"&limit="+LIMIT
 },fetcher)
 
-if (!data){return <Layout title="Top beBO accounts">
-  
-    {data &&   <div className="md:mb-20" >
- 
-   <TopCompany data={data.res} />
-     <div className="mx-auto mt-10 mb-20 w-1/2 md:w-1/3">
-          <button
-            className="bg-red-600 border-solid border-2 hover:bg-white border-red-600 text-white hover:text-red-600 font-bold py-2 px-4 rounded-full w-full"
-            disabled={!data.next}
-            onClick={e=>setPage(page+1)}
-          >
-            {data.next ?'Load More Product': 'No more Product'}
-          </button>
+if (!data){return <Layout title="Top teba sellers">
 
-        </div>
+   
 
-    </div>    }
+     }
 
 
 
@@ -51,23 +40,46 @@ if (!data){return <Layout title="Top beBO accounts">
 
 
 return (
-  <Layout title="Top beBO accounts">
+  <Layout title="Top teba sellers">
+
+  <p className=" text-lg flex justify-between pt-3 pb-3 sm:pb-0 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
+    text-white" style={{'backgroundColor':'#01718f'}} >
+<p className="  w-full">
+<Breadcrumb className="flex w-full" >
+
+ <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >Top Ads
+       </Breadcrumb.Item>
+
+   
+      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-white" >Page: {page}, ( {Object.keys(data.res).length} products found ) </Breadcrumb.Item>
+
+ 
+      </Breadcrumb> 
+
+      </p>
+
+
+    </p>
   
     {data &&   <div className="md:mb-20" >
  
-   <TopCompany data={data.res} />
+   <TopCompany data={data.res} href={false} />
    
-   {data.next && <div className="mx-auto mt-10 mb-20 w-1/2 md:w-1/3">
-          <button
-            className="bg-red-600 border-solid border-2 hover:bg-white border-red-600 text-white hover:text-red-600 font-bold py-2 px-4 rounded-full w-full"
-            disabled={!data.next}
-            onClick={e=>setPage(page+1)}
-          >
-            More Product
-          </button>
+ <div className="mx-auto mt-2 mb-4 w-full flex justify-center">
 
+    
+          <a style={{'border':'1px solid'}}
+            className=" hover:bg-blue-500
+            hover:text-white font-bold py-2 px-8 rounded"
+
+             disabled={!data.next}
+            onClick={e=>setPage(page+1)}
+       
+          >
+              More product
+          </a>
+  
         </div>
-      }
 
     </div>    }
 

@@ -32,13 +32,23 @@ const generateCategory= async()=>{
     var returnData=[];
    const excludeData=[]
 
-  Object.keys(content).forEach(
+   if (content instanceof Array){
+
+ Object.values(content).map(
         prop =>{
 
 // console.log('cart -'+prop);
-         returnData.push(content[prop]['category']);
-         excludeData.push(content[prop]['id']);
+         returnData.push(prop.category);
+         excludeData.push(prop.id);
        });
+   } else {
+
+  returnData.push(content.category);
+         excludeData.push(content.id);
+
+   }
+
+ 
 
   const sendData = {
   category:returnData,
@@ -53,7 +63,7 @@ setData(response.data)
 
 return (
 
-  <DailyDeals data={data} title="Explore related search" />
+  <DailyDeals data={data} title="Explore related category" />
 
 
   )

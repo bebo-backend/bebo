@@ -2,8 +2,8 @@
 import React, { Component,useState } from 'react';
 import {Input,Button,Row,Col,Form,Divider,
 Modal,Cascader} from "antd";
-import {LoadingOutlined,WhatsAppOutlined,MailFilled,PhoneFilled,EnvironmentFilled,
- InfoCircleFilled} from '@ant-design/icons';
+import {LoadingOutlined,WhatsAppOutlined,MailOutlined,PhoneOutlined,EnvironmentOutlined,
+ InfoCircleOutlined} from '@ant-design/icons';
 import Options from "../contrib/category-options"
 
 
@@ -15,19 +15,22 @@ const Step1=({handlechange,data})=>{
 
 
  return <form className="mb-10 sm:mx-10">
- <h2 className='text-xl md:text-2xl font-bold mb-5 uppercase text-gray-700'> Details:  </h2>
- <hr className="mb-8" />
+ <h2 className='text-xl md:text-2xl mb-2 text-gray-900'> Enter product details  </h2>
+ <hr className="mb-8 " />
 
 
 <div className="grp-input">
 <label className="capitalize font-semibold my-2 text-lg  " htmlFor="title">Title * </label>
 <div>
-<Input name="title" prefix={<InfoCircleFilled />}   className="my-4 h-12 mb-8   " required allowClear
+
+<div className="my-4 mb-8 " >
+<Input name="title" prefix={<InfoCircleOutlined />}   className="h-12 " required allowClear
 onChange={e=>handlechange(e.target.value,'title')} autoFocus  autoComplete="true" 
  placeholder="eg. 3 Bedroom Flats, New Gks Generator(Black)" value={data['title']} 
 />
 
 
+</div>
 </div>
 
 </div>
@@ -51,38 +54,44 @@ placeholder={ data['category'] ?data['category']:"Select Category"}
 <div className="grp-input">
 
 <label className="capitalize text-lg font-semibold my-2 " htmlFor="locn">Address * </label>
-<Input  className="my-4 h-12 mb-8" name="locn" required allowClear  prefix={<EnvironmentFilled/>}
+<div className="my-4 mb-8 " >
+
+<Input  className="h-12" name="locn" required allowClear  prefix={<EnvironmentOutlined/>}
 onChange={e=>handlechange(e.target.value,'location')}
  value={data['location']}  autoComplete="true"  placeholder="eg. Ikeja, Lagos State"
 />
 
 </div>
+</div>
 
 
 
-<div className="grp-input">
-<Row gutter={[12, 12]} >
- <Col>
+<div >
+<div className="w-full flex sm:flex-row flex-col">
+ <div className="w-full sm:w-1/2 mr-4">
  
  
 <label className="capitalize text-lg font-semibold my-2 "  htmlFor="email">E-mail *</label>
-<Input  className="my-4 h-12  mb-8 " name="email" required allowClear prefix={<MailFilled/>} type="email"  
+<div className="my-4 mb-8 " >
+
+<Input  className="h-12  " name="email" required allowClear prefix={<MailOutlined />} type="email"  
 onChange={e=>handlechange(e.target.value,'email')}   autoComplete="true" value={data['email']}
   placeholder="eg. teba@gks.co"
 /> 
-</Col>
+</div>
+</div>
 
- <Col>  
+ <div className="w-full sm:w-1/2">  
 <label  htmlFor="tel" className="capitalize text-lg font-semibold my-2 " >Phone-No *</label>
-<Input className="my-4 h-12   mb-8" name="tel" required allowClear prefix={<PhoneFilled/>} type="tel" 
+<Input className="my-4 h-12   mb-8" name="tel" required allowClear prefix={<PhoneOutlined/>} type="tel" 
 onChange={e=>handlechange(e.target.value,'tel')}  autoComplete="true"  
 value={data['tel']} placeholder="i.e. 08061344475, 08061344475"
 /> 
 
 
-</Col>
+</div>
 
-</Row>
+</div>
 
 </div>
 
@@ -91,10 +100,14 @@ value={data['tel']} placeholder="i.e. 08061344475, 08061344475"
 <div className="grp-input">
 
 <label htmlFor="tel" className="capitalize text-lg font-semibold my-2 " >Website (Optional) </label>
-<Input className="my-4 h-12   mb-8" name="website"  required allowClear prefix={"http://"} type="text"
+
+<div className="my-4 mb-8 " >
+
+<Input className="h-12" name="website"  required allowClear prefix={"http://"} type="text"
  onChange={e=>handlechange(e.target.value,'website')} 
  value={data['website']} autoComplete="true"  placeholder="i.e. www.alaba21store.com"
 /> 
+</div>
 </div>
 
 
@@ -102,9 +115,12 @@ value={data['tel']} placeholder="i.e. 08061344475, 08061344475"
 <div className="grp-input">
 
 <label htmlFor="tel" className="capitalize text-lg font-semibold my-2 " >Whatsapp Contact (Optional) </label>
-<Input className="my-4 h-12 " name="whatsapp_no" required allowClear prefix={<WhatsAppOutlined />} type="text"
+<div className="my-4 mb-8 " >
+
+<Input className="h-12 " name="whatsapp_no" required allowClear prefix={<WhatsAppOutlined />} type="text"
 onChange={e=>handlechange(e.target.value,'whatsapp_no')}  value={data['whatsapp_no']}   autoComplete="true"  placeholder="Enter your whatsapp contact"
 /> 
+</div>
 </div>
 
 

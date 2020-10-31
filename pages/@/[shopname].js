@@ -12,7 +12,7 @@ import Link from 'next/link'
 import {Breadcrumb,Cascader,Typography,Tag,Empty,Rate,Table} from "antd";
 import {sortBy,reverse} from 'lodash'
 import {useState,useEffect} from 'react'
-import {LoadingOutlined,MenuOutlined} from '@ant-design/icons';
+import {LoadingOutlined,BarsOutlined} from '@ant-design/icons';
 import remove from 'lodash'
 import {fetcher} from '../../lib/ax-fetch'
 import useSWRInfinite from "swr";
@@ -201,7 +201,7 @@ addUrl(filterurl,'sort')
       </p>
 
   <span className="flex justify-end  flex-shrink ">
-<MenuOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-white " onClick={e=>setMenu(!menu)} style={{
+<BarsOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-white " onClick={e=>setMenu(!menu)} style={{
   'color':'white'
 }} />
 </span> 
@@ -264,17 +264,20 @@ justify-left mb-2 mx-2 md:mx-3 sm:mx-0 md:mx-1   ">
 </div>
 
 
-  <div className="mx-auto mt-10 mb-20 w-1/2 md:w-1/3">
-          <button
-            className="bg-red-600 border-solid 
-            border-2 hover:bg-white border-red-600 text-white 
-            hover:text-red-600 font-bold py-2 px-4 rounded-full w-full"
-            disabled={!ssrData.next}
-            onClick={e=>setPage(page+1)}
-          >
-            {ssrData.next &&'More Product'}
-          </button>
+    <div className="mx-auto mt-2 mb-4 w-full flex justify-center">
 
+    
+          <a style={{'border':'1px solid'}}
+            className=" hover:bg-blue-500
+            hover:text-white font-bold py-2 px-8 rounded"
+
+             disabled={!ssrData.next}
+            onClick={e=>setPage(page+1)}
+       
+          >
+              More product
+          </a>
+  
         </div>
  </div>
 
@@ -505,7 +508,7 @@ setMenu(true)
       </p>
 
   <span className="flex justify-end  flex-shrink ">
-<MenuOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-white " onClick={e=>setMenu(!menu)} style={{
+<BarsOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-white " onClick={e=>setMenu(!menu)} style={{
   'color':'white'
 }} />
 </span> 
@@ -530,13 +533,13 @@ setMenu(true)
 
  <span className="text-base px-2 py-0 center leading-tight  mb-0 text-black
      font-mono border-teal-900 border-r-2 w-20 mx-0 cursor-pointer " onClick={e=>setcurView(1)}  style={{
-'color':curView=== 1 ? "blue":"silver",'textAlign':'center'
+'color':curView=== 1 ? "black":"silver",'textAlign':'center'
 }}>About</span>
 
 
  <span className="text-base px-2 py-0 center leading-tight  mb-0 
      font-mono  w-20 cursor-pointer " onClick={e=>setcurView(0)}  style={{
-'color':curView=== 0 ? "blue":"silver",'textAlign':'center'
+'color':curView=== 0 ? "black":"silver",'textAlign':'center'
 }} >Product (Ads)</span>
 
 <div className="md:flex flex-inline mb-10">
@@ -582,20 +585,21 @@ justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
   ))}
 </div>
 
-{data.next &&
-  <div className="mx-auto mt-10 mb-20 w-1/2 md:w-1/3">
-          <button
-            className="bg-red-600 border-solid 
-            border-2 hover:bg-white border-red-600 text-white 
-            hover:text-red-600 font-bold py-2 px-4 rounded-full w-full"
-            disabled={!data.next}
-            onClick={e=>setPage(page+1)}
-          >
-              'More Product'
-          </button>
+  <div className="mx-auto mt-4 mb-4 w-full flex justify-center">
 
+    
+          <a style={{'border':'1px solid'}}
+            className=" hover:bg-blue-500
+            hover:text-white font-bold py-2 px-8 rounded"
+
+             disabled={!data.next}
+            onClick={e=>setPage(page+1)}
+       
+          >
+              More product
+          </a>
+  
         </div>
-        }
  </div>
 
 :

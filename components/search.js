@@ -9,6 +9,7 @@ import {useRouter} from 'next/router'
 
 function Search(){
 const router = useRouter()
+const searched = router.query.search
 const [inputdata,setInput] = useState('all')
 // const router = useRouter()
 
@@ -22,7 +23,7 @@ return (
     <div className="w-full mx-1 flex justify-center  m-0 items-start"> 
    
 <Input  className="h-8 " allowClear 
-onChange={handleInput} 
+onChange={handleInput} defaultValue={searched}
 placeholder="Search for anything on teba" 
  suffix={<Link href={"/search?search="+inputdata}><i className="cursor-pointer hover:text-gray-600"><SearchOutlined style={{
     'fontSize':'20px'

@@ -2,7 +2,7 @@ import GroupPics from './group-pictures'
 import {Empty,Button,Avatar,Input,Rate} from 'antd';
 import { BASE_IMG_URL,BASE_URL } from '../../settings'
 import {useState} from 'react'
-import {LeftOutlined,RightOutlined,ArrowRightOutlined,UserOutlined,ClockCircleFilled,
+import {CaretLeftOutlined,CaretRightOutlined,ArrowRightOutlined,UserOutlined,ClockCircleFilled,
 EyeFilled} from '@ant-design/icons';
 import Review from './reviews'
 import Description from './description'
@@ -45,23 +45,23 @@ mutate(BASE_URL+'get_reviews/'+data.id+'/')
 
 const stepMove=(value)=>{
 
-        return <div className="flex justify-around absolute"><p style={{
-        	'marginTop':'180px'}} className=" z-30   " 
-        >
-
+        return <div style={{
+          'marginTop':'180px'}} className="flex justify-around absolute  
+        w-full">
+  
 
       { value > 0 && 
         <button className="mx-3 p-1  " 
-        onClick={e=>setStep(value-1)}><LeftOutlined className="
+        onClick={e=>setStep(value-1)}><CaretLeftOutlined className="
       shadow-lg text-3xl sm:text-5xl bg-white rounded-full "/></button>
       }
 
       {value < data.images.length-1 && 
       <button className="mx-3 p-1 " 
-      onClick={e=>setStep(value+1)}><RightOutlined className="
+      onClick={e=>setStep(value+1)}><CaretRightOutlined className="
       shadow-lg text-3xl sm:text-5xl bg-white rounded-full " /></button>
       }
-      </p>
+
 </div>
        
 
@@ -71,8 +71,8 @@ const stepMove=(value)=>{
 
 
 
- return <div className="mx-0 md:ml-1 mb-2 md:mx-0 w-full rounded-lg ">
-<div className=" p-2 justify-center px-0 md:justify-left md:px-0  flex overflow-y-hidden"
+ return <div className="mx-0 md:ml-3 mb-2 md:mx-0 w-full rounded-lg ">
+<div className=" p-2 justify-left px-0 md:px-0  flex overflow-y-hidden"
  style={{'maxHeight':'600px'}}>
 <GroupPics  images={data.images && data.images} step={step} />
 
@@ -80,15 +80,16 @@ const stepMove=(value)=>{
 
 
 
-<div className="sm:w-5/6 mx-0 mb-4 flex" style={{'maxHeight':'530px'}}>  
+<div className="w-full md:w-5/6 mx-0 mb-4 p-2 md:p-0 flex justify-center" style={{'maxHeight':'530px'}}>  
+{stepMove(step)}
 
 
-
-   <img className="object-cover  rounded shadow-lg  " onClick={e=>router.push(BASE_IMG_URL+data.images[step].images)}
+   <img className="object-cover sm:object-contain  w-full  " 
+   onClick={e=>router.push(BASE_IMG_URL+data.images[step].images)}
       src={BASE_IMG_URL+data.images[step].images}></img>
  
 
-     {stepMove(step)}
+     
 
 
 </div>
@@ -106,7 +107,7 @@ const stepMove=(value)=>{
 
 
 <div className="p-3 md:mr-20">
-<div>
+<div className=" hidden md:block">
 
 <Description data={data} />
 

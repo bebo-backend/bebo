@@ -10,6 +10,7 @@ import {Select} from "antd";
 import {EnvironmentFilled} from '@ant-design/icons';
 import gistfile1 from '../contrib/gistfile1'
 import {useRouter} from 'next/router'
+import Link from 'next/link'
 
 
 
@@ -89,6 +90,20 @@ router.push(url)
  </div>
 
  <DailyDeals data={dailyDeals} />
+
+ <div className="mx-auto mt-2 mb-4 w-full flex justify-center">
+
+    <Link href="/search?search=all">
+          <a style={{'border':'1px solid'}}
+            className=" hover:bg-blue-500
+            hover:text-white font-bold py-2 px-8 rounded"
+       
+          >
+              See all
+          </a>
+   </Link>
+        </div>
+
 
   </Layout>
 )

@@ -18,7 +18,7 @@ const Footer = () => {
     <footer className="sm:border-t-2 sm:shadow-md border-gray-200 inset-y-0 bottom-0   ">
     <p className="text-gray-400 mt-4 hidden sm:block">Please do not use Opera mini for better performance </p>
    <div className="flex justify-evenly 
-    flex-wrap mt-4 ml-6  md:mt-1">
+    flex-wrap mt-4 sm:ml-6  md:mt-1">
 
   
 
@@ -47,9 +47,9 @@ const Footer = () => {
     <ul className="m-3" > 
     <h2 className="text-lg font-bold"> About teba  </h2>
     
-    <li className=" text-base">Company info  </li>
+    <li className=" text-base">Contacts  </li>
     <li className=" text-base">We are hiring </li>
-    <li  className=" text-base">  Advertise with us</li>
+    <li  className=" text-base"> Faq</li>
     <li  className=" text-base"> Policies </li>
     
     

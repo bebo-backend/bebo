@@ -12,16 +12,16 @@ return (
 
  <p className="text-2xl font-extrabold px-3 py-0 center leading-tight md:w-full"
  style={{'textAlign':'center'}}>
-<ShoppingFilled className="text-5xl mx-2" /></p>
+<ShoppingFilled className=" text-4xl sm:text-5xl mx-2" /></p>
       
       <div>
-   <p className="text-2xl font-extrabold text-gray-900 px-0 mb-1 py-0 center leading-tight w-full"
+   <p className="text-base sm:text-2xl font-extrabold text-gray-900 px-0 mb-1 py-0 center leading-tight w-full"
     style={{'textAlign':'center'}}>
   Shop Bag
 
    </p>
    
-<div style={{'textAlign':'center'}} className=" flex flex-1 items-start center text-lg mt-0 pt-0 ">   
+<div style={{'textAlign':'center'}} className=" flex flex-1 items-start center sm:text-lg mt-0 pt-0 ">   
 Save things you'll love, want or need  for later consideration.
 </div>  
 

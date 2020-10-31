@@ -12,7 +12,7 @@ const Step4=({handlechange,data})=>{
 
 return <div className="mb-10 sm:mx-10">
 
- <h2  className='text-xl md:text-2xl font-bold mb-5  text-gray-700'> DELIVERY OPTION(S) <CarFilled className="mx-5"/></h2>
+ <h2  className='text-xl md:text-2xl mb-2  text-gray-900'> Delivery options (if available) </h2>
  <hr className="mb-8" />
  
 <div className="deli-input mb-5">

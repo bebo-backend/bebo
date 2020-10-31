@@ -1,16 +1,16 @@
 
-import {Radio,Select} from "antd";
+import {Radio,Select,Alert} from "antd";
 import {PayCircleFilled, CloudUploadOutlined} from '@ant-design/icons';
 
 
-const Step5=({handlechange,submitForm,data})=>{
+const Step5=({handlechange,submitForm,data,error})=>{
 
 
 
 
 return <div className="mb-10 sm:mx-10">
 
-<h2  className='text-xl md:text-2xl font-bold mb-5  text-gray-700'> PAYMENT OPTIONS(S) <PayCircleFilled className="mx-5"/></h2>
+<h2  className='text-xl md:text-2xl font-bold mb-2  text-gray-900'> Enter payment option(s) </h2>
 <hr className="mb-8" />
 
 
@@ -37,11 +37,19 @@ defaultValue={data['payment_type']? data['payment_type']:"Bank Transfer "} mode=
 </p>
 </div>
 
+
+{Object.keys(error).length >0 && error.map((value,index)=>(
+  <div className="mb-5" ><Alert showIcon type="error" message={value}></Alert></div>
+	))
+
+  }
+
 <div className="flex justify-center items-center"> 
 <div onClick={submitForm} className='btn w-full sm:w-1/2 center h-12 flex justify-center items-center  bg-blue-700
 rounded-md my-10  text-white  hover:bg-blue-500'>
+
 <button className="text-base capitalize font-extrabold my-10 "  
->UPLOAD ITEM <CloudUploadOutlined className="ml-3 text-base"/> </button>
+>VERIFY & UPLOAD <CloudUploadOutlined className="ml-3 text-base"/> </button>
 
 </div>
 

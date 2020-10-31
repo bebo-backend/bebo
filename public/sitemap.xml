@@ -1,62 +1,64 @@
-
-      <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
           
                       <url>
-                          <loc>bebo.vercel.app//cart</loc>
+                          <loc>bebo.vercel.app/cart</loc>
                       </url>
                   
                       <url>
-                          <loc>bebo.vercel.app/</loc>
+                          <loc>bebo.vercel.app</loc>
                       </url>
                   
                       <url>
-                          <loc>bebo.vercel.app//login</loc>
+                          <loc>bebo.vercel.app/login</loc>
                       </url>
                   
                       <url>
-                          <loc>bebo.vercel.app//search</loc>
+                          <loc>bebo.vercel.app/search</loc>
                       </url>
                   
                       <url>
-                          <loc>bebo.vercel.app//signup</loc>
+                          <loc>bebo.vercel.app/signup</loc>
                       </url>
                   
                       <url>
-                          <loc>bebo.vercel.app//ssr search</loc>
+                          <loc>bebo.vercel.app/sitemap-ads.xml</loc>
                       </url>
                   
                       <url>
-                          <loc>bebo.vercel.app//top-shops</loc>
+                          <loc>bebo.vercel.app/ssr search</loc>
                       </url>
                   
                       <url>
-                          <loc>bebo.vercel.app//upload-item</loc>
+                          <loc>bebo.vercel.app/top-shops</loc>
                       </url>
                   
                       <url>
-                          <loc>bebo.vercel.app//@/[shopname]</loc>
+                          <loc>bebo.vercel.app/upload-item</loc>
                       </url>
                   
                       <url>
-                          <loc>bebo.vercel.app//blog/[id]</loc>
+                          <loc>bebo.vercel.app/@/[shopname]</loc>
                       </url>
                   
                       <url>
-                          <loc>bebo.vercel.app//dashboard/profile-ssr</loc>
+                          <loc>bebo.vercel.app/blog/[id]</loc>
                       </url>
                   
                       <url>
-                          <loc>bebo.vercel.app//dashboard/profile</loc>
+                          <loc>bebo.vercel.app/dashboard/profile-ssr</loc>
                       </url>
                   
                       <url>
-                          <loc>bebo.vercel.app//item/[id]/[title]</loc>
+                          <loc>bebo.vercel.app/dashboard/profile</loc>
                       </url>
                   
                       <url>
-                          <loc>bebo.vercel.app//_app</loc>
+                          <loc>bebo.vercel.app/item/[id]/[title]</loc>
+                      </url>
+                  
+                      <url>
+                          <loc>bebo.vercel.app/_app</loc>
                       </url>
                   
       </urlset>
-  

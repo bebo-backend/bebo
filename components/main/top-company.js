@@ -7,7 +7,7 @@ import {last} from 'lodash'
 
 
 
-function TopCompany({data}){
+function TopCompany({data, href=true}){
 // console.log('data '+ Object.keys(data[0].images))
 
 return (
@@ -22,14 +22,20 @@ return (
     <p className="text-lg md:text-2xl ml-4 font-bold mb-0 text-gray-900 md:ml-5 md:px-5  pb-3 center leading-tight w-full
      " style={{'textAlign':'left'}}>
  Trending seller
+ {href && 
    <Link href='/top-shops'>
  
-    <a className="ml-0 p-1 font-bold">   <button className="mx-0 p-1 font-extrabold text-gray-900 " 
-      ><ArrowRightOutlined className="
-       sm:text-2xl   hover:bg-black  " /></button></a> 
+   <a style={{'border':'1px solid'}}
+            className=" hover:bg-blue-500 hover:text-white 
+           font-bold py-2 px-4 rounded text-sm mx-3  sm:mx-6"
+       
+          >
+              See all
+          </a> 
    
 
    </Link>
+ }
 
     </p>
     
@@ -56,7 +62,7 @@ justify-left mb-0  md:mx-3  ">
     { data.images && data.images[0] ?
       
       <img alt="first image" className="
-      object-cover mr-0 mt-3 rounded-full h-20 w-20 sm:h-32 sm:w-32 " src={BASE_IMG_URL+last(data.images).images} />:
+      object-cover mr-0 mt-3 rounded h-20 w-20 sm:h-32 sm:w-32 " src={BASE_IMG_URL+last(data.images).images} />:
 <FileJpgOutlined style={{
   'fontSize':'70px','textAlign':'center'
 }}  /> 

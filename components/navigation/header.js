@@ -25,17 +25,21 @@ const Header = ({tag=true}) => {
     <header className=" bg-white  " >
     <div className="sm:fixed w-full" style={{'z-index':'9999'}}>
       <nav className=" flex inset-y-0 top-0 text-black px-2 w-full md:px-5 items-end justify-center
-       sm:justify-start pb-0 shadow-sm py-1 h-14  " style={{'backgroundColor':'#01718f'}}>
+       sm:justify-start pb-0 shadow-sm pt-1 pb-0 h-14  " style={{'backgroundColor':'#01718f',
+       'borderBottom':'2px solid white'}}>
         <ul className="flex-inline sm:flex w-full py-0 my-0 ">
 
-        <div className="w-full sm:w-1/6 mx-0 hidden sm:inline sm:relative pt-1 pb-1  
+        <div className="w-full sm:w-1/6 mx-0 hidden sm:inline sm:relative pt-0 pb-0  
         z-40  md:mr-3 my-0 
-        sm:py-0 flex justify-center items-center bg-white ">
-       
+        sm:py-0 flex justify-center items-center cursor-pointer bg-white" style={{'textAlign':'center'}}>
+
+     
+
         <Link href="/">
-         <h2 className="font-extrabold text-3xl z px-2 sm:mt-0 sm:mt-2 sm:mb-1
-     text-black cursor-pointer sm:mb-0  font-sans 
-          relative   rounded  " style={{'textAlign':'center'}} >teba</h2>
+       <a className="text-3xl font-sans font-extrabold flex justify-center items-center  
+       h-full">
+            <span className="text-black">te</span><span className="text-yellow-600">ba.</span>
+            </a>
         </Link>
 
         </div>
@@ -44,12 +48,12 @@ const Header = ({tag=true}) => {
         <Search/>
         </div>
 
-        <div className="flex-shrink pb-2 sm:pb-0 md:m-2 w-full  py-1 md:w-2/3 md:px-3 justify-around md:justify-evenly flex items-start">
+        <div className="flex-shrink pb-2 sm:pb-0 md:m-2 w-full  py-1 md:w-2/3 md:px-3 justify-evenly  flex items-center">
 
         <Link href='/upload-item'>
         <a className="
       
-         cursor-pointer mr-3   leading-loose  hover:text-purple-300 
+         cursor-pointer mr-1   leading-loose  hover:text-purple-300 
          p-1 rounded-sm  px-3 text-md uppercase text-white  font-mono font-bold
 
          ">create</a>
@@ -120,7 +124,7 @@ Sign out
       </nav>
       </div>
      
-{tag && (  <div className="flex inline-flex w-full px-1 md:px-1 mx-0 pb-2 pt-4 mt-2 sm:mt-16">
+{tag && (  <div className="flex inline-flex w-full px-1 md:px-1 mx-0 pb-2 pt-4 mt-3 sm:mt-20 ">
 <Tag />
 </div>)}
     

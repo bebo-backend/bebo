@@ -17,7 +17,8 @@ const Step2=({handlechange, data})=>{
 
 return <div className="mb-10 sm:mx-10">
 
-<h2 className='text-xl md:text-2xl font-bold mb-5  text-gray-700'> ADDITIONAL DETAILS </h2>
+ <h2 className='text-xl md:text-2xl mb-2 text-gray-900'> Enter additional details for product  </h2>
+
  
 <hr className="mb-8" />
 
@@ -65,10 +66,12 @@ name="condition" defaultValue={data['condition']? data['condition']:"new"} butto
 
 <label htmlFor="price" className="capitalize text-lg font-semibold my-2 mr-2 ">Price *</label>
 
-<Input value={data['price']}    className="my-5 h-12" name="price" required allowClear prefix={"NGN(₦)"} type="number" 
+<div className="my-5 h-12">
+<Input value={data['price']}    className="h-12" name="price" required allowClear prefix={"NGN(₦)"} type="number" 
 onChange={e=>handlechange(e.target.value,'price')}  autoComplete="true"  placeholder="10,000" autoFocus
 /> 
 
+</div>
 </div>
 
 
@@ -169,11 +172,13 @@ placeholder={data['duration']? data['duration']:"Duration"} defaultValue="weekly
 
 <label  className="capitalize text-lg font-semibold my-2 " htmlFor="rent_dur_year">Duration Count</label>
 
-<Input   className="my-4 h-12 mt-5" name="dur_count" minLength={1} maxLength={50} minLength={1} required allowClear  type="number"
+<div className="my-5 ">
+<Input   className="h-12" name="dur_count" minLength={1} maxLength={50} minLength={1} required allowClear  type="number"
 onChange={e=>handlechange(e.target.value,'dur_count')}   placeholder="3" 
 defaultValue={data['dur_count']? data['dur_count']:1}
 />
 
+</div>
 </div>
 :<></> 
    }
@@ -185,11 +190,13 @@ defaultValue={data['dur_count']? data['dur_count']:1}
 <div className="grp-input">
 <label className="capitalize text-lg font-semibold my-2 mr-10 " htmlFor="instock">Available inStock: </label> 
 
-<InputNumber   className="my-4 h-12 py-0 px-24 "  onChange={e=>handlechange(e,'instock')} 
+<div className="my-4 ">
+<InputNumber   className="h-12 py-0 px-24 "  onChange={e=>handlechange(e,'instock')} 
  defaultValue={data['instock']? data['instock']:1}>
 
 </InputNumber> 
  
+</div>
 </div>
 
 <Row>

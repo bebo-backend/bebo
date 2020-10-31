@@ -1,11 +1,12 @@
 
-import {Avatar,Rate,Tag,Statistic,Button,Modal,Table} from 'antd';
+import {Avatar,Rate,Tag,Statistic,Button,Modal,Table,notification} from 'antd';
 import { BASE_IMG_URL,BASE_URL } from '../../settings'
-import {CheckOutlined,UserOutlined,EnvironmentFilled,CarFilled,LoadingOutlined} from '@ant-design/icons';
+import {CheckOutlined,UserOutlined,EnvironmentFilled,CarFilled,LoadingOutlined,CloudUploadOutlined} from '@ant-design/icons';
 import Link from 'next/link'
 import axios from 'axios'
 import {mutate} from 'swr'
 import {useState} from 'react'
+import Description from './description'
 
 
 const Index=({data, isLoggedIn,username})=>{
@@ -13,6 +14,13 @@ const Index=({data, isLoggedIn,username})=>{
 const [load,setLoad] = useState(false)
 const [rateLoad,setRateLoad] = useState(false)
 const [contact,setContacts] =useState(false)
+
+
+notification.config({
+  placement: 'topRight',
+  top: 200,
+  duration: 3,
+});
 
 
 const getDuration=(duration)=>{
@@ -40,11 +48,12 @@ switch(duration){
 
 }
 
-const addToCart=()=>{
+const addToCart=(title)=>{
 setLoad(true)
 axios.get(BASE_URL+"addtocart/"+data.id+'/'+username).then(res=>{
 	mutate(BASE_URL+"getcartlen/"+username+'/')
 	setLoad(false)
+  notification.success({message:"Product ("+title+") has been saved"})
 
 })
 
@@ -57,6 +66,9 @@ axios.get(BASE_URL+"addrate/"+data.id+'/'+value+'/'+username).then(res=>{
 	
 	setRateLoad(false)
 	mutate(BASE_URL+'get_reviews/'+data.id+'/')
+
+   notification.success({message:"Seller has been rated "+value+" star"})
+
 
 })
 
@@ -222,7 +234,7 @@ axios.get(BASE_URL+"addrate/"+data.id+'/'+value+'/'+username).then(res=>{
 <span className="mx-5"><Rate onChange={e=>handleRate(e)} defaultValue={data.submit_user.rate} allowClear={false}
 > </Rate> </span> {rateLoad &&  <LoadingOutlined />}</span>
 
-<p className="sm:text-2xl text-lg font-normal leading-tight mt-3 my-4 " > {data.title}</p>
+<p className="sm:text-2xl text-lg font-normal mt-3 my-4 " > {data.title}</p>
 
 
 <p>{data.submit_user.rate >=0 && <Tag  style={{'paddingRight':'10px',
@@ -256,7 +268,7 @@ className="rounded-full"> Exclusive</Tag>}</p>
 
 <p className=" mb-1 mt-2 text-gray-500 text-base" style={{
 	'fontFamily':'serif'
-}}>Exclusive Seller on teba: </p>
+}}>Exclusive Seller on teba: <span className='ml-2 text-black  font-semibold'> <CheckOutlined className=" text-black text-base mr-0" /> Instock</span></p> 
 
 
 <Avatar src={BASE_IMG_URL+data.submit_user.image} style={{"width":'35px',
@@ -268,7 +280,7 @@ className="rounded-full"> Exclusive</Tag>}</p>
 </span>
 <hr className="my-3" />
 
-<p className='mt-2 text-gray-500  font-semibold'> <CheckOutlined className=" text-black text-base mr-2" /> Instock</p>
+
 
 
   
@@ -287,17 +299,10 @@ rounded-md mt-3 text-white  hover:bg-teal-500 my-4' style={{'backgroundColor':'r
 
 </div>
 
-  <p>  <Table  sortDirections={["ascend","descend"]}  tableLayout="auto" 
-
-      dataSource={contactDataSource} 
-      columns={contactColumns} />
-      </p>
-
-
 {isLoggedIn ?
-  <div onClick={e=>addToCart()} className='btn w-full center h-10 flex
+  <div onClick={e=>addToCart(data.title)} className='btn w-full center h-10 flex
    justify-center items-center bg-blue-700
-rounded-md mt-3 text-white  hover:bg-blue-500 my-4'>
+rounded-md mt-1 text-white  hover:bg-blue-500 my-4'>
 
 <a className="text-lg text-white font-extrabold "
 > Save Product {load &&  <LoadingOutlined />}</a>
@@ -317,6 +322,25 @@ rounded-md mt-3 text-white  hover:bg-teal-500 my-4'>
 
 }
 
+<div className=" md:hidden block">
+
+<Description data={data} />
+
+
+
+
+</div>
+
+
+  <p>  <Table  sortDirections={["ascend","descend"]}  tableLayout="auto" 
+
+      dataSource={contactDataSource} 
+      columns={contactColumns} />
+      </p>
+
+
+
+
 
 
 
@@ -333,6 +357,15 @@ rounded-md mt-3 text-white  hover:bg-teal-500 my-4'>
 
 
 }
+
+ <div className="bg-gray-300 font-bold text-lg w-full center py-4 flex items-center flex-col  justify-center " >
+ <p className="w-full font-bold text-2xl text-black" style={{'textAlign':'center'}}>Post Ad like this </p>
+    <Link href="/upload-item">
+    <Button type="primary" size='large'>
+    <a className="px-5 py-2 my-4 hover:text-blue-300 cursor-pointer text-white text-base">
+    <CloudUploadOutlined /> Ads Hub </a></Button>
+  </Link>  </div>
+
 
 
 

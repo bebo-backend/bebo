@@ -1,6 +1,6 @@
 
 import Link from 'next/link'
-import {Empty,Avatar,Statistic,Modal,Button} from "antd";
+import {Empty,Avatar,Statistic,Modal,Button,notification,Tag} from "antd";
 import {BASE_IMG_URL,BASE_URL} from '../settings'
 import {MailFilled,PhoneFilled,UserOutlined,CloudUploadOutlined,
     FileJpgOutlined,ClearOutlined} from '@ant-design/icons';
@@ -21,7 +21,7 @@ return (
     rounded-lg shadow-2xl justify-center" > 
  
   
- <p className="uppercase text-base font-extrabold pt-3 py-2 mb-5 border-b-2 border-black">Profile data</p>
+ <p className="uppercase text-base font-extrabold pt-3 py-2 mb-5 border-b-2 border-gray-400">Profile data</p>
  <p className="">Username:</p>
  <p className="capitalize text-base font-semibold text-gray-900 mb-4 ">
  {data.user.username}</p>
@@ -42,7 +42,7 @@ return (
      rounded-lg shadow-2xl justify-center overflow-hidden"   > 
  
   
- <p className="uppercase text-base font-extrabold pt-3 py-2 mb-5 border-b-2 border-black ">contact info</p>
+ <p className="uppercase text-base font-extrabold pt-3 py-2 mb-5 border-b-2 border-gray-400">contact info</p>
 
  <p className="">Phone Number: <PhoneFilled/></p>
  <p className="capitalize text-base font-semibold text-gray-900 mb-4  ">
@@ -91,6 +91,12 @@ return (
 
 export function ItemInfo({itemdata,mutateProperty,setPage,page,about}){
 
+notification.config({
+  placement: 'topRight',
+  top: 200,
+  duration: 3,
+});
+
 
 return (
 
@@ -101,9 +107,9 @@ return (
 
 
  <p className="text-2xl px-0 py-0 center leading-tight  mb-4
-     font-sans border-black border-b-2 " >ABOUT </p>
+     font-sans border-gray-400 border-b-2 " >ABOUT </p>
 
-    <pre className="my-6 text-md sm:text-base px-3 leading-relaxed  whitespace-pre-wrap"> {about} </pre>
+    <pre className="my-6 text-md sm:text-base px-3 leading-relaxed  whitespace-pre-wrap text-gray-800"> {about} </pre>
 
        
     <p className="sm:text-3xl text-lg text-gray-900 px-0 py-3 pt-6 center 
@@ -123,7 +129,7 @@ return (
   </Link>  </div>
  
 
-<p className=" sm:text-2xl text-lg  font-bold mt-5 font-sans border-b-2 border-black">Ads (Product) ({itemdata && Object.keys(itemdata.res).length})</p>
+<p className=" sm:text-2xl text-lg  font-bold mt-5 font-sans border-b-2 border-gray-400">Ads (Product) ({itemdata && Object.keys(itemdata.res).length})</p>
 <table className="table-auto overflow-scroll w-full">
 
 
@@ -144,10 +150,10 @@ return (
 <p  className=" border-b-2 border-gray-300 p-1 px-5 m-1 mb-4  font-extrabold text-lg capitalize text-white "
  style={{'fontFamily':'monopo'}}>
 
- <h2><i className="mr-5 text-base">Exclusive Adser:</i> <Avatar src={BASE_IMG_URL+item.submit_user.image} style={{"width":'35px',
+ <h2><i className="mr-5 text-base text-red-600">Exclusive Seller:</i> <Avatar src={BASE_IMG_URL+item.submit_user.image} style={{"width":'35px',
 'height':'35px'}} icon={<UserOutlined />}></Avatar> 
 
-<span  className="ml-3 font-bold text-lg uppercase">You
+<span  className="ml-3 font-bold text-base">You
 </span></h2></p>
 
 <div>
@@ -170,22 +176,38 @@ return (
 
         <div className="m-2 sm:ml-6 ">
 
-  <p  className="font-extrabold text-lg my-1 mb-3 text-black leading-tight">{item.title}</p>
-  <p className="mt-2 my-2 text-lg overflow-hidden font-normal leading-tight " 
+  <p  className="font-extrabold text-base my-1 mb-2 text-black leading-tight">{item.title}</p>
+  <p className="mt-2 my-2 text-base overflow-hidden font-normal leading-tight " 
    style={{'fontFamily':'serif',
         'maxHeight':'70px'}}>{item.category}</p>
-    <p className="text-gray-600 text-base my-1 text-mg font-normal mb-0">{item.address}</p>
+    <p className="text-gray-600 text-base my-1 text-mg font-normal mb-0"    style={{'fontFamily':'serif',
+        'maxHeight':'70px'}}>{item.address}</p>
 
-        <p className="mt-2 my-3 text-lg overflow-hidden text-gray-600 font-normal leading-tight capitalize "  style={{'fontFamily':'serif',
-        'maxHeight':'70px'}}>{item.acquire_type}</p>
+<p>
+      <Tag className=" rounded-none capitalize mb-0  " style={{
+      'marginTop':'10px','border':'0px solid',
+      'borderRadius':'13px','minWidth':'60px','backgroundColor':'red','color':'white',
+      'textAlign':'center'}} >{item.acquire_type=='rent'?'rental':item.acquire_type }</Tag></p>  
+
+        <p className="flex m-0 block md:hidden">
+
+ {item.from_price != 0 ? <>
+<Statistic  valueStyle={{'fontSize':'1.4rem'}} prefix={"₦"} value={item.from_price} ></Statistic>  
+<span className=" flex text-xl font-bold items-center mx-3"> - </span>
+<Statistic valueStyle={{'fontSize':'1.4rem'}} prefix={"₦"} value={item.to_price}></Statistic> 
+
+</>:
+<Statistic valueStyle={{'fontSize':'1.4rem'}} prefix={"₦"} value={item.price} ></Statistic> }
+</p>
+
         </div>
 
   
 </div>
 </Link>
-  <div className="m-0 sm:ml-6 ">
+  <div className="m-0 sm:ml-3 hidden md:block w-3/5  ">
 
-<p className="shadow-md px-4  py-4 rounded-lg ">
+<p className=" px-1  py-1 rounded-lg ">
 
 
 
@@ -211,11 +233,11 @@ return (
 
 
 
- <p className='mb-2 text-gray-700'> Delivery: <span className='uppercase text-base font-semibold mb-0'> {item.with_delivery =='Yes'? " Provided by Adser":" Not Provided"} </span> </p>
+ <p className='mb-2 text-gray-700'> Delivery: <span className='capitalize text-base  mb-0'> {item.with_delivery =='Yes'? " Provided by Adser":" Not Provided"} </span> </p>
 
 {item.delivery_company &&<>
 
- <p className='mb-2 text-gray-700 '> Delivery Company:   <span className='uppercase text-base font-semibold mb-0'> {item.delivery_company} </span> </p>
+ <p className='mb-2 text-gray-700 '> Delivery Company:   <span className='capitalize text-base  mb-0'> {item.delivery_company} </span> </p>
 
 </>
 }
@@ -236,7 +258,7 @@ return (
           <div className="mt-2 sm:ml-2 p-5" style={{'textAlign':'center'}}>
 
 <p className="text-md btn bg-blue-700 center h-10 p-1 lg:w-40 leading-tight flex justify-center items-center shadow 
-rounded-full mt-3 px-3 text-white hover:bg-blue-400" onClick={e=>removeItem(item.id)} >Remove</p>
+rounded-full sm:mt-3 px-3 text-white hover:bg-blue-400" onClick={e=>removeItem(item.id,mutateProperty,item.title)} >Remove</p>
 
 
 
@@ -289,10 +311,16 @@ rounded-full mt-3 px-3 text-white hover:bg-blue-400" onClick={e=>removeItem(item
 }
 
 
-function removeItem(id){
-axios.get(BASE_URL+'dashboard/remove-item/'+id).then(
+function removeItem(id,mutateProperty,title=""){
+  const tit = title
+axios.get(BASE_URL+'dashboard/remove-item/'+id).then(()=>{
 
-    mutateProperty()
+   notification.success({message:tit+" product removed"})
+    mutateProperty();
+
+}
+
+   
 )
     ;
 }

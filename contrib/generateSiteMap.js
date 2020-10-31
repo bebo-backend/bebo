@@ -28,8 +28,7 @@ async function generateSiteMap() {
                   `
             })
             .join('')}
-      </urlset>
-  `
+      </urlset>`
 
   fs.writeFileSync('public/sitemap.xml', sitemap)
 }
