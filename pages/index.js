@@ -78,6 +78,19 @@ router.push(url)
 
  <DailyDeals data={dailyDeals} />
 
+ <div className="mx-auto mt-4 mb-4 w-full flex justify-center">
+
+    <Link href="/search?search=all">
+          <a style={{'border':'1px solid'}}
+            className=" hover:bg-blue-500
+            hover:text-white font-bold py-2 px-8 rounded"
+       
+          >
+              See all
+          </a>
+   </Link>
+        </div>
+
  <div  className="flex  flex-wrap md:flex-no-wrap justify-evenly mb-8 py-5 mx-0  md:px-5 ">
 
 
@@ -92,18 +105,6 @@ router.push(url)
     <TopCompany data={topCompany} />
 
 
- <div className="mx-auto mt-2 mb-4 w-full flex justify-center">
-
-    <Link href="/search?search=all">
-          <a style={{'border':'1px solid'}}
-            className=" hover:bg-blue-500
-            hover:text-white font-bold py-2 px-8 rounded"
-       
-          >
-              See all
-          </a>
-   </Link>
-        </div>
 
 
   </Layout>

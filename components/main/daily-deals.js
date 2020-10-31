@@ -50,7 +50,7 @@ justify-left mb-0 mx-0  md:mx-3 sm:mx-0 md:mx-1  ">
 
     <Link href={"/item/"+data.id+"/"+data.title}
     >
-    <a key={key} style={{'width':'260px'}} className="
+    <a key={key} style={{'width':'250px'}} className="
    
      cursor-pointer bg-white  m-0 sm:m-2 pb-0 px-0 py-0  rounded  ">
     
@@ -70,8 +70,9 @@ justify-left mb-0 mx-0  md:mx-3 sm:mx-0 md:mx-1  ">
    
        <div>
    
-      <img alt="first image"  style={{'height':'190px'}} className="
-       rounded-tl rounded-tr object-contain sm:object-fit mb-0 mt-1"
+      <img alt="first image"   className="
+       rounded-tl rounded-tr object-contain sm:object-fit mb-0 mt-1 
+       sm:h-40 sm:w-40 h-32 w-32"
         src={BASE_IMG_URL+last(data.images).images} />
 
         </div>:
