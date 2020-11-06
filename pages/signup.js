@@ -119,12 +119,12 @@ setForm(data)
      
 
 <div className="text-white flex 
-flex-col justify-start items-center mt-6 sm:mt-32 font-serif px-4 sm:w-1/2  ">
+flex-col justify-start items-center mt-6 sm:mt-32 font-serif px-6 sm:w-1/2  ">
 
 
 
-<p className="text-3xl sm:text-5xl font-extrabold mb-1  " style={{'textAlign':'center'}}>Do you need to </p>
-<p className="text-3xl sm:text-5xl font-extrabold mb-1 " style={{'textAlign':'center'}}>Sell, Rent or Exchange your product ?</p>
+<p className="text-3xl sm:text-5xl font-extrabold mb-1 uppercase  " >Do you need to </p>
+<p className="text-3xl sm:text-5xl font-extrabold mb-1 uppercase " >Sell, Rent or Exchange your product ?</p>
 
 
 </div>
