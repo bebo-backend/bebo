@@ -60,7 +60,7 @@ const Header = ({tag=true}) => {
         <a className="
       
          cursor-pointer mr-1   leading-loose  hover:bg-blue-500 hover:text-white
-         p-1 rounded  px-3 sm:px-6 text-md uppercase  font-mono font-bold text-black border-black
+         p-1 rounded  px-4 sm:px-6 text-md uppercase  font-mono font-bold text-black border-black
 
          " style={{'border':'1px solid black'}}>post</a>
                 </Link>

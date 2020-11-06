@@ -62,12 +62,12 @@ onClick={onSubmit}>CONTINUE {load && <LoadingOutlined /> }</button>
 
   </div>
 
-  <div className="w-full flex flex-col items-center justify-center my-3  cursor-pointer">
+  <div className="w-full flex flex-col items-center justify-center my-4 cursor-pointer">
   
-  <p className="mx-8 w-full bg-red-500 rounded-full text-white text-lg font-bold">
+  <p className="mx-8 my-2 w-full bg-red-500 rounded-full text-white text-lg font-bold">
 
    <GoogleCircleFilled style={{'fontSize':'35px','marginRight':'25px','color':'red'}} /> Google</p>
-    <p className="mx-8 w-full bg-blue-500 rounded-full text-white text-lg font-bold overflow-hidden"> 
+    <p className="mx-8 my-2 w-full bg-blue-500 rounded-full text-white text-lg font-bold overflow-hidden"> 
     <FacebookFilled  style={{'fontSize':'35px','marginRight':'20px','color':'blue',
     'borderRadius':'100%'}} /> Facebook </p>
   </div>
