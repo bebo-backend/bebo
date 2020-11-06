@@ -46,21 +46,13 @@ onChange={onChange}  placeholder="you@domain.com"
 
 
 <div className='btn w-full center h-12 flex justify-center items-center bg-blue-700
-rounded-md mt-3 text-white  hover:bg-blue-500'>
+rounded-md my-4 text-white  hover:bg-blue-500'>
 <button className="text-md uppercase font-extrabold "  
 onClick={onSubmit}>CONTINUE {load && <LoadingOutlined /> }</button>
 
 </div>
 
 
-
-  <div className='w-full flex justify-center mt-6 capitalize '>
-  
-  <p className="w-full border-b-2 text-gray-900 border-gray-400 font-extrabold flex justify-center uppercase">
-  <span className="w-full">Sign in with</span></p>
-
-
-  </div>
 
  
 
