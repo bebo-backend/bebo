@@ -50,8 +50,8 @@ defaultValue={data['delivery']? data['delivery']:"no"} buttonStyle="outline">
 </div>
 
 }
-<p className="flex justify-center text-2xl font-bold 
-text-gray-400">Watch out for teba Courier - Currently not available  </p>
+<p className="flex justify-center text-lg 
+text-gray-400">Watch out for teba jet delivery  </p>
 </div>
 
 }

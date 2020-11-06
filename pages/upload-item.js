@@ -196,11 +196,12 @@ if (Object.keys(validateForm()).length === 0){
 
 
 const steps=(step)=>{
-    return <div className="flex sm:inline w-full"> <Steps direction="horizontal"   current={step} 
+    return <div className="flex flex-wrap w-full"> <Steps direction="horizontal" 
+      current={step} 
 >
 
 
-      <Steps.Step title={<p className="font-bold hidden sm:block capitalize "> DETAILS </p>}>
+      <Steps.Step style={{'display':"inline"}} title={<p className="font-bold hidden sm:block capitalize "> DETAILS </p>}>
 
       </Steps.Step>
        <Steps.Step   title={<p className="font-bold hidden sm:block capitalize"> MORE DETAILS </p>} >
@@ -278,29 +279,29 @@ const stepMove=(value)=>{
 
 
 
-<div className="bg-white py-3 mx-0  my-5 text-white" style={{'backgroundColor':'#01718f'}}>
+<div className="bg-white py-3 mx-0  mb-5 text-black mt-3 sm:mt-12 shadow-lg" style={{'backgroundColor':'white'}}>
     <div className="flex w-full justify-center mt-2 mb-0 " >  
-    <span className="text-4xl font-extrabold mb-0 text-white font-mono">Ads Hub</span>
+    <span className="text-4xl font-extrabold mb-0 text-black font-mono">Ads Hub</span>
     
 
     </div>
 
 
     <div className="flex w-full justify-center mt-0 mb-2 ">  
-    <p className=" text-lg text-white mx-3" style={{'textAlign':'center'}}>
-   Create a product (ads) for Sale, Rental and Exchange 
+    <p className=" text-lg text-black mx-3" style={{'textAlign':'center'}}>
+   Create your product (ads) for Sale, Rental and Exchange 
     </p> 
     </div>
 
 </div>
 
-    <div className="mx-10">
+    <div className="sm:mx-10">
     
     {steps(step)}
     </div>
 
 
-<div className="flex w-full justify-left">
+<div className="flex w-full justify-left ">
       <div className=" w-full sm:mx-20  my-8 mx-0 px-5 sm:px-10  sm:px-10 mt-0 
       bg-white py-5 mt-3 rounded-lg shadow-lg pt-10  ">
 

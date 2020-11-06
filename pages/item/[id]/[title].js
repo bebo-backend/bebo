@@ -41,21 +41,26 @@ return (
 
   <Layout title={data && data.title}>
 
-   {data && <p className=" text-2xl flex justify-between pt-3 pb-3 sm:pb-0 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
-    text-white" style={{'backgroundColor':'#01718f'}} >
-<p className="  w-full">
+   {data &&  <p className=" cursor-pointer text-lg flex mt-4  justify-between pt-3 pb-3 sm:pb-0 sm:mt-16 mb-1  px-3 sm:px-5 center leading-tight w-full
+    text-black"  >
+<p className="  w-full overflow-hidden">
 <Breadcrumb className="flex w-full" >
+ <Link href="/">
 
-  <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >Ad
+ <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-blue-500"  >Home
+       </Breadcrumb.Item>
+  </Link>
+
+  <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-black"  >Ad
        </Breadcrumb.Item>
 
-     <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >
-     <Link href={"/search?search="+data.category}><a className='text-white' style={{'color':'white'}}>
+     <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-black"  >
+     <Link href={"/search?search="+data.category}><a className='text-white'>
      {data.category} </a></Link>
        </Breadcrumb.Item>
      
 
-      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >{data.title}
+      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-black"  >{data.title}
        </Breadcrumb.Item>
       
  

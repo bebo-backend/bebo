@@ -24,27 +24,33 @@ const Header = ({tag=true}) => {
   return (
     <header className=" bg-white  " >
     <div className="sm:fixed w-full" style={{'z-index':'9999'}}>
-      <nav className=" flex inset-y-0 top-0 text-black px-2 w-full md:px-5 items-end justify-center
-       sm:justify-start pb-0 shadow-sm pt-1 pb-0 h-14  " style={{'backgroundColor':'#01718f',
-       'borderBottom':'2px solid white'}}>
+      <nav className=" flex inset-y-0 top-0 text-black shadow px-1 w-full md:px-5 items-end justify-center
+       sm:justify-start pb-0  h-14 py-0  " style={{'backgroundColor':'white',
+       'borderBottom':'0px solid white'}}>
         <ul className="flex-inline sm:flex w-full py-0 my-0 ">
 
-        <div className="w-full sm:w-1/6 mx-0 hidden sm:inline sm:relative pt-0 pb-0  
+        <div className="w-full sm:w-1/6 sm:px-6 hidden sm:inline sm:relative pt-0 pb-0  
         z-40  md:mr-3 my-0 
         sm:py-0 flex justify-center items-center cursor-pointer bg-white" style={{'textAlign':'center'}}>
 
      
 
         <Link href="/">
-       <a className="text-3xl font-sans font-extrabold flex justify-center items-center  
-       h-full">
-            <span className="text-black">te</span><span className="text-yellow-600">ba.</span>
+       <a className=" pt-0 font-extrabold flex justify-center items-end tracking-wide  
+       " style={{'fontSize':'42px','fontFamily':'Baskerville'}}>
+
+        <span className="mr-2 " style={{'marginBottom':'15px'}}>
+<svg viewBox="0 0 24 24" class="ic -mrxs -fsh0" width="32" height="30">
+<svg viewBox="0 0 512 512" id="cat-groceries">
+<path fill-rule="evenodd" d="M512 0C460.22 3.56 96.44 38.2 71.01 287.61c-3.09 26.66-4.84 53.44-5.99 80.24l178.87-178.69c6.25-6.25 16.4-6.25 22.65 0s6.25 16.38 0 22.63L7.04 471.03c-9.38 9.37-9.38 24.57 0 33.94 9.38 9.37 24.59 9.37 33.98 0l57.13-57.07c42.09-.14 84.15-2.53 125.96-7.36 53.48-5.44 97.02-26.47 132.58-56.54H255.74l146.79-48.88c11.25-14.89 21.37-30.71 30.45-47.12h-81.14l106.54-53.21C500.29 132.86 510.19 26.26 512 0z"></path></svg>
+</svg>
+</span>    <span className="text-black p-0">te</span><span className="text-black p-0">ba.</span>
             </a>
         </Link>
 
         </div>
 
-        <div className="flex-shrink  w-full flex justify-center items-center my-2 p-0 mt-3 ">
+        <div className="flex-shrink  w-full flex justify-center items-center mt-3 sm:my-1 p-0 mb-3 sm:mb-1  ">
         <Search/>
         </div>
 
@@ -53,20 +59,19 @@ const Header = ({tag=true}) => {
         <Link href='/upload-item'>
         <a className="
       
-         cursor-pointer mr-1   leading-loose  hover:text-purple-300 
-         p-1 rounded-sm  px-3 text-md uppercase text-white  font-mono font-bold
+         cursor-pointer mr-1   leading-loose  hover:bg-blue-500 hover:text-white
+         p-1 rounded  px-3 sm:px-6 text-md uppercase  font-mono font-bold text-black border-black
 
-         ">create</a>
+         " style={{'border':'1px solid black'}}>post</a>
                 </Link>
         
         
         {
         user?.isLoggedIn ?(
 <i className="cursor-pointer hover:border-b-2">
-          <Avatar  src={BASE_IMG_URL+user?.image} style={{"width":'33px','height':'33px',
-        }} onClick={e=>router.push('/dashboard/profile')}><h2 className="text-base font-bold 
-        uppercase  font-mono">
-          {user?.username.slice(0,2)}</h2>
+          <Avatar icon={<UserOutlined></UserOutlined>} src={BASE_IMG_URL+user?.image} style={{
+            "width":'33px','height':'33px','backgroundColor':'silver'
+        }} onClick={e=>router.push('/dashboard/profile')}>
           </Avatar>
           </i>
         ) : (
@@ -80,9 +85,9 @@ const Header = ({tag=true}) => {
       
       
       <Link href="/cart">
-    <a className="hover:text-blue-300 text-white">
+    <a className="hover:text-blue-300 text-black">
       <ShoppingFilled  className="mx-4 pr-0 " style={{"fontSize":'35px'}} />
-        <span className="font-bold absolute text-black text-base mt-2 mr-1 cursor-pointer "
+        <span className="font-bold absolute text-white text-base mt-2 mr-1 cursor-pointer "
         style={{'marginLeft':'-38px'}}> {cart?.data.len && cart?.data.len}</span>
  
 </a>
@@ -124,9 +129,7 @@ Sign out
       </nav>
       </div>
      
-{tag && (  <div className="flex inline-flex w-full px-1 md:px-1 mx-0 pb-2 pt-4 mt-3 sm:mt-16 ">
-<Tag />
-</div>)}
+
     
       
     </header>

@@ -2,6 +2,205 @@ import {Typography} from "antd";
 
 
 
+const category = {
+
+'vehicles' :['Vehicles',
+'Bicycles','Automotive Hand Tools',
+ 'Boats','Other Vehicles & Trailers',
+ 'Automotive Part & Accessories'],
+
+ 'fashion' : ['Womens Clothing',
+ 'Womens Accessories',
+  'Mens Clothing',
+  'Mens Accessories',
+  'Shoes',
+  'Jewelry', 'Watches',
+  'Parts & Accessories',
+  'Kids Clothing,Shoes & Accessories',
+
+], 'software' : [
+'Domain',
+  'Web Application',
+  'Mobile Application',
+  'Desktop Application',
+  'Other Application',],
+
+  'booksmovmus' : [
+'Musical Instruments & Gear',
+'DVD & Movies',
+'Books',
+'Musics', 
+],
+
+'electronics' :  [
+     'Computers, Tablets & Network Hardware',
+     'Computers Parts & Accessories',
+     'Cell Phones, Smart Watches & Accessories',
+      'Video Games & Console',
+      'Cameras & Photo',
+      'TV, Video & Home Audio Electronics',
+      'Portable Audio & Headphones',
+      'Vehicle Electronics & GPS',
+      'Multipurpose Power & Batteries',
+       'Surveillance & Smart Home Electronics',
+       'Old/Vintage Electronics',
+       'Radio Communication Electronics',
+        'Virtual Reality Headsets, Parts & Accessories',
+  ],
+
+   'realestate' : [
+     'Land',
+     'Residential',
+     'Apartment',
+     'Commercial',
+     'Shops',
+     'Room',
+      'Other Real Estate',
+],
+ 'collectart' : [
+    'Art',
+    'Collectibles',
+    'Sports Card',
+    'Paper Art & Craft Supplies',
+    'Antiques',
+    'Dolls & Teddy Bears',
+    'Pottery & Glass',
+    'Entertainment Memorabilia',
+    'Stamps',
+    
+  ],
+
+'homegarden':[
+    'Yard, Garden & Outdoor Items',
+     'Tools & Workshop Equipment',
+     'Kitchen, Dinning & Bar Supples',
+     'Home Improvement',
+      'Household & Cleaning Supplies',
+      'Camps, Lighting & Ceiling Fans',
+       'Home Decor',
+       'Home & Garden Furnitures',
+       'Food & Beverages',
+       'Major Appliances, Parts & Accessories',
+        'Bedding',
+        'Greeting Cards & Party Supplies',
+        'Bathroom Supplies & Accessories',
+        'Rugs & Carpets',
+        'Window Treatments & Hardware',
+        'Holiday & Seasonal Decor',
+        'Wedding Supplies',
+],
+'sportgoods':[
+     'Outdoor Sports Equipment',
+      'Hunting Equipment',
+      'Fitness, Running & Yoga Equipment',
+       'Cycling Equipment',
+       'Golf Equipment',
+       'Fishing Equipment & Supplies',
+       'Tennis & Racquel Sports',
+       'Water Sports Equipment',
+       'Indoor Games',
+       'Team Sports Equipment',
+  ],
+
+ 'toyHobbies':[
+  'Action Figures',
+  'RC Model Vehicles, Toys & Control Line',
+  'Games',
+  'Diecast & Toy Vehicles',
+  'Collectible Card Games & Accessories',
+  'Building Toys',
+  'Model Railroads & Trains',
+  'Toy Models & Kits',
+  'Preschool Toys & Pretend Play',
+  'Vintage & Antique Toys',
+  'Outdoor Toys & Structures',
+  'Slot Cars',
+  'Puzzles',
+  'Robot, Monster & Space Toys'
+  ],
+  
+   'bussIndustry': [
+  'Electrical Equipment & Supplies'  ,
+  'Health Care, Lab & Dental',
+  'Wire & Metal Manufacturing',
+  'Test, Measurement & Inspection Equipment',
+  'Office Equipment & Supplies',
+  'Industrial Automation & Motion Control',
+  'Heavy Equipment, Parts & Attachments',
+  'Material Handling',
+  'Facility Maintenance & Safety Equipment',
+  'Restaurant & Food Services',
+  'Light Industrial Equipment & Tools',
+  'Hydraulics, Pheumatics, Pumps & Plumbing',
+  'Retail & Services',
+  'Printing & Graphic Arts',
+  'Industrial Fasteners(Screw), Bolts & Hardware',
+  'HVAC & Refrigeration',
+  'Building Materials & Supplies',
+  'Agriculture Forestry Equipment'
+  ],
+
+  'healthBeauty' : [
+    'Skin Care Products',
+    'Vitamins & Dietary SUpplements',
+    'Haircare & Styling Products',
+    'Fragrances',
+    'Makeup Products',
+    'Health Care Products',
+    'Medical & Mobility',
+    'Shaving & Hair Removal Products',
+    'Manicure, Pedicure & Nail Products',
+    'Natural & Alternative Remedies',
+    'Vision Care Products',
+    'Oral Care Products',
+    'Oral Cone Products',
+    'Bath & Body Products',
+    'Massage Equipment & Supplier' ,
+    'Sun Protection & Tanning Equipment',
+    'Tattoos & Body Art Products'
+  ],
+  
+  'otherItem':[
+    'Tickets & Travels',
+    'Gift Cards & Coupons',
+    'Everything Else'
+  ],
+
+  'supermarket' : [
+"Grains & Rice",
+'Pasta',
+"Noodles",
+'Breakfast Foods',
+"Herbs, Spices & Seasoning",
+'Flours & Meals',
+'Malt Drinks',
+'Coffee',
+'Water',
+'Cooking Oil',
+'Juices',
+'Soft Drinks',
+'Canned & Packaged Foods',
+'Candy & Chocolate',
+'Syrups, Sugars & Sweeteners',
+'Disposable Diapers',
+'Bottle Feeding',
+'Wipes & Refills',
+'Laundry',
+'Air Fresheners',
+'Toilet Paper & Wipes',
+'Bathroom Cleaners',
+'Dishwashing',
+'Disinfectant Wipes',
+'Beers',
+'Vodka',
+'Red Wine',
+'Champagne & Sparkling Wine',
+'White Wine',
+'Whiskey',
+'Liquors',
+]
+
+}
 
 const motorsItem = ['Vehicles',
 'Bicycles','Automotive Hand Tools',
@@ -51,6 +250,7 @@ const elect =  [
   const realest = [
      'Land',
      'Residential',
+     'Apartment',
      'Commercial',
      'Shops',
      'Room',
@@ -165,9 +365,93 @@ const toyHobbies=[
     'Gift Cards & Coupons',
     'Everything Else'
   ]
+
+
+  const supermarket = [
+"Grains & Rice",
+'Pasta',
+"Noodles",
+'Breakfast Foods',
+"Herbs, Spices & Seasoning",
+'Flours & Meals',
+'Malt Drinks',
+'Coffee',
+'Water',
+'Cooking Oil',
+'Juices',
+'Soft Drinks',
+'Canned & Packaged Foods',
+'Candy & Chocolate',
+'Syrups, Sugars & Sweeteners',
+'Disposable Diapers',
+'Bottle Feeding',
+'Wipes & Refills',
+'Laundry',
+'Air Fresheners',
+'Toilet Paper & Wipes',
+'Bathroom Cleaners',
+'Dishwashing',
+'Disinfectant Wipes',
+'Beers',
+'Vodka',
+'Red Wine',
+'Champagne & Sparkling Wine',
+'White Wine',
+'Whiskey',
+'Liquors',
+]
+
+  const foodCupboard=[
+"Grains & Rice",
+'Pasta',
+"Noodles",
+'Breakfast Foods',
+"Herbs, Spices & Seasoning",
+'Flours & Meals',
+'Malt Drinks',
+'Coffee',
+'Water',
+'Cooking Oil',
+'Juices',
+'Soft Drinks',
+'Canned & Packaged Foods',
+'Candy & Chocolate',
+'Syrups, Sugars & Sweeteners']
+
+const babyProduct=[
+'Disposable Diapers',
+'Bottle Feeding',
+'Wipes & Refills']
+
+const housecleaning=[
+'Laundry',
+'Air Fresheners',
+'Toilet Paper & Wipes',
+'Bathroom Cleaners',
+'Dishwashing',
+'Disinfectant Wipes',
+]
+
+const bearWine =[
+'Beers',
+'Vodka',
+'Red Wine',
+'Champagne & Sparkling Wine',
+'White Wine',
+'Whiskey',
+'Liquors',
+
+]
   
 
-  
+   export const getcategory =(value)=>{
+
+return category[value]
+
+   }
+
+
+   
   function getChildren(data=[]){
     
     const result=[];
@@ -185,7 +469,7 @@ const toyHobbies=[
   
   }
   
-   
+  
   
   
 const Options = [
@@ -229,6 +513,11 @@ const Options = [
         label: <Typography.Text>Software-</Typography.Text>,
         disabled: false,
         children: [...getChildren(software) ],
+      },{
+        value: 'Supermarket',
+        label: <Typography.Text>Supermarket-</Typography.Text>,
+        disabled: false,
+        children: [...getChildren(supermarket) ],
       },
 
     {

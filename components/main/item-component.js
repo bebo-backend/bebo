@@ -15,15 +15,18 @@ const Main=({data=[]})=>{
     >
     <a key={data.id} style={{'width':'250px'}} className="
    
-              cursor-pointer bg-white  m-0 sm:m-2 pb-0 px-0 py-0  rounded  ">
+              cursor-pointer bg-white  my-6 sm:m-2 pb-0 px-0 py-0  rounded  ">
     
 
      <div className="flex sm:inline-block  sm:shadow sm:hover:shadow-2xl
-      w-full sm:w-64 px-2 sm:block  py-1 mx-0 
+      w-full sm:w-64 pr-2 sm:block  py-1 mx-0 
      sm:mx-0  sm:rounded-lg sm:px-0 sm:my-2 my-0  ">
 
-  <span className="absolute w-full  p-3  font-bold text-yellow-400" style={{'color':'golden'}}>
-      <CameraOutlined className="text-2xl"  /><span className="pt-4"> {Object.keys(data.images).length} </span>
+  <span className="absolute w-full  p-2  font-bold text-white " 
+   style={{'color':'white'}}>
+   <span className="bg-black p-2 rounded opacity-75">
+      <CameraOutlined className="text-2xl "  /><span className="pt-4"> {Object.keys(data.images).length} </span>
+      </span>
       </span>
 
     <p className="mb-0  justify-center w-2/5 sm:w-full flex ml-0">
@@ -47,9 +50,9 @@ const Main=({data=[]})=>{
     </p>
 
 <div className="w-3/5   sm:w-full mb-0  md:block 
-md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
+md:mb-2 flex flex-col justify-end items-left pl-3 sm:px-3 ml-0 overflow-hidden">
    
-    <p className="text-red-600 mt-0 mb-1" style={{'marginTop':'-25px'}}>
+    <p className="text-red-600 mt-0 mb-1 hidden sm:block" style={{'marginTop':'-25px'}}>
     <Rate style={{'fontSize':'15px'}} defaultValue={0} value={data.submit_user.rate}
      allowClear={false} disabled> 
     </Rate> ({data.submit_user.rate_count}) </p>
@@ -77,8 +80,8 @@ md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
   <hr className="my-0 my-1 border-b-1 sm:border-b-2 border-gray-200" />
 
 <p className='mb-0 sm:mb-1 sm:mt-1 text-gray-500 text-sm  '> 
-<i className="hidden sm:inline">
-<CheckOutlined className=" text-black text-sm mr-2" /> Instock</i>
+<span className="hidden sm:inline">
+<CheckOutlined className=" text-black text-sm mr-2" /> Instock</span>
     <Tag className=" rounded-none capitalize mb-0  " style={{
       'marginLeft':'15px','border':'0px solid',
       'borderRadius':'13px','minWidth':'60px','backgroundColor':'red','color':'white',

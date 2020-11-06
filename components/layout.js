@@ -9,7 +9,7 @@ import Head from 'next/head'
 const Layout = ({ title,children,tag }) => (
   <>
   <Head>
-    <title>{title ? title+ " @ teba" :"Buy, Sell, Rent or Exchange items @ teba"}</title>
+    <title>{title ? title+ " @ teba" :"Buy, Sell, Rent or Exchange your product @ teba"}</title>
 
     <meta name="robots" content="index" />
     <meta name="robots" content="follow" />

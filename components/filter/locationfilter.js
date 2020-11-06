@@ -60,12 +60,15 @@ return window.innerWidth <= 600
 
 
 
-{gistfile1 && Object.values(gistfile1).map((e,index)=>(
-  Object.values(e.state.locals).map(city=>(
+{gistfile1 && Object.values(gistfile1).map((e,index)=>(<>
+     <Select.Option value={e.state.name.replace("State","")} key={e.state.name}>All {e.state.name}</Select.Option>
+  {Object.values(e.state.locals).map(city=>(
    <Select.Option value={city.name} key={city.name}>{ city.name + ', '+e.state.name}</Select.Option>
  
     ))
+  }
   
+  </>
 )) 
 
 

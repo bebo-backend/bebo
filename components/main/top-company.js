@@ -19,13 +19,14 @@ return (
 
     
        
-    <p className="text-lg md:text-2xl ml-4 font-bold mb-0 text-gray-900 md:ml-5 md:px-5  pb-3 center leading-tight w-full
+    <p className="text-lg md:text-2xl ml-4 my-2 mb-0 text-black md:ml-5
+     md:px-5  pb-3 center leading-tight w-full
      " style={{'textAlign':'left'}}>
  Trending seller
  {href && 
    <Link href='/top-shops'>
  
-   <a style={{'border':'1px solid'}}
+   <a style={{'border':'1px solid #1890ff'}}
             className=" hover:bg-blue-500 hover:text-white 
            font-bold py-2 px-4 rounded text-sm mx-3  sm:mx-6"
        
@@ -72,7 +73,7 @@ justify-left mb-0  md:mx-3  ">
 <div className="w-3/4   sm:w-full mb-0 mb:4  
 md:mb-3 flex flex-col ml-2 sm:ml-0 sm:mx-3 " 
 >
-    <p className="text-gray-500 mb-2 sm:mb-2 mx-0 my-1 md:my-1" style={{'zIndex':'0'}}>
+    <p className="text-gray-500 mb-2 mx-0 my-1 md:my-1" style={{'zIndex':'0'}}>
     <Rate style={{'fontSize':'15px','zIndex':'0'}} defaultValue={0} value={data.submit_user.rate}
      allowClear={false} disabled> 
     </Rate> ({data.submit_user.rate_count}) </p>
@@ -87,7 +88,7 @@ md:mb-3 flex flex-col ml-2 sm:ml-0 sm:mx-3 "
       <Avatar className="cursor-pointer"  style={{"width":'32px','height':'32px',
     }} icon={<UserOutlined></UserOutlined>} className=""></Avatar> 
     }
-<span className=" font-bold ml-3 mb-1 md:mb-2
+<span className=" font-bold ml-3 mb-2
    text-base text-gray-900 h-4  " >
 <Typography.Text style={{'width':'70%'}} ellipsis={true}>  
    {data.submit_user.agencyname}</Typography.Text>

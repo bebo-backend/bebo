@@ -147,14 +147,6 @@ return (
 
 <div className="sm:w-full"> 
 
-<p  className=" border-b-2 border-gray-300 p-1 px-5 m-1 mb-4  font-extrabold text-lg capitalize text-white "
- style={{'fontFamily':'monopo'}}>
-
- <h2><i className="mr-5 text-base text-red-600">Exclusive Seller:</i> <Avatar src={BASE_IMG_URL+item.submit_user.image} style={{"width":'35px',
-'height':'35px'}} icon={<UserOutlined />}></Avatar> 
-
-<span  className="ml-3 font-bold text-base">You
-</span></h2></p>
 
 <div>
 
@@ -166,7 +158,8 @@ return (
  { item.images && item.images[0] ?
        
           
-          <img alt="first image" style={{'maxHeight':'150px','maxWidth':'160px'}}  className=" m-2 rounded-md object-cover" src={BASE_IMG_URL+last(item.images).images} />:
+          <img alt="first image" style={{'maxHeight':'150px','maxWidth':'160px'}}  
+          className=" m-2 rounded-md object-cover h-20 w-20 sm:h-32 sm:w-32" src={BASE_IMG_URL+last(item.images).images} />:
     <FileJpgOutlined className="text-5xl" style={{
     'textAlign':'center'
     }}  /> 
@@ -176,7 +169,8 @@ return (
 
         <div className="m-2 sm:ml-6 ">
 
-  <p  className="font-extrabold text-base my-1 mb-2 text-black leading-tight">{item.title}</p>
+  <p  className="font-extrabold text-base my-1 mb-2 text-black leading-tight 
+  h-10 overflow-hidden ">{item.title}</p>
   <p className="mt-2 my-2 text-base overflow-hidden font-normal leading-tight " 
    style={{'fontFamily':'serif',
         'maxHeight':'70px'}}>{item.category}</p>

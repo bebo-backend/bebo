@@ -10,13 +10,7 @@ const Form = ({ errorMessage, onSubmit,onChange=f=>f,load=false }) => (
   border-1 bg-white">
   
 
-        <Link href="/">
-       <a className="text-3xl  font-sans font-extrabold flex 
-       justify-center items-center  
-  ">
-            <span className="text-black">te</span><span className="text-yellow-600">ba.</span>
-            </a>
-        </Link>
+ 
 
         <p className="w-full flex border-b-2 border-black pb-3  justify-center text-3xl text-black font-bold 
  ">
@@ -34,7 +28,7 @@ const Form = ({ errorMessage, onSubmit,onChange=f=>f,load=false }) => (
 <div className="my-3 mb-6 ">
 <Input type="email" name="username"  prefix={<MailOutlined/>} allowClear
 onChange={onChange}  placeholder="you@domain.com"
- className="h-10 rounded " 
+ className="h-12 rounded " 
 />
 
 </div>
@@ -44,15 +38,15 @@ onChange={onChange}  placeholder="you@domain.com"
 <p  className="text-md font-semibold  " style={{'marginBottom':'12px'}}>Password</p>
 <div className="my-3 mb-6 ">
 <Input.Password name="password" onChange={onChange} placeholder="Password" style={{'marginTop':'3px','marginBottom':'5px'}}
- allowClear prefix={<SecurityScanOutlined></SecurityScanOutlined>}  className="h-10"
+ allowClear prefix={<SecurityScanOutlined></SecurityScanOutlined>}  className="h-12"
  ></Input.Password>
   </div>
 
 </div>
 
 
-<div className='btn w-full center h-10 flex justify-center items-center bg-red-700
-rounded-md mt-3 text-white  hover:bg-red-500'>
+<div className='btn w-full center h-12 flex justify-center items-center bg-blue-700
+rounded-md mt-3 text-white  hover:bg-blue-500'>
 <button className="text-md uppercase font-extrabold "  
 onClick={onSubmit}>CONTINUE {load && <LoadingOutlined /> }</button>
 
@@ -63,19 +57,23 @@ onClick={onSubmit}>CONTINUE {load && <LoadingOutlined /> }</button>
   <div className='w-full flex justify-center mt-6 capitalize '>
   
   <p className="w-full border-b-2 text-gray-900 border-gray-400 font-extrabold flex justify-center uppercase">
-  <span>Sign in with</span></p>
+  <span className="w-full">Sign in with</span></p>
 
 
   </div>
 
-  <div className="w-full flex justify-center my-3 mb-8 cursor-pointer">
+  <div className="w-full flex flex-col items-center justify-center my-3  cursor-pointer">
   
-  <GoogleCircleFilled style={{'fontSize':'45px','marginRight':'25px','color':'red'}} /> 
-  <FacebookFilled  style={{'fontSize':'45px','marginRight':'20px','color':'blue'}} />
+  <p className="mx-8 w-full bg-red-500 rounded-full text-white text-lg font-bold">
+
+   <GoogleCircleFilled style={{'fontSize':'35px','marginRight':'25px','color':'red'}} /> Google</p>
+    <p className="mx-8 w-full bg-blue-500 rounded-full text-white text-lg font-bold overflow-hidden"> 
+    <FacebookFilled  style={{'fontSize':'35px','marginRight':'20px','color':'blue',
+    'borderRadius':'100%'}} /> Facebook </p>
   </div>
 
-  <div className='btn w-full center h-10 flex justify-center items-center bg-blue-700
-rounded-md mt-3 text-white  hover:bg-blue-500'>
+  <div className='btn w-full center h-12 flex justify-center items-center
+rounded-md mt-1 text-black  hover:bg-gray-500' style={{'border':'1px solid black'}}>
 <Link href="/signup">
 <button className="text-md font-extrabold "
 >New to teba? Sign Up</button>

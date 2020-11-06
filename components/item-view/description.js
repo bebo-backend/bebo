@@ -10,8 +10,26 @@ import {useState} from 'react'
 
 const Review=({data})=>{
 	const [show,setShow] = useState(0)
+	const [view,setView] = useState(false)
 
 return (
+<>
+
+
+
+
+<div className='sm:hidden btn w-full cursor-pointer center h-10 flex justify-center items-center bg-teal-700
+rounded-md mt-3 text-white  hover:bg-teal-500 my-4'>
+
+<a onClick={e=>setView(!view)} className="sm:text-lg text-base font-extrabold text-white w-full "style={{'textAlign':'center'}}
+> Show Description</a>
+
+
+</div>
+
+
+ {view &&
+
 
 	<div className="my-3 mx-1">  
 {data.description && 
@@ -67,7 +85,11 @@ issue
 
 
 
- </div>)
+ </div>
+
+}
+
+ </>)
     
     }
 

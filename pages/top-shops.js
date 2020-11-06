@@ -42,23 +42,37 @@ if (!data){return <Layout title="Top teba sellers">
 return (
   <Layout title="Top teba sellers">
 
-  <p className=" text-lg flex justify-between pt-3 pb-3 sm:pb-0 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
-    text-white" style={{'backgroundColor':'#01718f'}} >
+    <p className=" cursor-pointer text-lg flex   justify-between pt-3 pb-3 sm:pb-0 mt-16 mb-1  px-3 sm:px-5 center leading-tight w-full
+    text-black"  >
 <p className="  w-full">
+
+
 <Breadcrumb className="flex w-full" >
 
- <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >Top Ads
+ <Link href="/">
+
+ <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-black"  >Home
+       </Breadcrumb.Item>
+  </Link>
+
+
+ <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-black"  >Top Ads
        </Breadcrumb.Item>
 
-   
-      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-white" >Page: {page}, ( {Object.keys(data.res).length} products found ) </Breadcrumb.Item>
+      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-black"  >{search}
+       </Breadcrumb.Item>
+      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-black" >Page: {page} </Breadcrumb.Item>
 
  
       </Breadcrumb> 
 
       </p>
 
-
+  <span className="flex justify-end  flex-shrink pt-1 bg-black opacity-75 rounded hover:bg-blue-500 ">
+<BarsOutlined className="mt-1 mx-3 flex text-xl sm:text-2xl cursor-pointer text-black " onClick={e=>setMenu(!menu)} style={{
+  'color':'white'
+}} />
+</span> 
     </p>
   
     {data &&   <div className="md:mb-20" >

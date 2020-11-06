@@ -49,9 +49,9 @@ if(account && property){
 
   return (
     <Layout title={user.username}>
-
+<div className="mt-3 sm:mt-12">
     <ProfileEdit data={account.data} update={update} setUpdate={setUpdate} mutateAccount={mutateAccount} mutateUser={mutateUser} />
-
+</div>
 
 <div className="bg-white "> 
     <div className="flex flex-col sm:flex-row w-full justify-center  pl-1 pt-10 pb-20 shadow-2xl 

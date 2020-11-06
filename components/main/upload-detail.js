@@ -7,14 +7,22 @@ function UploadDetail(){
 
 return (
 
-    <div className="flex md:flex-col w-full  md:w-1/3 lg:w-1/4  md:justify-center items-center  py-5 sm:p-5
- sm:shadow-2xl rounded-lg bg-white m-2 px-2 "> 
+<div className="flex md:flex-col w-full  
+    md:w-1/3  m-2  md:justify-center items-center  py-5 
+   bg-white sm:shadow-lg rounded-lg px-2 "> 
 
- <p className="text-2xl font-extrabold px-3 py-0 center leading-tight md:w-full"
+
+ <p className="text-2xl font-extrabold px-3 py-0  leading-tight
+  flex justify-center items-center
+ rounded-full bg-red-700 h-16 w-16 "
  style={{'textAlign':'center'}}>
-<ShoppingFilled className=" text-4xl sm:text-5xl mx-2" /></p>
+<ShoppingFilled className="text-2xl  sm:text-3xl " style={{'color':'white'}} />
+
+</p>
+
+
       
-      <div>
+      <div className="mx-3 sm:mx-1 w-full">
    <p className="text-base sm:text-2xl font-extrabold text-gray-900 px-0 mb-1 py-0 center leading-tight w-full"
     style={{'textAlign':'center'}}>
   Shop Bag

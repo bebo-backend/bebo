@@ -50,10 +50,10 @@ const data = {user:{}}
 data.user.username = userForm.username
 data.user.password = userForm.password
  data.user.email = userForm.username
-  data.phone_no = userForm.tel
+  data.phone_no = userForm.tel ?userForm.tel:''
   data.agencyname = userForm.store
-  data.website = userForm.website
-  data.about = userForm.about
+  data.website = userForm.website ? userForm.website:''
+  data.about = userForm.about ? userForm.about:''
 
     // const {message,error,user} = await axios.post(BASE_URL+"signup/", data);
 
@@ -112,21 +112,19 @@ setForm(data)
 
 
 
-      <div className=" items-center flex w-full flex-col sm:flex-row justify-center sm:flex-no-wrap" style={{'backgroundColor':'#01718f'}}>
+      <div className=" items-start flex w-full 
+      flex-col sm:flex-row justify-center sm:flex-no-wrap mt-3 sm:mt-12" 
+      style={{'backgroundColor':'#01718f'}}>
 
      
 
-<div className="text-white flex flex-col justify-start items-center mt-12 font-extrabold px-4 sm:w-1/2  ">
+<div className="text-white flex 
+flex-col justify-start items-center mt-6 sm:mt-32 font-serif px-4 sm:w-1/2  ">
 
- <Link href="/">
-       <a className="text-5xl  font-sans font-extrabold flex 
-       justify-center items-center  
-  ">
-            <span className="text-black">te</span><span className="text-yellow-600">ba.</span>
-            </a>
-        </Link>
 
-<span className="text-4xl sm:text-6xl font-extrabold mb-1 " style={{'textAlign':'center'}}>Make your product known</span>
+
+<p className="text-3xl sm:text-5xl font-extrabold mb-1  " style={{'textAlign':'center'}}>Do you need to </p>
+<p className="text-3xl sm:text-5xl font-extrabold mb-1 " style={{'textAlign':'center'}}>Sell, Rent or Exchange your product ?</p>
 
 
 </div>

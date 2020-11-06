@@ -6,9 +6,11 @@ import TopCompany from '../components/main/top-company'
 import DailyDeals from '../components/main/daily-deals'
 import { BASE_URL } from '../settings'
 import axios from 'axios'
-import {Select} from "antd";
+import {Select,Menu,Cascader} from "antd";
 import {EnvironmentFilled} from '@ant-design/icons';
 import gistfile1 from '../contrib/gistfile1'
+import {getRegion} from '../contrib/region'
+import Category from '../components/category-menu'
 import {useRouter} from 'next/router'
 import Link from 'next/link'
 
@@ -37,7 +39,7 @@ router.push(url)
   <Layout>
 
 
-    <div className="m-0 px-2 py-2" >   
+    <div className=" px-0 py-2 mt-3 sm:mt-16 w-full " >   
 
 
 
@@ -45,53 +47,83 @@ router.push(url)
 
 
 
-  <p className="text-lg md:text-3xl  font-extrabold rounded-lg
-  mt-3 text-black  sm:px-5 py-3 md:py-1 center w-full
+  <p className="text-lg md:text-3xl  font-extrabold 
+  my-0  text-black  sm:px-5 py-2 sm:px-3  w-full 
      " style={{'textAlign':'center'}}>
     Find things you'll love. Support independent sellers. Only on teba.
 
     </p>
 
-<p className="bg-white h-12 flex items-center rounded my-6" style={{'border':'1px solid silver'}}>
-    <Select  className="w-full" style={{'opacity':'1'}} onChange={value=>handleChange(value)} 
+
+
+
+
+    <p className=" px-2 bg-teal-200 h-16 flex sm:text-lg items-center justify-center  my-2 font-bold  " 
+    style={{'border':'0px solid silver'}}>
+   <span className="">Find in your area </span><Select  className="sm:w-64 w-full" style={{'opacity':'1'}}  
  placeholder={<span className="font-bold"> <EnvironmentFilled className="mr-2" /> Pick Region</span>} 
  showSearch={true} allowClear={true} bordered={false}>
 
 {gistfile1 && Object.values(gistfile1).map((e,index)=>(
-  Object.values(e.state.locals).map(city=>(
-   <Select.Option value={city.name} key={city.name}>{ city.name + ', '+e.state.name}</Select.Option>
- 
-    ))
+  <>
+    <Select.Option value={e.state.name} key={e.state.name}>
+  <Menu>
   
-)) 
+  <Menu.SubMenu title={e.state.name}>
+
+
+<Menu.Item >
+  <Link key={index} href={"/search?search="+e.state.name.replace(' ','').replace('State','')}>
+<span className=""> All {e.state.name}</span>
+</Link>
+</Menu.Item>
+
+
+{Object.values(e.state.locals).map((city,index)=>(
+
+    
+
+<Menu.Item key={index}>
+<Link key={index} href={"/search?search="+city.name.replace('&','and')}>
+{city.name}
+
+</Link>
+</Menu.Item>
+
+))}
+
+
+
+
+  </Menu.SubMenu>
+
+
+</Menu>
+</Select.Option>
+
+
+  
+</>)) 
   }
 
 
 
     </Select> 
     </p>
-     </div>  
 
 
 
-
-
- <DailyDeals data={dailyDeals} />
-
- <div className="mx-auto mt-4 mb-4 w-full flex justify-center">
-
-    <Link href="/search?search=all">
-          <a style={{'border':'1px solid'}}
-            className=" hover:bg-blue-500
-            hover:text-white font-bold py-2 px-8 rounded"
-       
-          >
-              See all
-          </a>
-   </Link>
+ 
         </div>
 
- <div  className="flex  flex-wrap md:flex-no-wrap justify-evenly mb-8 py-5 mx-0  md:px-5 ">
+<div className=" sm:flex sm:px-6 px-0 ">
+<div>
+<Category />
+
+</div>
+<div className="w-full">
+
+ <div  className="  flex-wrap md:flex-no-wrap justify-evenly mb-4 py-2 mx-0  md:px-2 hidden sm:flex">
 
 
  <UploadItem />
@@ -101,6 +133,27 @@ router.push(url)
 
 
  </div>
+
+<DailyDeals data={dailyDeals} />
+
+ <div className="mx-auto mt-4 mb-4 w-full flex justify-center">
+
+    <Link href="/search?search=all">
+          <a style={{'border':'1px solid #1890ff'}}
+            className=" hover:bg-blue-500
+            hover:text-white font-bold py-2 px-8 rounded"
+       
+          >
+              See all
+          </a>
+   </Link>
+      
+        </div>
+        </div>
+
+</div>
+
+
 
     <TopCompany data={topCompany} />
 

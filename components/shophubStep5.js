@@ -49,7 +49,7 @@ defaultValue={data['payment_type']? data['payment_type']:"Bank Transfer "} mode=
 rounded-md my-10  text-white  hover:bg-blue-500'>
 
 <button className="text-base capitalize font-extrabold my-10 "  
->VERIFY & UPLOAD <CloudUploadOutlined className="ml-3 text-base"/> </button>
+>VALIDATE & UPLOAD <CloudUploadOutlined className="ml-3 text-base"/> </button>
 
 </div>
 

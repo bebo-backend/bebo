@@ -68,7 +68,7 @@ return (
   <Layout title="My cart">
 
   
-<div className="flex-inline sm:flex mt-0 pt-1 sm:pl-1 w-full bg-white sm:pr-1"> 
+<div className="flex-inline sm:flex mt-0 pt-1 sm:mt-12 sm:pl-1 w-full bg-white sm:pr-1"> 
 
 
 
@@ -148,16 +148,16 @@ return (
 
 {content && 
 
-<div className="w-full sm:my-6  shadow p-0 sm:p-0  text-white p-2 " > 
-<div className="flex justify-between mb-5 p-5 items-center" style={{'backgroundColor':'#01718f'}}>
+<div className="w-full sm:my-6  shadow p-0 sm:p-0  text-black p-2 " > 
+<div className="flex justify-between mb-5 p-5 items-center" >
 
 <p className="text-base sm:text-2xl mb-0 font-bold">
 My Shopping Bag: {Object.keys(content.data).length} items</p>
 <Link href="/">
 
 <a className="sm:text-base font-bold btn  shadow center h-10 flex justify-center items-center
-rounded-full mt-3 mx-5 sm:mx-1 px-3 text-white  hover:bg-gray-200 leading-tight" 
-style={{'border':'1px solid white'}}>Continue Shopping</a>
+rounded  mt-1 mx-4 sm:mx-6 px-3 text-black  hover:bg-gray-200 leading-tight" 
+style={{'border':'1px solid black'}}>Continue Shopping</a>
 
 </Link>
 
@@ -165,7 +165,7 @@ style={{'border':'1px solid white'}}>Continue Shopping</a>
 
 
 
-<div className="justify-start mb-3">
+<div className="justify-start mb-3 sm:mx-4">
 
 
 {
@@ -203,7 +203,7 @@ style={{'border':'1px solid white'}}>Continue Shopping</a>
        
           
           <img alt="first image" style={{'maxHeight':'240px','maxWidth':'240px'}}  
-          className=" m-2 rounded-md sm:object-cover" src={BASE_IMG_URL+last(item.images).images} />:
+          className=" m-2 rounded-md sm:object-cover h-20 w-30 sm:h-40 sm:w-40" src={BASE_IMG_URL+last(item.images).images} />:
     <FileJpgOutlined className="text-5xl" style={{
     'textAlign':'center'
     }}  /> 
@@ -214,11 +214,12 @@ style={{'border':'1px solid white'}}>Continue Shopping</a>
 
 
 
-        <div className="sm:m-2 ml-2 sm:ml-6 ">
+        <div className="sm:m-2 ml-2 sm:mx-6 ">
 
 
 
-  <p  className="font-extrabold text-base my-1 mb-2 text-black ">{item.title}</p>
+  <p  className="font-extrabold text-base my-1 mb-2 text-black h-12 overflow-hidden
+   sm:mr-4 ">{item.title} </p>
 
 <p className="mt-1 my-1 text-base text-black overflow-hidden font-normal leading-tight " 
    style={{'fontFamily':'serif',

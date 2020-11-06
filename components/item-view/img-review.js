@@ -80,11 +80,11 @@ const stepMove=(value)=>{
 
 
 
-<div className="w-full md:w-5/6 mx-0 mb-4 p-2 md:p-0 flex justify-center" style={{'maxHeight':'530px'}}>  
+<div className="w-full md:w-5/6 mx-0 mb-4 p-0 flex justify-center" style={{'maxHeight':'530px'}}>  
 {stepMove(step)}
 
 
-   <img className="object-cover sm:object-contain  w-full  " 
+   <img className="object-fit sm:object-contain  w-full  " 
    onClick={e=>router.push(BASE_IMG_URL+data.images[step].images)}
       src={BASE_IMG_URL+data.images[step].images}></img>
  

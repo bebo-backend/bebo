@@ -18,7 +18,7 @@ const RegisterForm = ({ errorMessage, onSubmit,onChange=f=>f,load=false }) => (
   <label className="text-md font-semibold " htmlFor="agencyname">Full Name * </label>
 
 <div className="my-3 mb-6 ">
-<Input name="username"  className=" h-10 " required autoCapitalize 
+<Input name="username"  className=" h-12 " required autoCapitalize 
  allowClear prefix={<UserAddOutlined></UserAddOutlined>}
 onChange={onChange}  autoFocus autoComplete={true} placeholder="Owner Full Name"
 />
@@ -29,7 +29,7 @@ onChange={onChange}  autoFocus autoComplete={true} placeholder="Owner Full Name"
  <label className="text-md font-semibold " htmlFor="store">Business/Company Name *</label>
 <div className="my-3 mb-6 ">
 
-<Input name="store"  className="h-10" required allowClear  type="text" prefix={<ShopOutlined/>}
+<Input name="store"  className="h-12" required allowClear  type="text" prefix={<ShopOutlined/>}
 onChange={onChange} autoComplete="true"  placeholder="ie. Alaba21store electronics, Odeba Food & Beverages, GS Mall etc."
 />
 
@@ -39,7 +39,7 @@ onChange={onChange} autoComplete="true"  placeholder="ie. Alaba21store electroni
 <label className="text-md font-semibold "  htmlFor="email">E-mail *</label>
 <div className="my-3 mb-6 ">
 
-<Input name="username"  className="h-10" required   allowClear prefix={<MailOutlined/>} type="email" 
+<Input name="username"  className="h-12" required   allowClear prefix={<MailOutlined/>} type="email" 
 onChange={onChange} 
 autoComplete={true}placeholder="you@domain.com"
 />
@@ -50,7 +50,7 @@ autoComplete={true}placeholder="you@domain.com"
 <label className="text-md font-semibold "  htmlFor="tel">Phone Number *</label>
 <div className="my-3 mb-6 ">
 
-<Input name="tel"  className="h-10" required   allowClear prefix={<PhoneOutlined/>} type="tel" 
+<Input name="tel"  className="h-12" required   allowClear prefix={<PhoneOutlined/>} type="tel" 
 onChange={onChange} 
  placeholder="08123546778 etc."
 />
@@ -62,7 +62,7 @@ onChange={onChange}
 <label className="text-md font-semibold "  htmlFor="website">Website <i className="text-gray-600">(Optional) </i></label>
 <div className="my-3 mb-6 ">
 
-<Input name="website"  className="h-10" allowClear prefix={"https"}
+<Input name="website"  className="h-12" allowClear prefix={"https"}
 onChange={onChange} 
 placeholder="www.teba.now.sh"
 />
@@ -73,7 +73,7 @@ placeholder="www.teba.now.sh"
 <label className="text-md font-semibold " >Password *</label>
 <div className="my-3 mb-6 ">
 
-<Input.Password  className="h-10" required name="password" onChange={onChange} placeholder="Password"
+<Input.Password  className="h-12" required name="password" onChange={onChange} placeholder="Password"
  allowClear prefix={<SecurityScanOutlined></SecurityScanOutlined>}
   autoComplete={true}></Input.Password>
   </div>
@@ -118,8 +118,8 @@ Yes, i would like to receive a monthly e-mail on new item near me
   
 
 
-<div onClick={onSubmit} className='btn w-full center h-10 mb-6 flex justify-center items-center bg-red-700
-rounded-md mt-5 text-white  hover:bg-red-500'>
+<div onClick={onSubmit} className='btn w-full center h-12 mb-6 flex justify-center items-center bg-blue-700
+rounded-md mt-5 text-white  hover:bg-blue-500'>
 <button className="text-md uppercase font-extrabold "  
 >CONTINUE {load && <LoadingOutlined /> }</button>
 
@@ -127,8 +127,8 @@ rounded-md mt-5 text-white  hover:bg-red-500'>
 
 
 
-  <div className='btn w-full center h-10 mb-6 flex justify-center items-center bg-blue-700
-rounded-md mt-3 text-white  hover:bg-blue-500'>
+  <div className='btn w-full center h-12 mb-6 flex justify-center items-center 
+rounded-md mt-3 text-black  hover:bg-gray-500' style={{'border':'1px solid black'}}>
 <Link href="/login">
 <button className="text-md font-extrabold "
 >Already have an account? Log in</button>

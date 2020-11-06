@@ -267,31 +267,41 @@ setMenu(true)
   <Layout title={search ? "You search for "+search:"You search for All"} value={search}>
   
        
-   <p className=" text-lg flex justify-between pt-3 pb-3 sm:pb-0 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
-    text-white" style={{'backgroundColor':'#01718f'}} >
+     <p className=" cursor-pointer text-lg flex   justify-between pt-3 pb-3 sm:pb-0 mt-3 sm:mt-16 mb-1  px-3 sm:px-5 center leading-tight w-full
+    text-black"  >
 <p className="  w-full">
-<Breadcrumb className="flex w-full">
- <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >Ads
+
+
+<Breadcrumb className="flex w-full" >
+
+ <Link href="/">
+
+ <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-blue-500"  >Home
+       </Breadcrumb.Item>
+  </Link>
+
+
+ <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-black"  >Ads
        </Breadcrumb.Item>
 
-      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >{search}
+      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-black"  >{search}
        </Breadcrumb.Item>
-      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-white" >Page: {page}, ( {Object.keys(ssrData.res).length} products found ) </Breadcrumb.Item>
+      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-black" >Page: {page} </Breadcrumb.Item>
 
  
       </Breadcrumb> 
 
       </p>
 
-  <span className="flex justify-end  flex-shrink ">
-<BarsOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-white " onClick={e=>setMenu(!menu)} style={{
+  <span className="flex justify-end  flex-shrink pt-1 bg-black opacity-75 rounded hover:bg-blue-500 ">
+<BarsOutlined className="mt-1 mx-3 flex text-xl sm:text-2xl cursor-pointer text-black " onClick={e=>setMenu(!menu)} style={{
   'color':'white'
 }} />
 </span> 
     </p>
 
 
-<div className="mx-3 shadow-2xl rounded-lg">
+<div className="mx-3  rounded-lg">
 
 <div className=" md:flex flex-inline mt-0 py-5 pl-0 w-full bg-white pr-5  "> 
 
@@ -308,8 +318,11 @@ setMenu(true)
 <div className="  md:w-3/4 w-full ml-3 mt-6"> 
 
 
-<div className="md:flex flex-inline mb-10">
-<div className="w-full flex justify-end "> 
+
+<div className="md:flex flex-inline mb-10 px-0">
+
+<div className="w-full flex flex-col sm:flex-row justify-end my-4 mx-2 "> 
+
 
 {Object.keys(filters).length > 0 &&
 <div className="flex text-xl font-bold m-0 w-1/2 flex-wrap ">
@@ -329,7 +342,7 @@ Filters:
 
 
 
-<div className="flex mr-3 w-full mb-3 justify-end">
+<div className="flex mr-3 w-full mb-6 justify-start">
  {loading && <LoadingOutlined />}   {sortComp(Options)}
  </div>
 
@@ -643,32 +656,41 @@ setMenu(true)
   <Layout title={search ? "You search for "+search:"You search for All"} value={search}>
   
        
-   <p className=" text-lg flex justify-between pt-3 pb-3 sm:pb-0 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
-    text-white" style={{'backgroundColor':'#01718f'}} >
+   <p className=" cursor-pointer text-lg flex   justify-between pt-3 pb-3 sm:pb-0 mt-3 sm:mt-16 mb-1  px-3 sm:px-5 center leading-tight w-full
+    text-black"  >
 <p className="  w-full">
+
+
 <Breadcrumb className="flex w-full" >
 
- <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >Ads
+ <Link href="/">
+
+ <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-blue-500"  >Home
+       </Breadcrumb.Item>
+  </Link>
+
+
+ <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-black"  >Ads
        </Breadcrumb.Item>
 
-      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-white"  >{search}
+      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-black"  >{search}
        </Breadcrumb.Item>
-      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-white" >Page: {page}, ( {Object.keys(data.res).length} products found ) </Breadcrumb.Item>
+      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-black" >Page: {page} </Breadcrumb.Item>
 
  
       </Breadcrumb> 
 
       </p>
 
-  <span className="flex justify-end  flex-shrink ">
-<BarsOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-white " onClick={e=>setMenu(!menu)} style={{
+  <span className="flex justify-end  flex-shrink pt-1 bg-black opacity-75 rounded hover:bg-blue-500 ">
+<BarsOutlined className="mt-1 mx-3 flex text-xl sm:text-2xl cursor-pointer text-black " onClick={e=>setMenu(!menu)} style={{
   'color':'white'
 }} />
 </span> 
     </p>
 
 
-<div className="sm:mx-3 shadow-2xl rounded-lg">
+<div className="sm:mx-3  rounded-lg">
 
 <div className=" md:flex flex-inline mt-0 py-5 pl-0 w-full bg-white pr-5  "> 
 
@@ -682,14 +704,16 @@ setMenu(true)
 </div>
 
 
-<div className="  md:w-3/4 w-full mx-1 sm:ml-3 mt-6 "> 
+<div className="  md:w-3/4 w-full mx-1 sm:ml-3 mt-3 "> 
 
 
 <div className="md:flex flex-inline mb-10 px-0">
-<div className="w-full flex justify-end "> 
+
+<div className="w-full flex flex-col sm:flex-row justify-end my-4 mx-2 "> 
 
 {Object.keys(filters).length > 0 &&
-<div className="flex text-xl font-bold m-0 w-1/2 flex-wrap ">
+
+<div className="flex text-base font-bold m-0 w-1/2 flex-wrap mb-4 ">
 
 Filters:
 
@@ -697,7 +721,7 @@ Filters:
 
 <Tag color="#108ee9" key={e}  closable={true} onClose={d=>removeFilter(d,e)} style={{
 'padding':'2px','minWidth':'100px','textAlign':'center','margin':'3px',
-  'fontSize':'.8em','minHeight':'30px'
+  'fontSize':'.7em','minHeight':'30px'
 }}> <span className="ml-1">{e}: {filters[e]}</span> </Tag>
   ))}
 
@@ -706,7 +730,7 @@ Filters:
 
 
 
-<div className="flex sm:mr-3 px-0 w-full mb-3 justify-end">
+<div className="flex sm:mr-3 px-0 w-full mb-6 justify-start">
  {loading && <LoadingOutlined />}   {sortComp(Options)}
  </div>
 

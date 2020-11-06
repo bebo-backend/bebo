@@ -193,15 +193,15 @@ addUrl(filterurl,'sort')
         <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md sm:text-lg text-white"  >Ads
        </Breadcrumb.Item>
 
-      <Breadcrumb.Item className="text-sm leading-tight md:text-base text-white" >Page: {page}, ( {Object.keys(ssrData.res).length} products found )  </Breadcrumb.Item>
+      <Breadcrumb.Item className="text-sm leading-tight md:text-base text-white" >Page: {page}  </Breadcrumb.Item>
 
  
       </Breadcrumb> 
 
       </p>
 
-  <span className="flex justify-end  flex-shrink ">
-<BarsOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-white " onClick={e=>setMenu(!menu)} style={{
+   <span className="flex justify-end  flex-shrink pt-1 bg-black opacity-75 rounded hover:bg-blue-500 ">
+<BarsOutlined className="mt-1 mx-3 flex text-xl sm:text-2xl cursor-pointer text-black " onClick={e=>setMenu(!menu)} style={{
   'color':'white'
 }} />
 </span> 
@@ -220,7 +220,7 @@ addUrl(filterurl,'sort')
 </div>
 
 
-<div className="  md:w-3/4 w-full ml-3 mt-6"> 
+<div className="  md:w-3/4 w-full mx-2 mt-6"> 
 
 
 <div className="md:flex flex-inline mb-10">
@@ -244,7 +244,7 @@ Filters:
 
 
 
-<div className="flex mr-3 w-1/2 mb-3 justify-end">
+<div className="flex mr-3 w-1/2 my-3 justify-end">
  {loading && <LoadingOutlined />}   {sortComp(Options)}
  </div>
 
@@ -500,15 +500,15 @@ setMenu(true)
        </Breadcrumb.Item>
         <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md  text-white"  >Ads
        </Breadcrumb.Item>
-      <Breadcrumb.Item className="text-sm leading-tight md:text-md  text-white" >Page: {page}, ( {Object.keys(data.res).length} products found ) </Breadcrumb.Item>
+      <Breadcrumb.Item className="text-sm leading-tight md:text-md  text-white" >Page: {page} </Breadcrumb.Item>
 
  
       </Breadcrumb> 
 
       </p>
 
-  <span className="flex justify-end  flex-shrink ">
-<BarsOutlined className="mt-1  flex text-xl sm:text-2xl cursor-pointer text-white " onClick={e=>setMenu(!menu)} style={{
+   <span className="flex justify-end  flex-shrink pt-1 bg-black opacity-75 rounded hover:bg-blue-500 ">
+<BarsOutlined className="mt-1 mx-3 flex text-xl sm:text-2xl cursor-pointer text-black " onClick={e=>setMenu(!menu)} style={{
   'color':'white'
 }} />
 </span> 
@@ -528,7 +528,7 @@ setMenu(true)
 </div>
 
 
-<div className="  md:w-3/4 w-full ml-3 mt-6 bg-white"> 
+<div className="  md:w-3/4 w-full mx-2 my-6 bg-white"> 
 
 
  <span className="text-base px-2 py-0 center leading-tight  mb-0 text-black
@@ -563,7 +563,7 @@ Filters:
 
 
 
-<div className="flex mr-3 w-1/2 mb-3 justify-end">
+<div className="flex mr-3 w-1/2 my-3 justify-end">
  {loading && <LoadingOutlined />}   {sortComp(Options)}
  </div>
 

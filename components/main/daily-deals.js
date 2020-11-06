@@ -9,7 +9,7 @@ import {useState,useEffect} from 'react'
 
 
 
-function DailyDeals({data=[],title="Discover latest (Ads) now",paginate=false,paginateHandler=e=>e}){
+function DailyDeals({data=[],title="Discover trending ads now",paginate=false,paginateHandler=e=>e}){
 
 const [page,setPage] = useState(1)
 
@@ -22,19 +22,20 @@ const toPage=(page)=>{
 
 return (
 
-    <div className="mt-0 bg-white px-2 md:px-3 sm:mx-0 py-5  rounded-lg " > 
+    <div className="mt-0 bg-white px-2 md:px-1 sm:mx-0 py-5 sm:shadow-sm  rounded-lg " > 
 
     
        
-   <p className="text-lg md:text-2xl ml-3 font-bold mb-0 text-gray-900 md:ml-5 md:px-5  py-5 center leading-tight w-full
-     " style={{'textAlign':'left'}}>
+   <p className="sm:text-lg  mx-2 sm:mx-1 px-2  mb-5 text-white hover:bg-red-600 md:ml-5 sm:px-5  py-4 
+   center leading-tight  sm:font-bold
+     " style={{'textAlign':'left','backgroundColor':'#FF0000','marginLeft':'3px'}}>
 {title}
 {title &&
    <Link href="/search?search=all">
 
-     <a className="ml-0 p-1 font-bold">   <button className="mx-0 p-1 font-extrabold text-gray-900 " 
-      ><ArrowRightOutlined className="
-       sm:text-2xl   hover:bg-black  " /></button></a> 
+     <a className="ml-0 p-1 sm:text-base  flex items-start justify-center float-right  
+     mt-0">   <button className="mx-0 p-1  text-white " 
+      >SEE ALL</button></a> 
 
    </Link>
 }
@@ -56,11 +57,14 @@ justify-left mb-0 mx-0  md:mx-3 sm:mx-0 md:mx-1  ">
     
 
      <div className="flex sm:inline-block  sm:shadow sm:hover:shadow-2xl
-      w-full sm:w-64 px-2 sm:block  py-1 mx-0 
+      w-full sm:w-64 pr-2 sm:block  py-1 mx-0 
      sm:mx-0  sm:rounded-lg sm:px-0 sm:my-2 my-0  ">
    
-   <span className="absolute w-full  p-3  font-bold text-yellow-500" style={{'color':'gold'}}>
-      <CameraOutlined className="text-2xl"  /><span className="pt-4"> {Object.keys(data.images).length} </span>
+   <span className="absolute w-full  p-2  font-bold text-white " 
+   style={{'color':'white'}}>
+   <span className="bg-black p-2 rounded opacity-75">
+      <CameraOutlined className="text-lg "  /><span className="mt-8"> {Object.keys(data.images).length} </span>
+      </span>
       </span>
     <p className="mb-0  justify-center w-2/5 sm:w-full flex ml-0">
 
@@ -83,9 +87,9 @@ justify-left mb-0 mx-0  md:mx-3 sm:mx-0 md:mx-1  ">
     </p>
 
 <div className="w-3/5   sm:w-full mb-0  md:block 
-md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
+md:mb-2 flex flex-col justify-end items-left pl-3 sm:px-3 ml-0 overflow-hidden">
    
-    <p className="text-red-600 mt-0 mb-1" style={{'marginTop':'-25px'}}>
+    <p className="text-red-600 mt-0 mb-1 hidden sm:block" style={{'marginTop':'-25px'}}>
     <Rate style={{'fontSize':'15px'}} defaultValue={0} value={data.submit_user.rate}
      allowClear={false} disabled> 
     </Rate> ({data.submit_user.rate_count}) </p>
@@ -113,12 +117,13 @@ md:mb-2 flex flex-col justify-end items-left pl-6 sm:px-3 ml-0">
   <hr className="my-0 my-1 border-b-1 sm:border-b-2 border-gray-200" />
 
 <p className='mb-0 sm:mb-1 sm:mt-1 text-gray-500 text-sm  '> 
-<i className="hidden sm:inline">
-<CheckOutlined className=" text-black text-sm mr-2" /> Instock</i>
+<span className="hidden sm:inline">
+<CheckOutlined className=" text-black text-sm mr-2" /> Instock</span>
     <Tag className=" rounded-none capitalize mb-0  " style={{
       'marginLeft':'15px','border':'0px solid',
       'borderRadius':'13px','minWidth':'60px','backgroundColor':'red','color':'white',
-      'textAlign':'center'}} >{data.acquire_type=='rent'?'rental':data.acquire_type }</Tag></p>
+      'textAlign':'center'}} >{data.acquire_type=='rent'?'rental':data.acquire_type }
+      </Tag></p>
 
 
 

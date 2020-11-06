@@ -78,13 +78,13 @@ axios.get(BASE_URL+"addrate/"+data.id+'/'+value+'/'+username).then(res=>{
         {
           key: '1',
           name: <span className="font-bold">Type</span>,
-          value: data.acquire_type,
+          value: <span className="font-bold capitalize">{data.acquire_type}</span>,
       
         }, 
         {
             key: '2',
             name: <span className="font-bold">Condition</span>,
-            value:  data.condition,
+            value:  <span className="font-bold capitalize">{data.condition}</span>,
           },
 
           {
@@ -291,7 +291,7 @@ className="rounded-full"> Exclusive</Tag>}</p>
 
   <div onClick={e=>{ setContacts(true);}} className='btn w-full center h-10 flex
    justify-center items-center 
-rounded-md mt-3 text-white  hover:bg-teal-500 my-4' style={{'backgroundColor':'red'}}>
+rounded-md mt-3 text-white  hover:bg-blue-500 my-4 bg-blue-700' >
 
 <a className="sm:text-lg text-base font-extrabold text-white w-full "style={{'textAlign':'center'}}
 > Show Contacts</a>
@@ -304,15 +304,15 @@ rounded-md mt-3 text-white  hover:bg-teal-500 my-4' style={{'backgroundColor':'r
    justify-center items-center bg-blue-700
 rounded-md mt-1 text-white  hover:bg-blue-500 my-4'>
 
-<a className="text-lg text-white font-extrabold "
+<a className="sm:text-lg text-base text-white font-extrabold "
 > Save Product {load &&  <LoadingOutlined />}</a>
 
 
 </div>
 
 
- :<div className='btn w-full center h-10 flex justify-center items-center bg-teal-700
-rounded-md mt-3 text-white  hover:bg-teal-500 my-4'>
+ :<div className='btn w-full center h-10 flex justify-center items-center bg-red-700
+rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 <Link href="/login">
 <a className="sm:text-lg text-base font-extrabold text-white w-full "style={{'textAlign':'center'}}
 > Login to Save to cart</a>

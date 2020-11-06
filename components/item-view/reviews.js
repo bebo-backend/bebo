@@ -35,11 +35,10 @@ return (
  style={{"textAlign":"left"}} author={<p style={{
 	'fontFamily':'serif'
 }} className="text-base underline font-black">{data.account.user.username}</p>}
-  avatar={<Avatar icon="{<UserOutlined />}" src={BASE_IMG_URL+data.account.image} style={{"width":'44px',
-'height':'44px'}}> </Avatar>}
+  avatar={data.account.image ? <img className="object-fit rounded-lg" style={{'width':'33px','height':'33px'}} src={BASE_IMG_URL+data.account.image} /> : <UserOutlined style={{'width':'33px','height':'33px'}} /> }
 
 
- content={<p className="text-lg font-gray-900 md:pr-20">{data.text}</p>}> 
+ content={<p className="text-base font-gray-900 md:pr-20">{data.text}</p>}> 
  
 
 
