@@ -119,7 +119,7 @@ setForm(data)
      
 
 <div className="text-white flex 
-flex-col justify-start items-center mt-6 sm:mt-32 font-serif px-6 sm:w-1/2  ">
+flex-col justify-start  mt-6 sm:mt-32 px-6 sm:w-1/2  ">
 
 
 

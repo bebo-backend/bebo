@@ -13,7 +13,7 @@ return (
    bg-white sm:shadow-lg rounded-lg px-2 "> 
 
    <Link href="/upload-item">
- <p className="text-2xl font-extrabold px-3 py-0  leading-tight
+ <p className="text-2xl font-extrabold px-3 py-2  leading-tight
   flex justify-center items-center
  rounded-full bg-green-700 h-16 w-16 "
  style={{'textAlign':'center'}}>

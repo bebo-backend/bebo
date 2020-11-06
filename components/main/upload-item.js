@@ -13,7 +13,7 @@ return (
 
 
 
-   <p className="text-2xl font-extrabold px-3 py-0  leading-tight
+   <p className="text-2xl font-extrabold px-3 py-2  leading-tight
   flex justify-center items-center
  rounded-full bg-yellow-700 h-16 w-16 "
  style={{'textAlign':'center'}}>
