@@ -28,7 +28,7 @@ const Form = ({ errorMessage, onSubmit,onChange=f=>f,load=false }) => (
 <div className="my-3 mb-6 ">
 <Input type="email" name="username"  prefix={<MailOutlined/>} allowClear
 onChange={onChange}  placeholder="you@domain.com"
- className="h-12 rounded " 
+ className="h-10 rounded " 
 />
 
 </div>
@@ -38,7 +38,7 @@ onChange={onChange}  placeholder="you@domain.com"
 <p  className="text-md font-semibold  " style={{'marginBottom':'12px'}}>Password</p>
 <div className="my-3 mb-6 ">
 <Input.Password name="password" onChange={onChange} placeholder="Password" style={{'marginTop':'3px','marginBottom':'5px'}}
- allowClear prefix={<SecurityScanOutlined></SecurityScanOutlined>}  className="h-12"
+ allowClear prefix={<SecurityScanOutlined></SecurityScanOutlined>}  className="h-10"
  ></Input.Password>
   </div>
 
@@ -60,7 +60,7 @@ onClick={onSubmit}>CONTINUE {load && <LoadingOutlined /> }</button>
 rounded-md my-4 text-black  hover:bg-gray-500' style={{'border':'1px solid black'}}>
 <Link href="/signup">
 <button className="text-md font-extrabold "
->New to teba? Sign Up</button>
+>New to shoplist? Sign Up</button>
 </Link>
 
 </div>

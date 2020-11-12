@@ -60,8 +60,8 @@ if(account && property){
 <div className="flex flex-col sm:flex-row self-center ">
     <i className="ml-10 sm:ml-0 pl-4 sm:pl-1 hover:border-b-2 mr-0 md:mr-5 z-20 ">
 
-    <Avatar className="shadow" src={BASE_IMG_URL+account.data.image} 
-style={{"width":'137px','height':'137px'
+    <Avatar className="shadow " src={BASE_IMG_URL+account.data.image} 
+style={{"width":'137px','height':'137px','borderRadius':'0px','border':'4px solid white'
     }} icon={<UserOutlined className="text-6xl object-center mt-4" style={{"marginTop":'15px'}} ></UserOutlined>} className="">
     </Avatar >
 
@@ -74,7 +74,7 @@ style={{"width":'137px','height':'137px'
 <p className="flex w-full justify-center">
 <h1 className="text-4xl font-extrabold m-0 sm:px-5 text-white">{account.data.agencyname}</h1> 
 </p>
-<span  className="pl-5 text-white m-0 text-2xl wrap  font-sans ">www.teba.vercel.app/@/{account.data.agencyname}  </span>
+<span  className="pl-5 text-white m-0 text-2xl wrap  font-sans ">www.shoplist.vercel.app/@/{account.data.agencyname}  </span>
 <table className="table m-2">
 
 <tr >
@@ -84,9 +84,9 @@ style={{"width":'137px','height':'137px'
 </tr>
 
 <tr>
-<td><span className="mx-3 text-base font-semibold">Ratings </span></td>
-<td><span className="mx-3 text-base font-semibold">Collections</span>
-</td><td><span className="mx-3 text-base font-semibold">Stars </span></td>
+<td><span className="mx-3 text-base ">Ratings </span></td>
+<td><span className="mx-3 text-base">Collections</span>
+</td><td><span className="mx-3 text-base">Stars </span></td>
 
 </tr>
 

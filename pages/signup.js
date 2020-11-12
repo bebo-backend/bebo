@@ -123,8 +123,8 @@ flex-col justify-start  mt-6 sm:mt-32 px-6 sm:w-1/2  ">
 
 
 
-<p className="text-3xl sm:text-5xl font-extrabold mb-1 uppercase  " >Do you need to </p>
-<p className="text-3xl sm:text-5xl font-extrabold mb-1 uppercase " >Sell, Rent or Exchange your product ?</p>
+<p className="text-3xl sm:text-5xl font-extrabold mb-1 uppercase leading-loose  " >
+Do you need to Sell, Rent or Exchange your product ?</p>
 
 
 </div>

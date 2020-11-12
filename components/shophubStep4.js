@@ -51,7 +51,7 @@ defaultValue={data['delivery']? data['delivery']:"no"} buttonStyle="outline">
 
 }
 <p className="flex justify-center text-lg 
-text-gray-400">Watch out for teba jet delivery  </p>
+text-gray-400">Watch out for shoplist jet delivery  </p>
 </div>
 
 }

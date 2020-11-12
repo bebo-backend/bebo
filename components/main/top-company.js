@@ -12,14 +12,14 @@ function TopCompany({data, href=true}){
 
 return (
 
-  <div className="sm:mx-0  py-2 bg-white rounded-lg mt-3">
+  <div className="sm:mx-0  py-2 bg-white rounded-lg mt-3 shadow">
 
     <div className="mt-2 text-black bg-white sm:px-3 py-1   leading-tight w-full mb-5
     " > 
 
     
        
-    <p className="text-lg md:text-2xl ml-4 my-2 mb-0 text-black md:ml-5
+    <p className="sm:text-lg font-bold ml-4 my-2 mb-0 text-black md:ml-5
      md:px-5  pb-3 center leading-tight w-full
      " style={{'textAlign':'left'}}>
  Trending seller

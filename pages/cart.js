@@ -202,7 +202,7 @@ style={{'border':'1px solid black'}}>Continue Shopping</a>
  { item.images && item.images[0] ?
        
           
-          <img alt="first image" style={{'maxHeight':'240px','maxWidth':'240px'}}  
+          <img alt="first image" 
           className=" m-2 rounded-md sm:object-cover h-20 w-30 sm:h-40 sm:w-40" src={BASE_IMG_URL+last(item.images).images} />:
     <FileJpgOutlined className="text-5xl" style={{
     'textAlign':'center'

@@ -24,7 +24,7 @@ const router = useRouter()
 const handleChange=(e)=>{
 
 const page=1
-const LIMIT=44
+const LIMIT=32
 
 const url ="search?search="+e+"&page="+page+"&limit="+LIMIT
 
@@ -50,7 +50,7 @@ router.push(url)
   <p className="text-lg md:text-3xl  font-extrabold 
   my-0  text-black  sm:px-5 py-2 sm:px-3  w-full 
      " style={{'textAlign':'center'}}>
-    Find things you'll love. Support independent sellers. Only on teba.
+    Find things you'll love. Support independent sellers. Only on shoplist.
 
     </p>
 

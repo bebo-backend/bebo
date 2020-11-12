@@ -30,12 +30,14 @@ const [url,setUrl] = useState({})
 const [page,setPage] = useState(1)
 const [curView,setcurView] = useState(0)
 const [menu,setMenu] = useState(true)
+const [previousPageData,setPreviousPageData] = useState([])
+
 
 
 // search && console.log('search',Object.values(search))
 const baseUrl = BASE_URL+"search_data?search="+title+Object.values(url).join("+")
 
-const LIMIT = 44
+const LIMIT = 24
 
 
 const {data,error,mutate,size,setSize,isReachingEnd}=useSWRInfinite((index,previousPageData)=>{
@@ -90,6 +92,8 @@ const clearFilters=(e)=>{
   setUrl({})
   setFilters({})
   setPage(1)
+  setPreviousPageData([])
+
 
 mutate()
 }
@@ -183,17 +187,17 @@ addUrl(filterurl,'sort')
   
        
   <p className=" text-2xl flex justify-between pt-3 pb-3 sm:pb-0 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
-    text-white" style={{'backgroundColor':'#01718f'}} >
+    text-white sm:mt-16" >
 <p className="  w-full">
 <Breadcrumb className="flex w-full" >
 
 
-      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md sm:text-lg text-white"  >{title}
+      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md sm:text-lg text-black"  >{title}
        </Breadcrumb.Item>
-        <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md sm:text-lg text-white"  >Ads
+        <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md sm:text-lg text-black"  >Ads
        </Breadcrumb.Item>
 
-      <Breadcrumb.Item className="text-sm leading-tight md:text-base text-white" >Page: {page}  </Breadcrumb.Item>
+      <Breadcrumb.Item className="text-sm leading-tight md:text-base text-black" >Pages: {page}  </Breadcrumb.Item>
 
  
       </Breadcrumb> 
@@ -253,9 +257,15 @@ Filters:
 
   </div>
 
- <div className="mr-5 md:mr-0" style={{'marginTop':'-39px'}}>
-  <div className="w-full  flex-inline sm:flex
-justify-left mb-2 mx-2 md:mx-3 sm:mx-0 md:mx-1   ">
+
+ <div className="mr-5 md:mr-0 w-full  " style={{'marginTop':'-39px'}}>
+  <div className="w-full  block sm:inline-block 
+justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
+
+{previousPageData && previousPageData.map(e=>(
+
+<ItemComponent data={e} ke={e.title} />
+  ))}
 
 {ssrData.res.map(e=>(
 
@@ -272,7 +282,10 @@ justify-left mb-2 mx-2 md:mx-3 sm:mx-0 md:mx-1   ">
             hover:text-white font-bold py-2 px-8 rounded"
 
              disabled={!ssrData.next}
-            onClick={e=>setPage(page+1)}
+              onClick={e=>{ 
+              setPreviousPageData([...previousPageData,...ssrData.res]); 
+              setPage(page+1)}
+            }
        
           >
               More product
@@ -346,6 +359,8 @@ const clearFilters=(e)=>{
   setUrl({})
   setFilters({})
   setPage(1)
+  setPreviousPageData([])
+
 
 mutate()
 }
@@ -491,16 +506,17 @@ setMenu(true)
   
        
   <p className=" text-2xl flex justify-between pt-3 pb-3 sm:pb-0 m-0 mb-0  px-3 sm:px-5 center leading-tight w-full
-    text-white" style={{'backgroundColor':'#01718f'}} >
+    text-white sm:mt-16" >
 <p className="  w-full">
 <Breadcrumb className="flex w-full">
 
 
-      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md  text-white"  >{title}
+
+      <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md  text-black"  >{title}
        </Breadcrumb.Item>
-        <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md  text-white"  >Ads
+        <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md  text-black"  >Ads
        </Breadcrumb.Item>
-      <Breadcrumb.Item className="text-sm leading-tight md:text-md  text-white" >Page: {page} </Breadcrumb.Item>
+      <Breadcrumb.Item className="text-sm leading-tight md:text-md  text-black" >Pages: {page} </Breadcrumb.Item>
 
  
       </Breadcrumb> 
@@ -531,13 +547,13 @@ setMenu(true)
 <div className="  md:w-3/4 w-full mx-2 my-6 bg-white"> 
 
 
- <span className="text-base px-2 py-0 center leading-tight  mb-0 text-black
+ <span className="text-base px-2 py-2 center leading-tight  mb-0 text-black
      font-mono border-teal-900 border-r-2 w-20 mx-0 cursor-pointer " onClick={e=>setcurView(1)}  style={{
 'color':curView=== 1 ? "black":"silver",'textAlign':'center'
 }}>About</span>
 
 
- <span className="text-base px-2 py-0 center leading-tight  mb-0 
+ <span className="text-base px-2 py-2 center leading-tight  mb-0 
      font-mono  w-20 cursor-pointer " onClick={e=>setcurView(0)}  style={{
 'color':curView=== 0 ? "black":"silver",'textAlign':'center'
 }} >Product (Ads)</span>
@@ -574,11 +590,17 @@ Filters:
 
 {curView === 0 ?<>
 
-{Object.keys(data.res).length > 0 ?
+{Object.keys(data.res).length > 0 || Object.keys(previousPageData).length > 0  ?
  <div className="mr-5 md:mr-0 w-full  " style={{'marginTop':'-39px'}}>
   <div className="w-full  block sm:inline-block 
 justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
 
+{previousPageData && previousPageData.map(e=>(
+
+<ItemComponent data={e} ke={e.title} />
+  ))}
+
+  
 {data.res.map(e=>(
 
 <ItemComponent data={e} ke={e.title} />
@@ -593,8 +615,10 @@ justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
             hover:text-white font-bold py-2 px-8 rounded"
 
              disabled={!data.next}
-            onClick={e=>setPage(page+1)}
-       
+           onClick={e=>{ 
+              setPreviousPageData([...previousPageData,...data.res]); 
+              setPage(page+1)} 
+            }
           >
               More product
           </a>
@@ -671,7 +695,7 @@ export const getServerSideProps = async({query})=>{
 const search = query.shopname
 const tags = query.tags ? query.tags :''
 const page=query.page ? query.page :1
-const LIMIT=44
+const LIMIT=20
 
 const url = BASE_URL+"search_data?search="+search+"&page="+page+"&limit="+LIMIT
 

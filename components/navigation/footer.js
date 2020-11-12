@@ -37,15 +37,15 @@ const Footer = () => {
     <ul className="m-3" > 
     <h2 className="text-lg font-bold">Stay Connected  </h2>
     
-    <li  className=" text-base"> <a href="https://www.facebook.com/teba"> <FacebookOutlined></FacebookOutlined> Facebook </a> </li>
-    <li  className=" text-base"> <a href="https://www.twitter.com/teba"> <TwitterCircleFilled></TwitterCircleFilled> Twitter </a>  </li>
-    <li  className=" text-base"><a href="https://www.linkedin.com/teba"><LinkedinOutlined></LinkedinOutlined>  Linkedin </a></li>
+    <li  className=" text-base"> <a href="https://www.facebook.com/shoplist"> <FacebookOutlined></FacebookOutlined> Facebook </a> </li>
+    <li  className=" text-base"> <a href="https://www.twitter.com/shoplist"> <TwitterCircleFilled></TwitterCircleFilled> Twitter </a>  </li>
+    <li  className=" text-base"><a href="https://www.linkedin.com/shoplist"><LinkedinOutlined></LinkedinOutlined>  Linkedin </a></li>
     
     
     </ul>
 
     <ul className="m-3" > 
-    <h2 className="text-lg font-bold"> About teba  </h2>
+    <h2 className="text-lg font-bold"> About shoplist  </h2>
     
     <li className=" text-base">Contacts  </li>
     <li className=" text-base">We are hiring </li>
@@ -58,11 +58,14 @@ const Footer = () => {
 
 
     <ul className="m-3" > 
-    <h2 className="text-lg font-bold">  teba sites </h2>
+    <h2 className="text-lg font-bold">  Shoplist sites </h2>
     
-    <li className=" text-base"> <span className="text-green-700 bg-green-700 rounded-full">-</span> Nigeria </li>
+    <li className=" text-base"> 
+    <span className="text-green-700 bg-green-700 ">-</span>
+     <span className="text-white bg-white">--</span> 
+      <span className="text-green-700 bg-green-700 ">-</span>  Nigeria </li>
 
-    <li  className=" text-base">  Powered by Gks </li>
+    <li  className=" text-base">  Powered by Gks Inc. </li>
    
     
     

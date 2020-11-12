@@ -36,13 +36,13 @@ return (
  
 
 
-
-
-<LocationFilter search={search} handleSearch={handleSearch} menu={menu} ></LocationFilter>
 <AcquireFilter search={search} handleSearch={handleSearch}></AcquireFilter>
 
-
 <ConditionFilter  search={search} handleSearch={handleSearch}></ConditionFilter>
+
+<LocationFilter search={search} handleSearch={handleSearch} menu={menu} ></LocationFilter>
+
+
 
 
 

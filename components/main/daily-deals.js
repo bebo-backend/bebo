@@ -9,7 +9,7 @@ import {useState,useEffect} from 'react'
 
 
 
-function DailyDeals({data=[],title="Discover trending ads now",paginate=false,paginateHandler=e=>e}){
+function DailyDeals({data=[],title="Discover trending now",paginate=false,paginateHandler=e=>e}){
 
 const [page,setPage] = useState(1)
 

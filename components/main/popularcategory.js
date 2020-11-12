@@ -28,7 +28,7 @@ return (
       
    <p className="text-base sm:text-2xl font-extrabold text-gray-900 px-0 py-0 center leading-tight w-full mb-1"
     style={{'textAlign':'center'}}>
- Post ad for free
+ Post for free
 
    </p>
    

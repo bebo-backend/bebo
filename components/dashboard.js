@@ -115,7 +115,7 @@ return (
     <p className="sm:text-3xl text-lg text-gray-900 px-0 py-3 pt-6 center 
     leading-tight w-full font-extrabold mb-1  uppercase mt-6
      " style={{'textAlign':'center'}}>
- Build your teba account
+ Build your shoplist account
 
     </p>
     <p className="sm:text-2xl px-0 py-0 center leading-tight w-full text-gray-900 mb-4
@@ -158,7 +158,7 @@ return (
  { item.images && item.images[0] ?
        
           
-          <img alt="first image" style={{'maxHeight':'150px','maxWidth':'160px'}}  
+          <img alt="first image"
           className=" m-2 rounded-md object-cover h-20 w-20 sm:h-32 sm:w-32" src={BASE_IMG_URL+last(item.images).images} />:
     <FileJpgOutlined className="text-5xl" style={{
     'textAlign':'center'

@@ -76,7 +76,7 @@ onChange={e=>handlechange(e.target.value,'location')}
 
 <Input  className="h-12  " name="email" required allowClear prefix={<MailOutlined />} type="email"  
 onChange={e=>handlechange(e.target.value,'email')}   autoComplete="true" value={data['email']}
-  placeholder="eg. teba@gks.co"
+  placeholder="eg. shoplist@gks.co"
 /> 
 </div>
 </div>

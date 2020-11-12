@@ -26,7 +26,7 @@ return (
       <div className="mx-3 sm:mx-1">
    <p className="text-base sm:text-2xl font-extrabold text-gray-900 py-0 center leading-tight w-full mb-1"
     style={{'textAlign':'center'}}>
-  teba Account
+  shoplist Account
 
    </p>
    

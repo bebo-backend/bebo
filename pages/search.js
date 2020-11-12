@@ -29,12 +29,13 @@ const [filters,setFilters] = useState({})
 const [url,setUrl] = useState({})
 const [page,setPage] = useState(1)
 const [menu,setMenu] = useState(true)
+const [previousPageData,setPreviousPageData] = useState([])
 
 
 // search && console.log('search',Object.values(search))
 const baseUrl = BASE_URL+"search_data?search="+search+Object.values(url).join("+")
 
-const LIMIT = 44
+const LIMIT = 24
 
 
 const {data,error,mutate,size,setSize,isReachingEnd}=useSWRInfinite((index,previousPageData)=>{
@@ -42,7 +43,7 @@ const {data,error,mutate,size,setSize,isReachingEnd}=useSWRInfinite((index,previ
 if (previousPageData && previousPageData.length === 0) return null
 if (!index || index===0) return BASE_URL+"search_data?search="+search+"&page="+page+"&limit="+LIMIT+"&tags="+tags+Object.values(url).join('+');
 
-return BASE_URL+"search_data?search="+search+"&page="+index+"&limit="+LIMIT+"&tags="+tags
+return BASE_URL+"search_data?search="+search+"&page="+page+"&limit="+LIMIT+"&tags="+tags
 },fetcher)
 
 if (!data) {
@@ -112,6 +113,7 @@ const clearFilters=(e)=>{
   setUrl({})
   setFilters({})
   setPage(1)
+  setPreviousPageData([])
 
 //  axios.get(baseUrl).then(res=>{
 
@@ -286,7 +288,7 @@ setMenu(true)
 
       <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-black"  >{search}
        </Breadcrumb.Item>
-      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-black" >Page: {page} </Breadcrumb.Item>
+      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-black" >Pages: {page} </Breadcrumb.Item>
 
  
       </Breadcrumb> 
@@ -351,10 +353,16 @@ Filters:
 
   </div>
 
-{Object.keys(ssrData.res).length > 0 ?
+{Object.keys(ssrData.res).length > 0 || Object.keys(previousPageData).length > 0  ?
  <div className="mr-5 md:mr-0 w-full  " style={{'marginTop':'-39px'}}>
   <div className="w-full  block sm:inline-block 
 justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
+
+{previousPageData && previousPageData.map(e=>(
+
+<ItemComponent data={e} ke={e.title} />
+  ))}
+
 
 {ssrData.res.map(e=>(
 
@@ -370,7 +378,10 @@ justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
             hover:text-white font-bold py-2 px-8 rounded"
 
              disabled={!ssrData.next}
-            onClick={e=>setPage(page+1)}
+            onClick={e=>{ 
+              setPreviousPageData([...previousPageData,...ssrData.res]); 
+              setPage(page+1)}
+            }
        
           >
               More product
@@ -497,6 +508,7 @@ const clearFilters=(e)=>{
   setUrl({})
   setFilters({})
   setPage(1)
+  setPreviousPageData([])
 
 //  axios.get(baseUrl).then(res=>{
 
@@ -675,7 +687,7 @@ setMenu(true)
 
       <Breadcrumb.Item className="font-extrabold  leading-tight capitalize text-md text-black"  >{search}
        </Breadcrumb.Item>
-      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-black" >Page: {page} </Breadcrumb.Item>
+      <Breadcrumb.Item className="text-sm leading-tight md:text-md text-black" >Pages: {page} </Breadcrumb.Item>
 
  
       </Breadcrumb> 
@@ -739,10 +751,17 @@ Filters:
 
   </div>
 
-{Object.keys(data.res).length > 0 ?
+
+{Object.keys(data.res).length > 0 || Object.keys(previousPageData).length > 0  ?
  <div className="mr-5 md:mr-0 w-full  " style={{'marginTop':'-39px'}}>
   <div className="w-full  block sm:inline-block 
 justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
+
+{previousPageData && previousPageData.map(e=>(
+
+<ItemComponent data={e} ke={e.title} />
+  ))}
+
 
 {data.res.map(e=>(
 
@@ -759,7 +778,10 @@ justify-left my-3  md:mx-3 sm:mx-0 md:mx-1   ">
             hover:text-white font-bold py-2 px-8 rounded"
 
              disabled={!data.next}
-            onClick={e=>setPage(page+1)}
+            onClick={e=>{ 
+              setPreviousPageData([...previousPageData,...data.res]); 
+              setPage(page+1)} 
+            }
        
           >
               More product
@@ -807,7 +829,7 @@ export const getServerSideProps  = async ({query})=>{
 const search = query.search
 const tags = query.tags ? query.tags :''
 const page=query.page ? query.page :1
-const LIMIT=44
+const LIMIT=20
 
 const url = BASE_URL+"search_data?search="+search+"&page="+page+"&limit="+LIMIT+"&tags="+tags
 

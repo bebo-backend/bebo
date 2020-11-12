@@ -226,7 +226,7 @@ axios.get(BASE_URL+"addrate/"+data.id+'/'+value+'/'+username).then(res=>{
 
 
 <Link href={"/@/"+data.submit_user.agencyname.replace('&','and')}>
-<a className="sm:text-4xl text-2xl font-bold mb-0 mx-0 cursor-pointer z-60 text-black"> {data.submit_user.agencyname} </a>
+<a className="sm:text-4xl text-2xl font-bold mb-0 mx-0 cursor-pointer z-60 text-blue-500"> {data.submit_user.agencyname} </a>
 </Link>
 <p className="my-0"></p>
 <span className="text-lg  text-gray-600 mt-0"> ({data.submit_user.rate_count}) 
@@ -268,7 +268,7 @@ className="rounded-full"> Exclusive</Tag>}</p>
 
 <p className=" mb-1 mt-2 text-gray-500 text-base" style={{
 	'fontFamily':'serif'
-}}>Exclusive Seller on teba: <span className='ml-2 text-black  font-semibold'> <CheckOutlined className=" text-black text-base mr-0" /> Instock</span></p> 
+}}>Exclusive Seller on shoplist: <span className='ml-2 text-black  font-semibold'> <CheckOutlined className=" text-black text-base mr-0" /> Instock</span></p> 
 
 
 <Avatar src={BASE_IMG_URL+data.submit_user.image} style={{"width":'35px',
@@ -301,8 +301,8 @@ rounded-md mt-3 text-white  hover:bg-blue-500 my-4 bg-blue-700' >
 
 {isLoggedIn ?
   <div onClick={e=>addToCart(data.title)} className='btn w-full center h-10 flex
-   justify-center items-center bg-blue-700
-rounded-md mt-1 text-white  hover:bg-blue-500 my-4'>
+   justify-center items-center bg-red-700
+rounded-md mt-1 text-white  hover:bg-red-500 my-4'>
 
 <a className="sm:text-lg text-base text-white font-extrabold "
 > Save Product {load &&  <LoadingOutlined />}</a>
@@ -346,8 +346,8 @@ rounded-md mt-3 text-white  hover:bg-red-500 my-4'>
 
  {data.submit_user.website &&
 
-<div className='btn w-full cursor-pointer center h-10 flex justify-center items-center bg-teal-700
-rounded-md mt-3 text-white  hover:bg-teal-500 my-4'>
+<div className='btn w-full cursor-pointer center h-10 flex justify-center items-center bg-blue-700
+rounded-md mt-3 text-white  hover:bg-blue-500 my-4'>
 
 <a href={"http://"+data.submit_user.website} className="sm:text-lg text-base font-extrabold text-white w-full "style={{'textAlign':'center'}}
 > Visit Website</a>

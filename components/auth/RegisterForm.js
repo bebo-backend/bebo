@@ -64,7 +64,7 @@ onChange={onChange}
 
 <Input name="website"  className="h-12" allowClear prefix={"https"}
 onChange={onChange} 
-placeholder="www.teba.now.sh"
+placeholder="www.shoplist.now.sh"
 />
 
 </div>
